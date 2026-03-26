@@ -1,0 +1,7 @@
+{
+  "buildCommand": "cd ../.. && pnpm turbo build --filter=@orgo-sync/portal",
+  "installCommand": "cd ../.. && corepack enable && pnpm install",
+  "outputDirectory": ".next",
+  "framework": "nextjs",
+  "ignoreCommand": "npx turbo-ignore @orgo-sync/portal"
+}
