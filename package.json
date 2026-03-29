@@ -7,5 +7,8 @@
     "dev": "turbo dev",
     "lint": "turbo lint",
     "typecheck": "turbo typecheck"
+  },
+  "devDependencies": {
+    "turbo": "latest"
   }
 }

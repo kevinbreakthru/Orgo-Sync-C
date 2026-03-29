@@ -13,7 +13,8 @@
   --m-green-pale: #EBF5EF;
   --m-red: #CC2200;
 
-  font-family: var(--font-dm-sans), 'DM Sans', sans-serif;
+  font-family: var(--font-outfit), 'Outfit', sans-serif;
+  font-weight: 300;
   color: var(--m-black);
   font-size: 16px;
   line-height: 1.6;
@@ -85,7 +86,7 @@
   display: block; margin-top: 12px;
   background: var(--m-orange); color: var(--m-white);
   text-align: center; padding: 12px;
-  border-radius: 6px; font-size: 14px; font-weight: 700;
+  border-radius: 6px; font-size: 14px; font-weight: 600;
   text-decoration: none; letter-spacing: 0.04em;
 }
 
@@ -103,7 +104,7 @@
   display: inline-flex; align-items: center; gap: 8px;
   background: rgba(255,77,0,0.1); border: 1px solid rgba(255,77,0,0.22);
   border-radius: 2px; padding: 6px 14px;
-  font-size: 11px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase;
+  font-size: 11px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase;
   color: var(--m-orange); margin-bottom: 28px; width: fit-content;
 }
 .mkt-hero-eyebrow::before {
@@ -132,7 +133,7 @@
 .mkt-btn-primary {
   background: var(--m-orange); color: var(--m-white);
   padding: 14px 32px; border-radius: 3px;
-  font-size: 14px; font-weight: 700; text-decoration: none;
+  font-size: 14px; font-weight: 600; text-decoration: none;
   letter-spacing: 0.04em; transition: background 0.2s, transform 0.15s;
   display: inline-block;
 }
@@ -149,7 +150,7 @@
 .mkt-btn-white {
   background: var(--m-white); color: var(--m-orange);
   padding: 16px 40px; border-radius: 3px;
-  font-size: 15px; font-weight: 700; text-decoration: none;
+  font-size: 15px; font-weight: 600; text-decoration: none;
   letter-spacing: 0.04em; transition: transform 0.15s; display: inline-block;
 }
 .mkt-btn-white:hover { transform: translateY(-2px); }
@@ -157,7 +158,7 @@
 .mkt-btn-cta-primary {
   background: var(--m-orange); color: var(--m-white);
   padding: 16px 44px; border-radius: 3px;
-  font-size: 15px; font-weight: 700; text-decoration: none;
+  font-size: 15px; font-weight: 600; text-decoration: none;
   letter-spacing: 0.06em; text-transform: uppercase;
   transition: background 0.2s, transform 0.15s; display: inline-block;
   position: relative; z-index: 1;
@@ -167,7 +168,7 @@
 /* ── SECTION HELPERS ── */
 .mkt-section { padding: 100px 60px; }
 .mkt-section-eyebrow {
-  font-size: 10px; font-weight: 700; letter-spacing: 0.2em;
+  font-size: 10px; font-weight: 600; letter-spacing: 0.2em;
   text-transform: uppercase; color: var(--m-orange); margin-bottom: 14px;
 }
 .mkt-section-h1 {
@@ -200,11 +201,11 @@
   transition: transform 0.3s;
 }
 .mkt-who-card:hover::after { transform: scaleX(1); }
-.mkt-who-tag { font-size: 10px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--m-orange); margin-bottom: 10px; }
+.mkt-who-tag { font-size: 10px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--m-orange); margin-bottom: 10px; }
 .mkt-who-title { font-family: var(--font-bebas), 'Bebas Neue', sans-serif; font-size: 26px; color: var(--m-white); line-height: 1; margin-bottom: 10px; letter-spacing: 0.02em; }
 .mkt-who-desc { font-size: 13px; color: rgba(255,255,255,0.45); line-height: 1.55; margin-bottom: 14px; }
 .mkt-who-desc strong { color: rgba(255,255,255,0.75); }
-.mkt-who-link { font-size: 12px; font-weight: 700; color: var(--m-orange); letter-spacing: 0.08em; text-transform: uppercase; display: flex; align-items: center; gap: 5px; transition: gap 0.2s; }
+.mkt-who-link { font-size: 12px; font-weight: 600; color: var(--m-orange); letter-spacing: 0.08em; text-transform: uppercase; display: flex; align-items: center; gap: 5px; transition: gap 0.2s; }
 .mkt-who-card:hover .mkt-who-link { gap: 9px; }
 
 /* ── PROBLEM / BEFORE-AFTER GRID ── */
@@ -226,7 +227,7 @@
 .mkt-card { padding: 36px 32px; border-radius: 3px; }
 .mkt-card.bad { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); }
 .mkt-card.good { background: rgba(26,107,60,0.08); border: 1px solid rgba(26,107,60,0.15); }
-.mkt-card-label { font-size: 10px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: 16px; }
+.mkt-card-label { font-size: 10px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: 16px; }
 .mkt-card.bad .mkt-card-label { color: rgba(255,255,255,0.35); }
 .mkt-card.good .mkt-card-label { color: #5CC98A; }
 .mkt-card-title {
@@ -244,7 +245,7 @@
 .mkt-dot {
   width: 16px; height: 16px; border-radius: 50%; flex-shrink: 0;
   display: flex; align-items: center; justify-content: center;
-  font-size: 8px; font-weight: 700; margin-top: 2px;
+  font-size: 8px; font-weight: 600; margin-top: 2px;
 }
 .mkt-card.bad .mkt-dot { background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.3); }
 .mkt-card.good .mkt-dot { background: var(--m-orange); color: var(--m-white); }
@@ -262,7 +263,7 @@
 .mkt-how-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--m-gray-mid); transition: background 0.3s; }
 .mkt-how-card:hover::before { background: var(--m-orange); }
 .mkt-how-num { font-family: var(--font-bebas), 'Bebas Neue', sans-serif; font-size: 56px; color: var(--m-gray-mid); line-height: 1; margin-bottom: 16px; }
-.mkt-how-title { font-size: 19px; font-weight: 700; color: var(--m-black); margin-bottom: 10px; line-height: 1.2; }
+.mkt-how-title { font-size: 19px; font-weight: 600; color: var(--m-black); margin-bottom: 10px; line-height: 1.2; }
 .mkt-how-body { font-size: 14px; color: var(--m-gray); line-height: 1.6; }
 .mkt-how-body strong { color: var(--m-black); }
 
@@ -307,7 +308,7 @@
   background: var(--m-orange); padding: 20px 60px;
   display: flex; align-items: center; gap: 16px;
 }
-.mkt-band-label { font-size: 10px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.7); white-space: nowrap; }
+.mkt-band-label { font-size: 10px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.7); white-space: nowrap; }
 .mkt-band-divider { width: 1px; height: 28px; background: rgba(255,255,255,0.3); flex-shrink: 0; }
 .mkt-band-text { font-size: 15px; color: var(--m-white); font-weight: 600; line-height: 1.5; }
 
@@ -316,8 +317,8 @@
 .mkt-usecases-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
 .mkt-usecase-card { background: var(--m-white); padding: 40px 32px; position: relative; }
 .mkt-usecase-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--m-orange); }
-.mkt-usecase-tag { font-size: 10px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--m-orange); margin-bottom: 12px; }
-.mkt-usecase-title { font-size: 20px; font-weight: 700; color: var(--m-black); margin-bottom: 12px; line-height: 1.2; }
+.mkt-usecase-tag { font-size: 10px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--m-orange); margin-bottom: 12px; }
+.mkt-usecase-title { font-size: 20px; font-weight: 600; color: var(--m-black); margin-bottom: 12px; line-height: 1.2; }
 .mkt-usecase-body { font-size: 14px; color: var(--m-gray); line-height: 1.6; margin-bottom: 20px; }
 .mkt-usecase-why { font-size: 13px; font-weight: 600; color: var(--m-black); padding: 12px 14px; background: var(--m-gray-light); border-radius: 3px; line-height: 1.5; }
 .mkt-usecase-why span { color: var(--m-orange); }
@@ -328,7 +329,7 @@
 .mkt-access-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--m-gray-mid); transition: background 0.3s; }
 .mkt-access-card:hover::before { background: var(--m-orange); }
 .mkt-access-num { font-family: var(--font-bebas), 'Bebas Neue', sans-serif; font-size: 52px; color: var(--m-gray-mid); line-height: 1; margin-bottom: 14px; }
-.mkt-access-title { font-size: 17px; font-weight: 700; color: var(--m-black); margin-bottom: 10px; line-height: 1.2; }
+.mkt-access-title { font-size: 17px; font-weight: 600; color: var(--m-black); margin-bottom: 10px; line-height: 1.2; }
 .mkt-access-body { font-size: 13.5px; color: var(--m-gray); line-height: 1.6; }
 .mkt-access-body strong { color: var(--m-black); }
 
@@ -338,26 +339,26 @@
 .mkt-pricing-card { background: var(--m-dark); padding: 36px 28px; text-align: center; position: relative; }
 .mkt-pricing-card.highlight { background: var(--m-dark-mid); }
 .mkt-pricing-card.highlight::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--m-orange); }
-.mkt-pricing-name { font-size: 10px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--m-orange); margin-bottom: 14px; }
+.mkt-pricing-name { font-size: 10px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--m-orange); margin-bottom: 14px; }
 .mkt-pricing-price { font-family: var(--font-bebas), 'Bebas Neue', sans-serif; font-size: 44px; color: var(--m-white); line-height: 1; margin-bottom: 4px; }
 .mkt-pricing-unit { font-size: 12px; color: rgba(255,255,255,0.4); margin-bottom: 14px; }
-.mkt-pricing-volume { font-size: 13px; font-weight: 700; color: rgba(255,255,255,0.8); margin-bottom: 10px; padding-bottom: 14px; border-bottom: 1px solid rgba(255,255,255,0.06); }
+.mkt-pricing-volume { font-size: 13px; font-weight: 600; color: rgba(255,255,255,0.8); margin-bottom: 10px; padding-bottom: 14px; border-bottom: 1px solid rgba(255,255,255,0.06); }
 .mkt-pricing-desc { font-size: 13px; color: rgba(255,255,255,0.4); line-height: 1.5; }
 .mkt-pricing-note { font-size: 13px; color: rgba(255,255,255,0.35); font-style: italic; text-align: center; }
-.mkt-pricing-roi { font-size: 12px; font-weight: 700; color: #5CC98A; margin-top: 12px; }
+.mkt-pricing-roi { font-size: 12px; font-weight: 600; color: #5CC98A; margin-top: 12px; }
 
 /* ── AI SECTION ── */
 .mkt-ai-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
 .mkt-ai-card { background: var(--m-white); padding: 40px 32px; }
 .mkt-ai-icon { font-size: 32px; margin-bottom: 16px; }
-.mkt-ai-title { font-size: 19px; font-weight: 700; color: var(--m-black); margin-bottom: 10px; line-height: 1.2; }
+.mkt-ai-title { font-size: 19px; font-weight: 600; color: var(--m-black); margin-bottom: 10px; line-height: 1.2; }
 .mkt-ai-body { font-size: 14px; color: var(--m-gray); line-height: 1.6; }
 .mkt-ai-body strong { color: var(--m-black); }
 
 /* ── UNLOCK / PRIVACY GRID ── */
 .mkt-unlock-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
 .mkt-unlock-card { background: var(--m-dark); padding: 40px 32px; }
-.mkt-unlock-title { font-size: 19px; font-weight: 700; color: var(--m-white); margin-bottom: 10px; }
+.mkt-unlock-title { font-size: 19px; font-weight: 600; color: var(--m-white); margin-bottom: 10px; }
 .mkt-unlock-title span { color: var(--m-orange); }
 .mkt-unlock-body { font-size: 14px; color: rgba(255,255,255,0.45); line-height: 1.6; }
 
@@ -366,7 +367,7 @@
 .mkt-value-card { background: var(--m-white); padding: 44px 36px; position: relative; }
 .mkt-value-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--m-orange); }
 .mkt-value-num { font-family: var(--font-bebas), 'Bebas Neue', sans-serif; font-size: 52px; color: var(--m-gray-mid); line-height: 1; margin-bottom: 16px; }
-.mkt-value-title { font-size: 20px; font-weight: 700; color: var(--m-black); margin-bottom: 12px; line-height: 1.2; }
+.mkt-value-title { font-size: 20px; font-weight: 600; color: var(--m-black); margin-bottom: 12px; line-height: 1.2; }
 .mkt-value-body { font-size: 14px; color: var(--m-gray); line-height: 1.6; margin-bottom: 24px; }
 .mkt-value-items { list-style: none; padding: 0; }
 .mkt-value-items li {
@@ -375,16 +376,16 @@
   display: flex; gap: 8px; align-items: flex-start; line-height: 1.45;
 }
 .mkt-value-items li:last-child { border-bottom: none; }
-.mkt-value-items li::before { content: '→'; color: var(--m-orange); font-size: 11px; font-weight: 700; flex-shrink: 0; margin-top: 2px; }
+.mkt-value-items li::before { content: '→'; color: var(--m-orange); font-size: 11px; font-weight: 600; flex-shrink: 0; margin-top: 2px; }
 
 /* ── REVENUE SECTION (platforms) ── */
 .mkt-revenue-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
 .mkt-revenue-card { background: var(--m-white); padding: 40px 36px; border-radius: 4px; position: relative; overflow: hidden; }
 .mkt-revenue-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--m-orange); }
-.mkt-revenue-tag { font-size: 10px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--m-orange); margin-bottom: 12px; }
-.mkt-revenue-title { font-size: 22px; font-weight: 700; color: var(--m-black); margin-bottom: 12px; line-height: 1.2; }
+.mkt-revenue-tag { font-size: 10px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--m-orange); margin-bottom: 12px; }
+.mkt-revenue-title { font-size: 22px; font-weight: 600; color: var(--m-black); margin-bottom: 12px; line-height: 1.2; }
 .mkt-revenue-body { font-size: 14px; color: var(--m-gray); line-height: 1.6; margin-bottom: 16px; }
-.mkt-revenue-pill { display: inline-block; background: var(--m-orange-pale); color: var(--m-orange); font-size: 12px; font-weight: 700; padding: 6px 14px; border-radius: 2px; letter-spacing: 0.04em; }
+.mkt-revenue-pill { display: inline-block; background: var(--m-orange-pale); color: var(--m-orange); font-size: 12px; font-weight: 600; padding: 6px 14px; border-radius: 2px; letter-spacing: 0.04em; }
 
 /* ── ROI STRIP (operators) ── */
 .mkt-roi-strip {
@@ -400,7 +401,7 @@
 .mkt-who-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
 .mkt-who-grid-card { background: var(--m-white); padding: 36px 32px; position: relative; }
 .mkt-who-grid-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--m-orange); }
-.mkt-who-grid-title { font-size: 20px; font-weight: 700; color: var(--m-black); margin-bottom: 12px; line-height: 1.2; }
+.mkt-who-grid-title { font-size: 20px; font-weight: 600; color: var(--m-black); margin-bottom: 12px; line-height: 1.2; }
 .mkt-who-grid-body { font-size: 14px; color: var(--m-gray); line-height: 1.6; }
 .mkt-who-systems { margin-top: 16px; display: flex; flex-direction: column; gap: 6px; }
 .mkt-who-system {
@@ -412,8 +413,8 @@
 
 /* ── COMING SOON BANNER (operators) ── */
 .mkt-coming { background: var(--m-dark); padding: 60px; display: flex; align-items: flex-start; gap: 28px; }
-.mkt-coming-tag { background: var(--m-orange); color: var(--m-white); font-size: 10px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; padding: 6px 12px; border-radius: 2px; white-space: nowrap; flex-shrink: 0; margin-top: 4px; }
-.mkt-coming-title { font-size: 22px; font-weight: 700; color: var(--m-white); margin-bottom: 10px; line-height: 1.2; }
+.mkt-coming-tag { background: var(--m-orange); color: var(--m-white); font-size: 10px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; padding: 6px 12px; border-radius: 2px; white-space: nowrap; flex-shrink: 0; margin-top: 4px; }
+.mkt-coming-title { font-size: 22px; font-weight: 600; color: var(--m-white); margin-bottom: 10px; line-height: 1.2; }
 .mkt-coming-title span { color: var(--m-orange); }
 .mkt-coming-body { font-size: 15px; color: rgba(255,255,255,0.5); line-height: 1.6; max-width: 700px; }
 .mkt-coming-body strong { color: rgba(255,255,255,0.85); }
@@ -475,7 +476,7 @@
   margin-bottom: 16px;
 }
 .hero-showcase-step {
-  font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+  font-size: 10px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
   color: rgba(255,255,255,0.2);
   padding: 3px 10px; border-radius: 3px;
   border: 1px solid rgba(255,255,255,0.06);
@@ -507,12 +508,12 @@
   margin-bottom: 10px; font-weight: 500;
 }
 .hero-showcase-badge-source {
-  font-size: 9px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+  font-size: 9px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
   background: rgba(255,77,0,0.12); color: var(--m-orange);
   padding: 2px 8px; border-radius: 2px;
 }
 .hero-showcase-badge-orgo {
-  font-size: 9px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+  font-size: 9px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
   background: rgba(92,201,138,0.12); color: #5CC98A;
   padding: 2px 8px; border-radius: 2px;
 }
@@ -548,7 +549,7 @@
   overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
 }
 .hero-showcase-ep-ok {
-  font-size: 9px; font-weight: 700; letter-spacing: 0.08em;
+  font-size: 9px; font-weight: 600; letter-spacing: 0.08em;
   color: #28C840; background: rgba(40,200,64,0.1);
   padding: 2px 8px; border-radius: 2px;
 }
@@ -614,7 +615,7 @@
 .mkt-retention-node {
   width: 44px; height: 44px; border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
-  font-size: 9px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
+  font-size: 9px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase;
   position: relative; z-index: 2; flex-shrink: 0;
 }
 .mkt-retention-edge {
@@ -627,7 +628,7 @@
   background: var(--m-orange);
   color: var(--m-white);
   display: flex; align-items: center; justify-content: center;
-  font-size: 8px; font-weight: 800; letter-spacing: 0.08em;
+  font-size: 8px; font-weight: 600; letter-spacing: 0.08em;
   position: relative; z-index: 3; flex-shrink: 0;
   box-shadow: 0 0 0 6px rgba(255,77,0,0.12);
 }
@@ -710,7 +711,7 @@
   background: var(--m-orange); color: var(--m-white);
   border: none; border-radius: 8px;
   font-family: var(--font-dm-sans), 'DM Sans', sans-serif;
-  font-size: 15px; font-weight: 700; letter-spacing: 0.04em;
+  font-size: 15px; font-weight: 600; letter-spacing: 0.04em;
   cursor: pointer; transition: opacity 0.2s, background 0.2s;
 }
 .mkt-getstarted-submit:disabled {

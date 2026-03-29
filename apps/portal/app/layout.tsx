@@ -6,6 +6,7 @@ import "./globals.css";
 const sans = Outfit({
   variable: "--font-outfit",
   subsets: ["latin"],
+  weight: ["300", "400", "500", "600"],
   display: "swap",
 });
 
