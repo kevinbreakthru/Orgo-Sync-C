@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { HubSpokeBg } from "../../../components/marketing/hub-spoke-bg";
 
 export const metadata: Metadata = {
   title: "Orgo Sync for Platforms — Replace Your ICS Link",
@@ -9,16 +10,17 @@ export default function PlatformsPage() {
   return (
     <>
       {/* HERO */}
-      <section className="mkt-hero">
+      <section className="mkt-hero mkt-hero--pillar">
+        <HubSpokeBg centerX={0.75} centerY={0.55} scale={0.38} overlay={false} />
         <div className="mkt-hero-eyebrow">For Scheduling Platforms</div>
         <h1 className="mkt-hero-headline" style={{ maxWidth: 860 }}>
           Three lines of code.<br />
           <span>Three value chains unlocked.</span>
         </h1>
         <p className="mkt-hero-sub">
-          Replace your ICS calendar link with a{" "}
+          Replace your ICS link with a{" "}
           <strong>secure, real-time, white-labeled API.</strong> Your brand. Your
-          data. Your customers. Finally working for you.
+          data.
         </p>
         <div className="mkt-hero-actions">
           <Link href="/getstarted" className="mkt-btn-primary">
@@ -35,8 +37,7 @@ export default function PlatformsPage() {
         <div className="mkt-band-label">The ask</div>
         <div className="mkt-band-divider" />
         <div className="mkt-band-text">
-          Replace your ICS link with the Orgo Sync white-labeled API. That is
-          it. Everything below flows from that one decision.
+          Replace your ICS link with the Orgo Sync white-labeled API. Everything else follows.
         </div>
       </div>
 
@@ -48,8 +49,7 @@ export default function PlatformsPage() {
           <span>Three value chains.</span>
         </h2>
         <p className="mkt-section-h2" style={{ color: "var(--m-gray)" }}>
-          A single afternoon of your developer&apos;s time unlocks three things
-          your platform has never had simultaneously.
+          One afternoon unlocks three things your platform has never had simultaneously.
         </p>
         <div className="mkt-value-grid">
           <div className="mkt-value-card">
@@ -58,15 +58,14 @@ export default function PlatformsPage() {
               Better family experience. Immediately.
             </div>
             <div className="mkt-value-body">
-              Real-time schedule updates reach families directly in their
-              personal calendar. No app required. No manual refresh. Your
+              Real-time updates reach family calendars directly. No app. Your
               platform gets the credit.
             </div>
             <ul className="mkt-value-items">
-              <li>Field changes propagate in seconds. Not hours.</li>
-              <li>No more missed games from stale calendar invites.</li>
+              <li>Field changes in seconds, not hours.</li>
+              <li>No more missed games from stale invites.</li>
               <li>Support tickets drop. NPS goes up.</li>
-              <li>Your brand on every calendar update they receive.</li>
+              <li>Your brand on every update.</li>
             </ul>
           </div>
           <div className="mkt-value-card">
@@ -75,12 +74,11 @@ export default function PlatformsPage() {
               New revenue stream. Zero build.
             </div>
             <div className="mkt-value-body">
-              Builders and AI apps apply to access your scheduling data. You
-              approve who gets in. You earn every time they use it.
+              Builders apply to access your data. You approve. You earn.
             </div>
             <ul className="mkt-value-items">
-              <li>You set the permissions. You control the access.</li>
-              <li>20% of every builder usage fee flows back to you.</li>
+              <li>You control who gets in.</li>
+              <li>20% of every usage fee, back to you.</li>
               <li>Passive. Recurring. From data you already own.</li>
               <li>No build. No maintenance. No effort.</li>
             </ul>
@@ -91,8 +89,8 @@ export default function PlatformsPage() {
               Your operators stop churning.
             </div>
             <div className="mkt-value-body">
-              Organizations running your platform alongside other systems can now
-              connect everything. Operational friction eliminated.
+              Operators running your platform alongside others can connect
+              everything. Friction gone.
             </div>
             <ul className="mkt-value-items">
               <li>Their systems talk to each other automatically.</li>
@@ -112,9 +110,7 @@ export default function PlatformsPage() {
           <span>vs. your Orgo Sync API.</span>
         </h2>
         <p className="mkt-section-h2" style={{ color: "rgba(255,255,255,0.5)", marginBottom: 56 }}>
-          ICS was built in 1993 for machines to exchange calendar data. It was
-          never designed for security, real-time updates or monetization. Every
-          platform still runs on it.
+          ICS was built for machines, not security or monetization. Every platform still runs on it.
         </p>
         <div className="mkt-compare-asym">
           <div className="mkt-card bad mkt-compare-bad">
@@ -125,22 +121,19 @@ export default function PlatformsPage() {
             <div className="mkt-ba-item">
               <div className="mkt-dot">✕</div>
               <span style={{ color: "rgba(255,255,255,0.5)" }}>
-                Public URL. Anyone can scrape it. Field locations, game times and
-                roster details exposed to anyone who knows where to look.
+                Public URL. Anyone can scrape it.
               </span>
             </div>
             <div className="mkt-ba-item">
               <div className="mkt-dot">✕</div>
               <span style={{ color: "rgba(255,255,255,0.5)" }}>
-                Static data. Refreshes every 4 to 12 hours. Families are working
-                from schedules that are already out of date.
+                Static. Refreshes every 4–12 hours.
               </span>
             </div>
             <div className="mkt-ba-item">
               <div className="mkt-dot">✕</div>
               <span style={{ color: "rgba(255,255,255,0.5)" }}>
-                Zero access control. You have no idea who has your calendar link
-                or what they are doing with it.
+                Zero access control. No visibility.
               </span>
             </div>
             <div className="mkt-ba-item">
@@ -152,8 +145,7 @@ export default function PlatformsPage() {
             <div className="mkt-ba-item">
               <div className="mkt-dot">✕</div>
               <span style={{ color: "rgba(255,255,255,0.5)" }}>
-                Zero monetization. Your scheduling data earns nothing despite
-                being accessed constantly.
+                Zero monetization. Accessed constantly. Earns nothing.
               </span>
             </div>
           </div>
@@ -167,36 +159,31 @@ export default function PlatformsPage() {
             <div className="mkt-ba-item">
               <div className="mkt-dot">✓</div>
               <span style={{ color: "rgba(255,255,255,0.75)" }}>
-                Authenticated. Only approved parties access it. Zero public
-                exposure. Complete control over your data.
+                Authenticated. Only approved parties. Complete control.
               </span>
             </div>
             <div className="mkt-ba-item">
               <div className="mkt-dot">✓</div>
               <span style={{ color: "rgba(255,255,255,0.75)" }}>
-                Real time. Changes propagate in seconds via webhook. Families
-                always have the current schedule.
+                Real-time. Changes propagate in seconds.
               </span>
             </div>
             <div className="mkt-ba-item">
               <div className="mkt-dot">✓</div>
               <span style={{ color: "rgba(255,255,255,0.75)" }}>
-                Full permissioning. You approve every builder and partner before
-                they access a single data point.
+                Full permissioning. You approve every request.
               </span>
             </div>
             <div className="mkt-ba-item">
               <div className="mkt-dot">✓</div>
               <span style={{ color: "rgba(255,255,255,0.75)" }}>
-                Complete audit trail. Every API call logged. You see exactly who
-                accessed what and when.
+                Complete audit trail. Every call logged.
               </span>
             </div>
             <div className="mkt-ba-item">
               <div className="mkt-dot">✓</div>
               <span style={{ color: "rgba(255,255,255,0.75)" }}>
-                20% kickback from every builder who uses your data. Passive
-                recurring revenue from day one.
+                20% from every builder who uses your data.
               </span>
             </div>
           </div>
@@ -212,16 +199,15 @@ export default function PlatformsPage() {
         </h2>
         <p className="mkt-section-h2" style={{ color: "var(--m-gray)" }}>
           Your developer replaces the ICS endpoint with your white-labeled Orgo
-          Sync API. Everything else is automatic from that moment forward.
+          Sync API. Everything after that is automatic.
         </p>
         <div className="mkt-how-grid">
           <div className="mkt-how-card">
             <div className="mkt-how-num">01</div>
             <div className="mkt-how-title">We scan your schema</div>
             <div className="mkt-how-body">
-              Our AI maps your existing data structure to the Orgo Sync standard
-              in minutes.{" "}
-              <strong>You review and approve. One time. Never again.</strong>
+              AI maps your data to the Orgo Sync standard.{" "}
+              <strong>You approve once. Never again.</strong>
             </div>
           </div>
           <div className="mkt-how-card">
@@ -230,10 +216,8 @@ export default function PlatformsPage() {
               Your developer adds three lines
             </div>
             <div className="mkt-how-body">
-              Replace your ICS endpoint with your white-labeled Orgo Sync API.{" "}
-              <strong>
-                Your brand. Your URL. Orgo Sync invisible underneath.
-              </strong>
+              Replace the ICS endpoint with your white-labeled API.{" "}
+              <strong>Your brand. Your URL. Orgo Sync invisible underneath.</strong>
             </div>
           </div>
           <div className="mkt-how-card">
@@ -242,11 +226,8 @@ export default function PlatformsPage() {
               Everything flows automatically
             </div>
             <div className="mkt-how-body">
-              Real-time family updates. Builder access requests routed to you for
-              approval.{" "}
-              <strong>
-                Revenue share deposited monthly. Zero ongoing work.
-              </strong>
+              Real-time updates. Builder requests routed to you.{" "}
+              <strong>Revenue deposited monthly. Zero ongoing work.</strong>
             </div>
           </div>
         </div>
@@ -260,8 +241,7 @@ export default function PlatformsPage() {
           <span>Now earning for you.</span>
         </h2>
         <p className="mkt-section-h2" style={{ color: "var(--m-gray)" }}>
-          You are not paying for Orgo Sync. Orgo Sync pays you — through two
-          passive revenue streams that activate the moment you connect.
+          You are not paying for Orgo Sync. Orgo Sync pays you.
         </p>
         <div className="mkt-revenue-grid-v2">
           <div className="mkt-revenue-card-v2">
@@ -270,16 +250,13 @@ export default function PlatformsPage() {
               Builder access fees — you approve, you earn
             </div>
             <div className="mkt-revenue-body">
-              AI apps, scheduling tools and builders apply to access your data
-              via the Orgo Sync developer portal. You approve or deny each
-              request. For every approved builder that uses your data you earn
-              20% of their usage fee automatically. No invoicing. No billing.
-              Deposited monthly.
+              Builders apply to access your data via the developer portal. You
+              approve or deny. 20% of every usage fee deposited monthly.
+              Automatic.
             </div>
             <div className="mkt-revenue-pill">
               Passive. Recurring. From data you already own.
             </div>
-            {/* Mini bar chart — passive income visualization */}
             <div className="mkt-revenue-mini-chart">
               {[28, 35, 32, 48, 44, 56, 52, 68, 64, 78, 72, 88].map((h, i) => (
                 <div
@@ -301,15 +278,12 @@ export default function PlatformsPage() {
               Operator retention — stop losing customers to friction
             </div>
             <div className="mkt-revenue-body">
-              Organizations running your platform alongside other systems can now
-              connect everything via Orgo Sync. Your platform stays essential to
-              their stack. Churn from integration friction drops. Operators who
-              were quietly switching away have a reason to stay.
+              Operators running your platform alongside others can now connect
+              everything via Orgo Sync. Friction drops. Churn drops.
             </div>
             <div className="mkt-revenue-pill">
               Retention is revenue you were already losing.
             </div>
-            {/* Connected graph — interoperability visualization */}
             <div className="mkt-retention-graph">
               <div
                 className="mkt-retention-node"
@@ -342,9 +316,8 @@ export default function PlatformsPage() {
           <span>the true power of your data?</span>
         </h2>
         <p className="mkt-section-h2" style={{ color: "rgba(255,255,255,0.5)", marginBottom: 56 }}>
-          Your scheduling data is the most valuable asset your platform owns.
-          Right now it sits locked inside your system — unmonetized, unprotected
-          and underutilized. Orgo Sync changes all three.
+          Your scheduling data is your most valuable asset. Right now it sits
+          unmonetized, unprotected and underutilized.
         </p>
         <div className="mkt-unlock-grid">
           <div className="mkt-unlock-card">
@@ -352,9 +325,8 @@ export default function PlatformsPage() {
               <span>Monetized</span>
             </div>
             <div className="mkt-unlock-body">
-              Every builder that accesses your data through Orgo Sync generates
-              passive revenue for you. Data you already own starts earning the
-              moment you connect. No build. No effort. No ongoing work.
+              Every builder that accesses your data earns you passive revenue.
+              No build. No effort.
             </div>
           </div>
           <div className="mkt-unlock-card">
@@ -362,10 +334,8 @@ export default function PlatformsPage() {
               <span>Protected</span>
             </div>
             <div className="mkt-unlock-body">
-              Every access permissioned. Every call audited. Every request
-              approved by you before a single data point moves. Your data stays
-              yours. ICS gave you zero control. Orgo Sync gives you complete
-              control.
+              Every access permissioned. Every call audited. Your data stays
+              yours. ICS gave you zero control. Orgo Sync gives you complete control.
             </div>
           </div>
           <div className="mkt-unlock-card">
@@ -373,10 +343,8 @@ export default function PlatformsPage() {
               <span>Interoperable</span>
             </div>
             <div className="mkt-unlock-body">
-              Your data becomes part of a growing ecosystem of connected
-              platforms, operators and builders. The more systems that connect to
-              Orgo Sync the more valuable your data becomes — automatically and
-              without any additional work on your end.
+              Your data joins a growing ecosystem. More platforms connecting
+              means more value for yours — automatically.
             </div>
           </div>
         </div>
@@ -388,8 +356,7 @@ export default function PlatformsPage() {
           Ready to unlock the<br />true power of your data?
         </h2>
         <p className="mkt-cta-h2">
-          Free to connect. Three lines of code. Your data stays yours. Revenue
-          starts flowing from day one.
+          Free to connect. Three lines of code.
         </p>
         <Link href="/getstarted" className="mkt-btn-white">
           Connect Your Platform →

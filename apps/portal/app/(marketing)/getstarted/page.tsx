@@ -9,7 +9,7 @@ const ROLES: { id: Role; title: string; desc: string; tags: string[]; icon: Reac
   {
     id: "platform",
     title: "Platform",
-    desc: "I manage a platform that creates and publishes scheduling data for organizations, leagues or families.",
+    desc: "I run a scheduling platform that publishes data for organizations or leagues.",
     tags: ["Youth sports platforms", "League management software", "Registration platforms"],
     icon: (
       <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
@@ -23,7 +23,7 @@ const ROLES: { id: Role; title: string; desc: string; tags: string[]; icon: Reac
   {
     id: "operator",
     title: "Operator",
-    desc: "I manage operations across more than one scheduling platform and need them to talk to each other automatically.",
+    desc: "I run multiple scheduling systems that don't talk to each other.",
     tags: ["Sports academies", "School districts", "Multi-system orgs"],
     icon: (
       <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
@@ -36,7 +36,7 @@ const ROLES: { id: Role; title: string; desc: string; tags: string[]; icon: Reac
   {
     id: "builder",
     title: "Builder",
-    desc: "I am a developer or product team that wants authenticated access to scheduling data from connected platforms to build on.",
+    desc: "I'm building a product that needs access to scheduling data.",
     tags: ["AI scheduling tools", "Fan engagement apps", "Participant platforms"],
     icon: (
       <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
@@ -71,8 +71,7 @@ export default function GetStartedPage() {
             How are you using<br /><span>Orgo Sync?</span>
           </h1>
           <p className="mkt-getstarted-sub">
-            Select the option that best describes you. We&apos;ll set up the
-            right experience from here.
+            Select the option that best describes you.
           </p>
         </div>
 
