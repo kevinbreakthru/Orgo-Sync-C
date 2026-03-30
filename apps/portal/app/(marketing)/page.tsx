@@ -1,3 +1,4 @@
+import React from "react";
 import Link from "next/link";
 import { HeroRoutingShowcase } from "../../components/marketing/hero-routing-showcase";
 import { NetworkNodesBg } from "../../components/marketing/network-nodes-bg";
@@ -14,7 +15,7 @@ export default function HomePage() {
             The API<br />for <span>scheduling data.</span>
           </h1>
           <p className="mkt-hero-sub">
-            The first universal API that makes every scheduling platform{" "}
+            A scheduling data API that makes every platform{" "}
             <strong>interoperable, secure and real-time.</strong>
           </p>
           <div className="mkt-hero-actions">
@@ -31,7 +32,7 @@ export default function HomePage() {
 
       {/* WHO IT'S FOR */}
       <div className="mkt-who-strip" id="who">
-        <Link href="/platform" className="mkt-who-card">
+        <Link href="/platform" className="mkt-who-card" style={{ "--m-accent": "#39FF6A", "--m-accent-glow": "rgba(57,255,106,0.1)", "--m-accent-border": "rgba(57,255,106,0.22)" } as React.CSSProperties}>
           <div className="mkt-who-tag">Scheduling Platforms</div>
           <div className="mkt-who-title">You own the scheduling data.</div>
           <div className="mkt-who-desc">
@@ -41,7 +42,7 @@ export default function HomePage() {
           </div>
           <div className="mkt-who-link">Learn more →</div>
         </Link>
-        <Link href="/operator" className="mkt-who-card">
+        {/* <Link href="/operator" className="mkt-who-card">
           <div className="mkt-who-tag">Operators</div>
           <div className="mkt-who-title">
             You run multiple scheduling systems.
@@ -52,8 +53,8 @@ export default function HomePage() {
             your systems. Done.
           </div>
           <div className="mkt-who-link">Learn more →</div>
-        </Link>
-        <Link href="/builder" className="mkt-who-card">
+        </Link> */}
+        <Link href="/builder" className="mkt-who-card" style={{ "--m-accent": "#7C3AFF", "--m-accent-glow": "rgba(124,58,255,0.1)", "--m-accent-border": "rgba(124,58,255,0.22)" } as React.CSSProperties}>
           <div className="mkt-who-tag">Builders</div>
           <div className="mkt-who-title">
             You need scheduling data to build on.
@@ -109,7 +110,7 @@ export default function HomePage() {
             </div>
             <div className="mkt-card-item">
               <div className="mkt-dot">✕</div>
-              <span>Every platform is a silo. Operators reconcile manually.</span>
+              {/* <span>Every platform is a silo. Operators reconcile manually.</span> */}
             </div>
             <div className="mkt-card-item">
               <div className="mkt-dot">✕</div>
@@ -137,7 +138,7 @@ export default function HomePage() {
             </div>
             <div className="mkt-card-item">
               <div className="mkt-dot">✓</div>
-              <span>Universal standard. Operators get one live source of truth.</span>
+              {/* <span>Universal standard. Operators get one live source of truth.</span> */}
             </div>
             <div className="mkt-card-item">
               <div className="mkt-dot">✓</div>
@@ -181,7 +182,7 @@ export default function HomePage() {
               Everyone benefits automatically
             </div>
             <div className="mkt-how-body">
-              Families get live updates. Operators get one truth. Builders get
+              Families get live updates. Builders get
               structured data.{" "}
               <strong>The ecosystem becomes interoperable.</strong>
             </div>
@@ -206,9 +207,9 @@ export default function HomePage() {
           <div className="mkt-cta-pill">
             <span>Platforms</span> — Free to connect
           </div>
-          <div className="mkt-cta-pill">
+          {/* <div className="mkt-cta-pill">
             <span>Operators</span> — Sign in and go
-          </div>
+          </div> */}
           <div className="mkt-cta-pill">
             <span>Builders</span> — Apply for access
           </div>

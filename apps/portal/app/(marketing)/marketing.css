@@ -2,6 +2,9 @@
   --m-orange: #FF3E00;
   --m-orange-dark: #CC3D00;
   --m-orange-pale: #FFF0EB;
+  --m-accent: #FF3E00;
+  --m-accent-glow: rgba(255,62,0,0.1);
+  --m-accent-border: rgba(255,62,0,0.22);
   --m-black: #0D0D0D;
   --m-dark: #1A1A1A;
   --m-dark-mid: #242424;
@@ -107,14 +110,14 @@
 .mkt-hero--pillar > *:not([aria-hidden]) { position: relative; z-index: 1; }
 .mkt-hero-eyebrow {
   display: inline-flex; align-items: center; gap: 8px;
-  background: rgba(255,77,0,0.1); border: 1px solid rgba(255,77,0,0.22);
+  background: var(--m-accent-glow); border: 1px solid var(--m-accent-border);
   border-radius: 2px; padding: 6px 14px;
   font-size: 14px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase;
   color: var(--m-orange); margin-bottom: 28px; width: fit-content;
 }
 .mkt-hero-eyebrow::before {
   content: ''; width: 6px; height: 6px; border-radius: 50%;
-  background: var(--m-orange); animation: mktPulse 2s infinite;
+  background: var(--m-accent); animation: mktPulse 2s infinite;
 }
 @keyframes mktPulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
 
@@ -190,7 +193,7 @@
 .mkt-who-strip {
   background: var(--m-dark);
   border-top: 1px solid rgba(255,255,255,0.06);
-  display: grid; grid-template-columns: 1fr 1fr 1fr;
+  display: grid; grid-template-columns: 1fr 1fr;
   padding: 0 max(0px, calc((100% - 1200px) / 2));
 }
 .mkt-who-card {
@@ -203,7 +206,7 @@
 .mkt-who-card:hover { background: var(--m-dark-mid); }
 .mkt-who-card::after {
   content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px;
-  background: var(--m-orange); transform: scaleX(0); transform-origin: left;
+  background: var(--m-accent); transform: scaleX(0); transform-origin: left;
   transition: transform 0.3s;
 }
 .mkt-who-card:hover::after { transform: scaleX(1); }
@@ -211,7 +214,7 @@
 .mkt-who-title { font-family: var(--font-bebas), 'Bebas Neue', sans-serif; font-size: 26px; color: var(--m-white); line-height: 1; margin-bottom: 10px; letter-spacing: 0.02em; }
 .mkt-who-desc { font-size: 16px; color: rgba(255,255,255,0.45); line-height: 1.55; margin-bottom: 14px; flex: 1; }
 .mkt-who-desc strong { color: rgba(255,255,255,0.75); }
-.mkt-who-link { font-size: 14px; font-weight: 600; color: var(--m-orange); letter-spacing: 0.06em; text-transform: uppercase; display: flex; align-items: center; gap: 5px; transition: gap 0.2s; }
+.mkt-who-link { font-size: 14px; font-weight: 600; color: var(--m-accent); letter-spacing: 0.06em; text-transform: uppercase; display: flex; align-items: center; gap: 5px; transition: gap 0.2s; }
 .mkt-who-card:hover .mkt-who-link { gap: 9px; }
 
 /* ── PROBLEM / BEFORE-AFTER GRID ── */
@@ -322,8 +325,8 @@
 .mkt-usecases-section { background: var(--m-gray-light); }
 .mkt-usecases-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
 .mkt-usecase-card { background: var(--m-white); padding: 40px 32px; position: relative; display: flex; flex-direction: column; }
-.mkt-usecase-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--m-orange); }
-.mkt-usecase-tag { font-size: 14px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--m-orange); margin-bottom: 12px; }
+.mkt-usecase-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--m-accent); }
+.mkt-usecase-tag { font-size: 14px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--m-accent); margin-bottom: 12px; }
 .mkt-usecase-title { font-size: 20px; font-weight: 600; color: var(--m-black); margin-bottom: 12px; line-height: 1.2; }
 .mkt-usecase-body { font-size: 16px; color: var(--m-gray); line-height: 1.6; margin-bottom: 20px; flex: 1; }
 .mkt-usecase-why { font-size: 14px; font-weight: 600; color: var(--m-black); padding: 12px 14px; background: var(--m-gray-light); border-radius: 3px; line-height: 1.5; }
@@ -371,7 +374,7 @@
 /* ── VALUE SECTION (platforms) ── */
 .mkt-value-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
 .mkt-value-card { background: var(--m-white); padding: 44px 36px; position: relative; display: flex; flex-direction: column; }
-.mkt-value-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--m-orange); }
+.mkt-value-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--m-accent); }
 .mkt-value-num { font-family: var(--font-bebas), 'Bebas Neue', sans-serif; font-size: 52px; color: var(--m-gray-mid); line-height: 1; margin-bottom: 16px; }
 .mkt-value-title { font-size: 20px; font-weight: 600; color: var(--m-black); margin-bottom: 12px; line-height: 1.2; }
 .mkt-value-body { font-size: 16px; color: var(--m-gray); line-height: 1.6; margin-bottom: 24px; flex: 1; }
@@ -387,8 +390,8 @@
 /* ── REVENUE SECTION (platforms) ── */
 .mkt-revenue-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
 .mkt-revenue-card { background: var(--m-white); padding: 40px 36px; border-radius: 4px; position: relative; overflow: hidden; }
-.mkt-revenue-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--m-orange); }
-.mkt-revenue-tag { font-size: 14px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--m-orange); margin-bottom: 12px; }
+.mkt-revenue-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--m-accent); }
+.mkt-revenue-tag { font-size: 14px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--m-accent); margin-bottom: 12px; }
 .mkt-revenue-title { font-size: 20px; font-weight: 600; color: var(--m-black); margin-bottom: 12px; line-height: 1.2; }
 .mkt-revenue-body { font-size: 16px; color: var(--m-gray); line-height: 1.6; margin-bottom: 16px; }
 .mkt-revenue-pill { display: inline-block; background: var(--m-orange-pale); color: var(--m-orange); font-size: 14px; font-weight: 600; padding: 6px 14px; border-radius: 2px; letter-spacing: 0.04em; }
@@ -656,7 +659,7 @@
   display: flex; align-items: center; justify-content: center;
   padding: 100px 24px 60px;
 }
-.mkt-getstarted-inner { width: 100%; max-width: 620px; }
+.mkt-getstarted-inner { width: 100%; max-width: 800px; }
 .mkt-getstarted-header { text-align: center; margin-bottom: 40px; }
 .mkt-getstarted-title {
   font-family: var(--font-bebas), 'Bebas Neue', sans-serif;
@@ -726,7 +729,6 @@
   width: 100%; padding: 14px;
   background: var(--m-orange); color: var(--m-white);
   border: none; border-radius: 8px;
-  font-family: var(--font-dm-sans), 'DM Sans', sans-serif;
   font-size: 16px; font-weight: 600; letter-spacing: 0.04em;
   cursor: pointer; transition: opacity 0.2s, background 0.2s;
 }

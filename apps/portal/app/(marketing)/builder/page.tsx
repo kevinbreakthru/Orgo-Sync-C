@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import React from "react";
 import Link from "next/link";
 import { HubSpokeBg } from "../../../components/marketing/hub-spoke-bg";
 
@@ -12,7 +13,7 @@ export default function BuildersPage() {
       {/* HERO */}
       <section className="mkt-hero mkt-hero--pillar">
         <HubSpokeBg centerX={0.75} centerY={0.55} scale={0.38} overlay={false} />
-        <div className="mkt-hero-eyebrow">For Builders</div>
+        <div className="mkt-hero-eyebrow" style={{ color: "#7C3AFF", background: "rgba(124,58,255,0.1)", borderColor: "rgba(124,58,255,0.22)", "--m-accent": "#7C3AFF" } as React.CSSProperties}>For Builders</div>
         <h1 className="mkt-hero-headline">
           The scheduling data<br />you need to build on<br />
           <span>has been locked. Until now.</span>

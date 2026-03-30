@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 
-type Role = "platform" | "operator" | "builder";
+type Role = "platform" | /* "operator" | */ "builder";
 
 const ROLES: { id: Role; title: string; desc: string; tags: string[]; icon: React.ReactNode }[] = [
   {
@@ -20,19 +20,19 @@ const ROLES: { id: Role; title: string; desc: string; tags: string[]; icon: Reac
       </svg>
     ),
   },
-  {
-    id: "operator",
-    title: "Operator",
-    desc: "I run multiple scheduling systems that don't talk to each other.",
-    tags: ["Sports academies", "School districts", "Multi-system orgs"],
-    icon: (
-      <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-        <circle cx="6" cy="6" r="3" fill="#FF4D00" />
-        <circle cx="12" cy="12" r="3" fill="#FF4D00" opacity="0.5" />
-        <line x1="6" y1="6" x2="12" y2="12" stroke="#FF4D00" strokeWidth="1.5" opacity="0.6" />
-      </svg>
-    ),
-  },
+  // {
+  //   id: "operator",
+  //   title: "Operator",
+  //   desc: "I run multiple scheduling systems that don't talk to each other.",
+  //   tags: ["Sports academies", "School districts", "Multi-system orgs"],
+  //   icon: (
+  //     <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+  //       <circle cx="6" cy="6" r="3" fill="#FF4D00" />
+  //       <circle cx="12" cy="12" r="3" fill="#FF4D00" opacity="0.5" />
+  //       <line x1="6" y1="6" x2="12" y2="12" stroke="#FF4D00" strokeWidth="1.5" opacity="0.6" />
+  //     </svg>
+  //   ),
+  // },
   {
     id: "builder",
     title: "Builder",

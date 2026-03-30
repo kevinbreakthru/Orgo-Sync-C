@@ -45,7 +45,7 @@ export function PulseRingsBg() {
         const elapsed = (now - startTime + offset) % CYCLE_DURATION;
         const progress = elapsed / CYCLE_DURATION; // 0 → 1
 
-        const radius = progress * maxR;
+        const radius = Math.max(0, progress * maxR);
         const alpha = Math.sin(progress * Math.PI) * 0.3;
         const lineWidth = (1 - progress) * 2.5 + 0.5;
 

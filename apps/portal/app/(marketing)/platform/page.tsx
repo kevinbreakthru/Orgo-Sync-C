@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import React from "react";
 import Link from "next/link";
 import { HubSpokeBg } from "../../../components/marketing/hub-spoke-bg";
 
@@ -12,7 +13,7 @@ export default function PlatformsPage() {
       {/* HERO */}
       <section className="mkt-hero mkt-hero--pillar">
         <HubSpokeBg centerX={0.75} centerY={0.55} scale={0.38} overlay={false} />
-        <div className="mkt-hero-eyebrow">For Scheduling Platforms</div>
+        <div className="mkt-hero-eyebrow" style={{ color: "#39FF6A", background: "rgba(57,255,106,0.1)", borderColor: "rgba(57,255,106,0.22)", "--m-accent": "#39FF6A" } as React.CSSProperties}>For Scheduling Platforms</div>
         <h1 className="mkt-hero-headline" style={{ maxWidth: 860 }}>
           Three lines of code.<br />
           <span>Three value chains unlocked.</span>
@@ -83,7 +84,7 @@ export default function PlatformsPage() {
               <li>No build. No maintenance. No effort.</li>
             </ul>
           </div>
-          <div className="mkt-value-card">
+          {/* <div className="mkt-value-card">
             <div className="mkt-value-num">03</div>
             <div className="mkt-value-title">
               Your operators stop churning.
@@ -98,7 +99,7 @@ export default function PlatformsPage() {
               <li>They stay on your platform because it works.</li>
               <li>Retention revenue you were quietly losing.</li>
             </ul>
-          </div>
+          </div> */}
         </div>
       </section>
 
@@ -272,7 +273,7 @@ export default function PlatformsPage() {
               ))}
             </div>
           </div>
-          <div className="mkt-revenue-card-v2">
+          {/* <div className="mkt-revenue-card-v2">
             <div className="mkt-revenue-tag">Revenue Stream 02</div>
             <div className="mkt-revenue-title">
               Operator retention — stop losing customers to friction
@@ -301,7 +302,7 @@ export default function PlatformsPage() {
                 TS
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </section>
 
