@@ -1,20 +1,22 @@
+import React from "react";
 import Link from "next/link";
-import { MarketingPillar } from "../../components/marketing/marketing-pillar";
 import { HeroRoutingShowcase } from "../../components/marketing/hero-routing-showcase";
+import { NetworkNodesBg } from "../../components/marketing/network-nodes-bg";
+import { PulseRingsBg } from "../../components/marketing/pulse-rings-bg";
 
 export default function HomePage() {
   return (
     <>
       {/* HERO */}
-      <section className="mkt-hero mkt-hero--pillar mkt-hero--split" style={{ minHeight: "100vh" }}>
-        <MarketingPillar opacity={0.55} />
+      <section className="mkt-hero mkt-hero--pillar mkt-hero--split">
+        <NetworkNodesBg />
         <div className="mkt-hero-content">
           <h1 className="mkt-hero-headline">
             The API<br />for <span>scheduling data.</span>
           </h1>
           <p className="mkt-hero-sub">
-            Orgo Sync is the first universal API that makes every scheduling
-            platform <strong>interoperable, secure and real-time.</strong>
+            A scheduling data API that makes every platform{" "}
+            <strong>interoperable, secure and real-time.</strong>
           </p>
           <div className="mkt-hero-actions">
             <Link href="/getstarted" className="mkt-btn-primary">
@@ -30,29 +32,29 @@ export default function HomePage() {
 
       {/* WHO IT'S FOR */}
       <div className="mkt-who-strip" id="who">
-        <Link href="/platform" className="mkt-who-card">
+        <Link href="/platform" className="mkt-who-card" style={{ "--m-accent": "#39FF6A", "--m-accent-glow": "rgba(57,255,106,0.1)", "--m-accent-border": "rgba(57,255,106,0.22)" } as React.CSSProperties}>
           <div className="mkt-who-tag">Scheduling Platforms</div>
           <div className="mkt-who-title">You own the scheduling data.</div>
           <div className="mkt-who-desc">
             Replace your ICS link with a{" "}
-            <strong>secure white-labeled real-time API.</strong> Lock down your
-            data. Earn passive revenue from builder access. Free to connect.
+            <strong>secure, real-time, white-labeled API.</strong> Lock down your
+            data. Earn passive revenue. Free to connect.
           </div>
           <div className="mkt-who-link">Learn more →</div>
         </Link>
-        <Link href="/operator" className="mkt-who-card">
+        {/* <Link href="/operator" className="mkt-who-card">
           <div className="mkt-who-tag">Operators</div>
           <div className="mkt-who-title">
             You run multiple scheduling systems.
           </div>
           <div className="mkt-who-desc">
-            Connect every scheduling platform you run into{" "}
+            Connect every platform you run into{" "}
             <strong>one real-time automated workflow.</strong> Sign in. Select
-            your systems. We handle everything else.
+            your systems. Done.
           </div>
           <div className="mkt-who-link">Learn more →</div>
-        </Link>
-        <Link href="/builder" className="mkt-who-card">
+        </Link> */}
+        <Link href="/builder" className="mkt-who-card" style={{ "--m-accent": "#7C3AFF", "--m-accent-glow": "rgba(124,58,255,0.1)", "--m-accent-border": "rgba(124,58,255,0.22)" } as React.CSSProperties}>
           <div className="mkt-who-tag">Builders</div>
           <div className="mkt-who-title">
             You need scheduling data to build on.
@@ -80,9 +82,8 @@ export default function HomePage() {
           className="mkt-section-h2"
           style={{ color: "rgba(255,255,255,0.5)" }}
         >
-          Every scheduling platform — from youth sports to healthcare to
-          hospitality — still uses ICS to push events to your calendar. A
-          standard built for machines. Not families. Not builders. Not security.{" "}
+          Every scheduling platform still exports ICS — a standard built for
+          machines, not people. Not secure. Not real-time.{" "}
           <strong style={{ color: "rgba(255,255,255,0.8)" }}>
             Orgo Sync replaces it.
           </strong>
@@ -97,38 +98,23 @@ export default function HomePage() {
             </div>
             <div className="mkt-card-item">
               <div className="mkt-dot">✕</div>
-              <span>
-                A public URL anyone can scrape. Field locations, game times and
-                roster details exposed with zero access control.
-              </span>
+              <span>A public URL anyone can scrape. Zero access control.</span>
             </div>
             <div className="mkt-card-item">
               <div className="mkt-dot">✕</div>
-              <span>
-                Static data that refreshes every 4 to 12 hours. Families miss
-                updates. Schedules are always slightly wrong.
-              </span>
+              <span>Stale. Refreshes every 4–12 hours. Families miss changes.</span>
             </div>
             <div className="mkt-card-item">
               <div className="mkt-dot">✕</div>
-              <span>
-                No permissioning. No audit trail. No way to know who has your
-                data or what they are doing with it.
-              </span>
+              <span>No permissioning. No audit trail. No visibility.</span>
             </div>
             <div className="mkt-card-item">
               <div className="mkt-dot">✕</div>
-              <span>
-                Systems cannot talk to each other. Every platform is a silo.
-                Every operator reconciles data manually.
-              </span>
+              {/* <span>Every platform is a silo. Operators reconcile manually.</span> */}
             </div>
             <div className="mkt-card-item">
               <div className="mkt-dot">✕</div>
-              <span>
-                Zero monetization. Platforms own valuable scheduling data and
-                earn nothing from it.
-              </span>
+              <span>Zero monetization. You own the data. It earns nothing.</span>
             </div>
           </div>
           <div className="mkt-card good mkt-compare-good">
@@ -140,38 +126,23 @@ export default function HomePage() {
             </div>
             <div className="mkt-card-item">
               <div className="mkt-dot">✓</div>
-              <span>
-                Authenticated access only. Every request permissioned by the
-                platform that owns the data. Nothing is public.
-              </span>
+              <span>Authenticated only. Every request permissioned by the platform.</span>
             </div>
             <div className="mkt-card-item">
               <div className="mkt-dot">✓</div>
-              <span>
-                Real-time webhooks. Changes propagate in seconds across every
-                connected system and every family&apos;s calendar.
-              </span>
+              <span>Real-time webhooks. Changes propagate in seconds.</span>
             </div>
             <div className="mkt-card-item">
               <div className="mkt-dot">✓</div>
-              <span>
-                Full audit trail. Every API call logged. Complete visibility into
-                who accessed what data and when.
-              </span>
+              <span>Full audit trail. Every API call logged.</span>
             </div>
             <div className="mkt-card-item">
               <div className="mkt-dot">✓</div>
-              <span>
-                Universal standard. Any platform talks to any other. Operators
-                get one source of truth automatically.
-              </span>
+              {/* <span>Universal standard. Operators get one live source of truth.</span> */}
             </div>
             <div className="mkt-card-item">
               <div className="mkt-dot">✓</div>
-              <span>
-                20% revenue share on every builder access. Data platforms already
-                own starts earning passively.
-              </span>
+              <span>20% revenue share on every builder access. Passive income.</span>
             </div>
           </div>
         </div>
@@ -193,20 +164,16 @@ export default function HomePage() {
             <div className="mkt-how-num">01</div>
             <div className="mkt-how-title">Connect your system</div>
             <div className="mkt-how-body">
-              Our AI scans your data schema and maps it to the Orgo Sync
-              standard automatically. <strong>Three lines of code.</strong> One
-              afternoon. Never again.
+              AI scans and maps your schema automatically.{" "}
+              <strong>Three lines of code. One afternoon.</strong>
             </div>
           </div>
           <div className="mkt-how-card">
             <div className="mkt-how-num">02</div>
             <div className="mkt-how-title">Data flows in real time</div>
             <div className="mkt-how-body">
-              Every scheduling change propagates instantly via authenticated
-              webhooks.{" "}
-              <strong>
-                Real time. Bidirectional. Permissioned. Always current.
-              </strong>
+              Changes propagate instantly via authenticated webhooks.{" "}
+              <strong>Real-time. Bidirectional. Permissioned.</strong>
             </div>
           </div>
           <div className="mkt-how-card">
@@ -215,8 +182,8 @@ export default function HomePage() {
               Everyone benefits automatically
             </div>
             <div className="mkt-how-body">
-              Families get live updates. Operators get one source of truth.
-              Builders get structured data.{" "}
+              Families get live updates. Builders get
+              structured data.{" "}
               <strong>The ecosystem becomes interoperable.</strong>
             </div>
           </div>
@@ -225,7 +192,7 @@ export default function HomePage() {
 
       {/* CTA */}
       <section className="mkt-cta-section mkt-cta--pillar">
-        <MarketingPillar opacity={0.45} />
+        <PulseRingsBg />
         <h2 className="mkt-cta-h1">
           The new<br />
           <span>Orgo Sync standard</span>
@@ -234,16 +201,15 @@ export default function HomePage() {
         </h2>
         <p className="mkt-cta-h2">
           Developer portal is live.{" "}
-          <strong>Platforms join free.</strong> Three lines of code and we handle
-          the rest.
+          <strong>Platforms join free.</strong>
         </p>
         <div className="mkt-cta-pills">
           <div className="mkt-cta-pill">
             <span>Platforms</span> — Free to connect
           </div>
-          <div className="mkt-cta-pill">
+          {/* <div className="mkt-cta-pill">
             <span>Operators</span> — Sign in and go
-          </div>
+          </div> */}
           <div className="mkt-cta-pill">
             <span>Builders</span> — Apply for access
           </div>

@@ -17,7 +17,7 @@ export function MarketingFooter() {
       </div>
       <div className="mkt-footer-links">
         <Link href="/platform">Platforms</Link>
-        <Link href="/operator">Operators</Link>
+        {/* <Link href="/operator">Operators</Link> */}
         <Link href="/builder">Builders</Link>
         <a href="mailto:zoya@orgohq.com">Contact</a>
       </div>

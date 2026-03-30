@@ -6,6 +6,7 @@ import "./globals.css";
 const sans = Outfit({
   variable: "--font-outfit",
   subsets: ["latin"],
+  weight: ["300", "400", "500", "600"],
   display: "swap",
 });
 
@@ -32,6 +33,19 @@ export const metadata: Metadata = {
   title: "Orgo Sync — Scheduling Interoperability API",
   description:
     "Real-time scheduling data routing and webhook delivery for sports platforms and builders.",
+  openGraph: {
+    title: "Orgo Sync — Scheduling Interoperability API",
+    description:
+      "Real-time scheduling data routing and webhook delivery for sports platforms and builders.",
+    images: [{ url: "/opengraph.png", width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Orgo Sync — Scheduling Interoperability API",
+    description:
+      "Real-time scheduling data routing and webhook delivery for sports platforms and builders.",
+    images: ["/opengraph.png"],
+  },
 };
 
 export default function RootLayout({

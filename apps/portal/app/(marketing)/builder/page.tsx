@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
+import React from "react";
 import Link from "next/link";
+import { HubSpokeBg } from "../../../components/marketing/hub-spoke-bg";
 
 export const metadata: Metadata = {
   title: "Orgo Sync for Builders — Build on Real Scheduling Data",
@@ -9,8 +11,9 @@ export default function BuildersPage() {
   return (
     <>
       {/* HERO */}
-      <section className="mkt-hero">
-        <div className="mkt-hero-eyebrow">For Builders</div>
+      <section className="mkt-hero mkt-hero--pillar">
+        <HubSpokeBg centerX={0.75} centerY={0.55} scale={0.38} overlay={false} />
+        <div className="mkt-hero-eyebrow" style={{ color: "#7C3AFF", background: "rgba(124,58,255,0.1)", borderColor: "rgba(124,58,255,0.22)", "--m-accent": "#7C3AFF" } as React.CSSProperties}>For Builders</div>
         <h1 className="mkt-hero-headline">
           The scheduling data<br />you need to build on<br />
           <span>has been locked. Until now.</span>
@@ -18,8 +21,7 @@ export default function BuildersPage() {
         <p className="mkt-hero-sub">
           One authenticated API. Real-time access to{" "}
           <strong>standardized scheduling data</strong> from every connected
-          platform. Apply once. Get approved. Build whatever experience your
-          users need.
+          platform. Apply once. Build anything.
         </p>
         <div className="mkt-hero-actions">
           <Link href="/getstarted" className="mkt-btn-primary">
@@ -36,9 +38,8 @@ export default function BuildersPage() {
         <div className="mkt-band-label">The constraint today</div>
         <div className="mkt-band-divider" />
         <div className="mkt-band-text">
-          Every scheduling platform is a silo. No unified access layer. No
-          authenticated API. No real-time data. You have been building on stale
-          public calendar feeds with five fields and no standard. That ends here.
+          Every platform is a silo. No unified API. No real-time data. You&apos;ve been
+          building on stale public feeds. That ends here.
         </div>
       </div>
 
@@ -50,9 +51,7 @@ export default function BuildersPage() {
           <span>vs. with Orgo Sync.</span>
         </h2>
         <p className="mkt-section-h2" style={{ color: "rgba(255,255,255,0.5)", marginBottom: 56 }}>
-          ICS was never built for developers. Five stale fields and a public URL
-          is not a data layer. Orgo Sync is what the scheduling ecosystem has
-          been missing.
+          Five stale fields and a public URL is not a data layer. Orgo Sync fills the gap.
         </p>
         <div className="mkt-ba-grid">
           <div className="mkt-card bad" style={{ borderRadius: 4 }}>
@@ -63,30 +62,25 @@ export default function BuildersPage() {
             <div className="mkt-ba-item">
               <div className="mkt-dot">✕</div>
               <span style={{ color: "rgba(255,255,255,0.5)" }}>
-                Public ICS feeds with no authentication and no structured data.
-                Title, time, location and an empty description. That is
-                everything you have to build on.
+                Public ICS feeds. Title, time, location. That&apos;s all you have.
               </span>
             </div>
             <div className="mkt-ba-item">
               <div className="mkt-dot">✕</div>
               <span style={{ color: "rgba(255,255,255,0.5)" }}>
-                Stale data. Changes happen in the platform. Your product never
-                finds out until the next refresh cycle — hours later.
+                Stale. Changes take hours to reach your product.
               </span>
             </div>
             <div className="mkt-ba-item">
               <div className="mkt-dot">✕</div>
               <span style={{ color: "rgba(255,255,255,0.5)" }}>
-                Every platform is a separate bilateral negotiation. Custom
-                integration per platform. You build the same thing repeatedly.
+                Every platform is a custom bilateral negotiation. You rebuild every time.
               </span>
             </div>
             <div className="mkt-ba-item">
               <div className="mkt-dot">✕</div>
               <span style={{ color: "rgba(255,255,255,0.5)" }}>
-                No permissioned access. No audit trail. No legitimate
-                authenticated data layer to build on with confidence.
+                No permissioned access. No audit trail. No legitimate foundation.
               </span>
             </div>
           </div>
@@ -99,30 +93,25 @@ export default function BuildersPage() {
             <div className="mkt-ba-item">
               <div className="mkt-dot">✓</div>
               <span style={{ color: "rgba(255,255,255,0.75)" }}>
-                Authenticated real-time API access to structured scheduling data
-                from every platform that approves you. One standard format
-                regardless of source.
+                Authenticated real-time access. One standard format, any approved platform.
               </span>
             </div>
             <div className="mkt-ba-item">
               <div className="mkt-dot">✓</div>
               <span style={{ color: "rgba(255,255,255,0.75)" }}>
-                Real-time updates via webhook. Changes in the platform reach your
-                product in seconds. Always current. Always accurate.
+                Real-time webhooks. Changes reach your product in seconds.
               </span>
             </div>
             <div className="mkt-ba-item">
               <div className="mkt-dot">✓</div>
               <span style={{ color: "rgba(255,255,255,0.75)" }}>
-                One API. Build once. Access any platform that approves you. No
-                custom integrations. No bilateral negotiations. Ever again.
+                One API. Build once. No custom integrations ever again.
               </span>
             </div>
             <div className="mkt-ba-item">
               <div className="mkt-dot">✓</div>
               <span style={{ color: "rgba(255,255,255,0.75)" }}>
-                Fully authenticated. Permissioned. Audited. Build on data you
-                have legitimate access to with a complete audit trail.
+                Authenticated. Permissioned. Audited.
               </span>
             </div>
           </div>
@@ -137,8 +126,7 @@ export default function BuildersPage() {
           <span>Your UX. Our infrastructure.</span>
         </h2>
         <p className="mkt-section-h2" style={{ color: "var(--m-gray)" }}>
-          Orgo Sync provides the data layer. What you build on top is entirely up
-          to you. No prescribed use case. No product category constraints.
+          Orgo Sync provides the data layer. What you build on top is up to you.
         </p>
         <div className="mkt-usecases-grid">
           <div className="mkt-usecase-card">
@@ -147,14 +135,11 @@ export default function BuildersPage() {
               Live schedule data. Real-time fan engagement.
             </div>
             <div className="mkt-usecase-body">
-              Pull structured game schedules, venue data and event information
-              directly into your product. Trigger push notifications, live
-              updates and contextual experiences tied to real scheduling events as
-              they happen — not hours later.
+              Pull game schedules and venue data into your product. Trigger live
+              updates tied to real events as they happen.
             </div>
             <div className="mkt-usecase-why">
-              <span>Why Orgo Sync:</span> Real-time authenticated data from the
-              platform. Not a stale ICS feed that refreshed six hours ago.
+              <span>Why Orgo Sync:</span> Real-time authenticated data. Not a stale ICS feed.
             </div>
           </div>
           <div className="mkt-usecase-card">
@@ -164,14 +149,11 @@ export default function BuildersPage() {
               touches.
             </div>
             <div className="mkt-usecase-body">
-              Connect to multiple approved platforms and assemble a unified
-              scheduling picture of any participant. Academic schedule. Club
-              schedule. Tournament schedule. All accessible through one API. Your
-              product assembles the profile — Orgo Sync provides the data.
+              Connect approved platforms and assemble a unified schedule for any
+              participant. Academic, club, tournament — all in one API.
             </div>
             <div className="mkt-usecase-why">
-              <span>Why Orgo Sync:</span> The only infrastructure that sees
-              across platforms. No single platform has this view.
+              <span>Why Orgo Sync:</span> The only infrastructure that sees across platforms.
             </div>
           </div>
           <div className="mkt-usecase-card">
@@ -180,14 +162,11 @@ export default function BuildersPage() {
               Real structured data for your AI to reason over accurately.
             </div>
             <div className="mkt-usecase-body">
-              Stop building AI on stale public feeds. Power your scheduling
-              intelligence with authenticated real-time structured data from the
-              platforms your users actually live in. Conflict detection. Load
-              management. Pattern recognition. All possible now.
+              Power your AI with authenticated real-time data from the platforms
+              users actually live in. Conflict detection. Pattern recognition. All possible now.
             </div>
             <div className="mkt-usecase-why">
-              <span>Why Orgo Sync:</span> AI doesn&apos;t hallucinate when it has
-              reliable real-time data. We provide that foundation.
+              <span>Why Orgo Sync:</span> AI doesn&apos;t hallucinate when it has reliable real-time data.
             </div>
           </div>
         </div>
@@ -202,8 +181,7 @@ export default function BuildersPage() {
         </h2>
         <p className="mkt-section-h2" style={{ color: "var(--m-gray)" }}>
           No bilateral negotiations. No custom integrations. Apply once and
-          access every platform that approves you through a single authenticated
-          API.
+          access every platform that approves you.
         </p>
         <div className="mkt-access-grid">
           <div className="mkt-access-card">
@@ -212,8 +190,7 @@ export default function BuildersPage() {
               Apply via the developer portal
             </div>
             <div className="mkt-access-body">
-              Visit <strong>sync.orgohq.com.</strong> Tell us what you are
-              building and which platforms you want access to. Takes minutes.
+              Tell us what you&apos;re building. <strong>Takes minutes.</strong>
             </div>
           </div>
           <div className="mkt-access-card">
@@ -222,9 +199,8 @@ export default function BuildersPage() {
               Platform approves your access
             </div>
             <div className="mkt-access-body">
-              Each platform reviews and approves your request.{" "}
-              <strong>They own their data.</strong> You get authenticated access
-              to what they authorize.
+              Each platform approves your request.{" "}
+              <strong>You get access to what they authorize.</strong>
             </div>
           </div>
           <div className="mkt-access-card">
@@ -233,9 +209,8 @@ export default function BuildersPage() {
               One API. Every approved source.
             </div>
             <div className="mkt-access-body">
-              All approved platform data through{" "}
-              <strong>one standardized authenticated API.</strong> Build once.
-              Access any platform you have approval for.
+              One standardized API.{" "}
+              <strong>Build once. Access any platform you&apos;re approved for.</strong>
             </div>
           </div>
           <div className="mkt-access-card">
@@ -244,8 +219,7 @@ export default function BuildersPage() {
               Pay per API call. Scale freely.
             </div>
             <div className="mkt-access-body">
-              No flat fees. No minimums. <strong>Pure consumption.</strong> Costs
-              scale only with your product&apos;s actual usage. Start free.
+              No flat fees. No minimums. <strong>Pay per call. Start free.</strong>
             </div>
           </div>
         </div>
@@ -259,9 +233,7 @@ export default function BuildersPage() {
           <span>No minimums. No surprises.</span>
         </h2>
         <p className="mkt-section-h2" style={{ color: "rgba(255,255,255,0.5)", marginBottom: 56 }}>
-          Your first 500 API calls are free. After that you pay only for what
-          your product actually uses. Costs scale with your growth — not before
-          it.
+          500 free calls to start. Pay only for what you use.
         </p>
         <div className="mkt-pricing-grid">
           <div className="mkt-pricing-card">
@@ -270,8 +242,7 @@ export default function BuildersPage() {
             <div className="mkt-pricing-unit">first 500 API calls</div>
             <div className="mkt-pricing-volume">Build and test</div>
             <div className="mkt-pricing-desc">
-              Full API access to integrate and validate your product at zero
-              cost. No credit card required.
+              Full API access. No credit card.
             </div>
           </div>
           <div className="mkt-pricing-card highlight">
@@ -280,8 +251,7 @@ export default function BuildersPage() {
             <div className="mkt-pricing-unit">per API call</div>
             <div className="mkt-pricing-volume">Up to 10K calls/mo</div>
             <div className="mkt-pricing-desc">
-              Early production. Growing products with their first real users
-              finding traction.
+              Early production.
             </div>
           </div>
           <div className="mkt-pricing-card">
@@ -290,7 +260,7 @@ export default function BuildersPage() {
             <div className="mkt-pricing-unit">per API call</div>
             <div className="mkt-pricing-volume">10K to 100K calls/mo</div>
             <div className="mkt-pricing-desc">
-              Established products with predictable and growing call volume.
+              Established products with growing volume.
             </div>
           </div>
           <div className="mkt-pricing-card">
@@ -299,13 +269,12 @@ export default function BuildersPage() {
             <div className="mkt-pricing-unit">per API call</div>
             <div className="mkt-pricing-volume">100K+ calls/mo</div>
             <div className="mkt-pricing-desc">
-              High-volume solutions. Custom SLA. Dedicated support available.
+              High-volume. Custom SLA.
             </div>
           </div>
         </div>
         <div className="mkt-pricing-note">
-          No setup fees. No monthly minimums. Your first 500 API calls are
-          always free.
+          No setup fees. No monthly minimums. First 500 calls always free.
         </div>
       </section>
 
@@ -317,9 +286,8 @@ export default function BuildersPage() {
           <span>We are building what scheduling AI runs on.</span>
         </h2>
         <p className="mkt-section-h2" style={{ color: "var(--m-gray)" }}>
-          Every AI scheduling assistant being built today hits the same wall —
-          fragmented, stale, inaccessible data. Orgo Sync is the infrastructure
-          that removes it.
+          Every AI scheduling assistant hits the same wall — fragmented, stale
+          data. Orgo Sync removes it.
         </p>
         <div className="mkt-ai-grid">
           <div className="mkt-ai-card">
@@ -328,14 +296,9 @@ export default function BuildersPage() {
               Agentic AI needs real-time authenticated data
             </div>
             <div className="mkt-ai-body">
-              The next wave of AI takes actions on your behalf. Scheduling agents
-              need{" "}
-              <strong>
-                real-time authenticated access across every platform a user
-                touches.
-              </strong>{" "}
-              Orgo Sync is the layer that makes that possible without building
-              bilateral integrations for every platform.
+              Scheduling agents need{" "}
+              <strong>real-time authenticated access across every platform a user touches.</strong>{" "}
+              Orgo Sync makes that possible without bilateral integrations.
             </div>
           </div>
           <div className="mkt-ai-card">
@@ -344,11 +307,9 @@ export default function BuildersPage() {
               Clean structured data AI can trust
             </div>
             <div className="mkt-ai-body">
-              AI doesn&apos;t hallucinate when it has reliable data. Orgo Sync
-              produces{" "}
-              <strong>clean standardized real-time scheduling data</strong> that
-              your AI models can reason over accurately. Not a stale ICS feed
-              from six hours ago.
+              AI doesn&apos;t hallucinate when it has reliable data. We produce{" "}
+              <strong>clean standardized real-time scheduling data</strong> your
+              models can reason over accurately.
             </div>
           </div>
           <div className="mkt-ai-card">
@@ -357,12 +318,8 @@ export default function BuildersPage() {
               The standard connection point for scheduling AI
             </div>
             <div className="mkt-ai-body">
-              Orgo Sync is positioned to become the{" "}
-              <strong>
-                default data layer every scheduling AI connects to
-              </strong>{" "}
-              — the MCP server for the scheduling universe. Build on the standard
-              early. Own the integration before it becomes table stakes.
+              Build on the scheduling data standard early.{" "}
+              <strong>Own the integration before it&apos;s table stakes.</strong>
             </div>
           </div>
         </div>
@@ -376,9 +333,8 @@ export default function BuildersPage() {
           <span>what you can actually build?</span>
         </h2>
         <p className="mkt-section-h2" style={{ color: "rgba(255,255,255,0.5)", marginBottom: 56 }}>
-          The scheduling data layer has been missing for 30 years. The products
-          that get built on top of it first will define the category. That window
-          is open right now.
+          The scheduling data layer has been missing for 30 years. The window is
+          open right now.
         </p>
         <div className="mkt-unlock-grid">
           <div className="mkt-unlock-card">
@@ -386,10 +342,8 @@ export default function BuildersPage() {
               <span>Build once.</span> Access everywhere.
             </div>
             <div className="mkt-unlock-body">
-              One API integration gives you access to every platform that
-              approves you. As new platforms join Orgo Sync your product
-              automatically gains access to their data without writing a single
-              new line of integration code.
+              One API. As platforms join, your product gains access
+              automatically — no new integrations.
             </div>
           </div>
           <div className="mkt-unlock-card">
@@ -397,10 +351,8 @@ export default function BuildersPage() {
               <span>The network</span> grows around you.
             </div>
             <div className="mkt-unlock-body">
-              Every new platform that connects to Orgo Sync expands what your
-              product can do. You build once. The data layer compounds around
-              you. The more connected the ecosystem becomes the more powerful
-              your product becomes automatically.
+              Every platform that connects expands your product&apos;s reach.
+              Build once. The network compounds.
             </div>
           </div>
           <div className="mkt-unlock-card">
@@ -408,10 +360,8 @@ export default function BuildersPage() {
               <span>First movers</span> define the category.
             </div>
             <div className="mkt-unlock-body">
-              The scheduling data standard is being set right now. The builders
-              who integrate early will have the deepest data access, the most
-              established platform relationships and the strongest position as
-              the ecosystem scales. The window is open. Not forever.
+              The standard is being set now. Early builders get the deepest
+              access and strongest position. The window is open.
             </div>
           </div>
         </div>
@@ -423,8 +373,7 @@ export default function BuildersPage() {
           Ready to build on<br />real scheduling data?
         </h2>
         <p className="mkt-cta-h2">
-          Developer portal is live. First 500 API calls are free. Apply in
-          minutes.
+          Developer portal is live. First 500 calls free. Apply in minutes.
         </p>
         <Link href="/getstarted" className="mkt-btn-white">
           Apply for Access →
