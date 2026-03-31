@@ -46,14 +46,14 @@ export default function PalettePage() {
     },
     {
       name: "Electric Violet",
-      hex: "#7C3AFF",
+      hex: "#BF00FF",
       bg: "#090810",
       label: "OPTION D",
       tagline: "The scheduling data standard.",
       pill: "Apply for Access →",
-      glow: "rgba(124,58,255,0.14)",
-      border: "rgba(124,58,255,0.22)",
-      tag: "#7C3AFF",
+      glow: "rgba(191,0,255,0.14)",
+      border: "rgba(191,0,255,0.22)",
+      tag: "#BF00FF",
     },
   ];
 

@@ -170,7 +170,7 @@ export default function ApiKeysPage() {
           <input
             value={newKeyName}
             onChange={(e) => setNewKeyName(e.target.value)}
-            placeholder="e.g. leagueapps-prod, teamsnap-staging"
+            placeholder="e.g. yourapp-prod, teamsnap-staging"
             className="flex-1 h-9 rounded-md border border-neutral-700 bg-neutral-800 px-3 text-[0.8125rem] text-white placeholder:text-neutral-500 focus:outline-none focus:ring-2 focus:ring-brand-500/50"
           />
           <select

@@ -57,7 +57,7 @@ export default function LoginPage() {
             required
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            placeholder="you@leagueapps.com"
+            placeholder="you@yourapp.com"
             className="flex h-9 w-full rounded-md border border-neutral-700/50 bg-neutral-800 px-3 text-[0.8125rem] text-white placeholder:text-neutral-500 focus:outline-none focus:ring-2 focus:ring-accent-teal/50 focus:border-accent-teal/50"
           />
         </div>

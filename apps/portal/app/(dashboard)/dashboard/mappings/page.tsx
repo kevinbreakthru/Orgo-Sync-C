@@ -11,7 +11,7 @@ const MonacoEditor = dynamic(() => import("@monaco-editor/react"), {
   ssr: false,
 });
 
-const LEAGUEAPPS_SAMPLE = {
+const YOURAPP_SAMPLE = {
   meta: {
     api_version: "2.4.1",
     organization_id: "org_8271",
@@ -110,7 +110,7 @@ const LEAGUEAPPS_SAMPLE = {
   },
 };
 
-const LEAGUEAPPS_JSON = JSON.stringify(LEAGUEAPPS_SAMPLE, null, 2);
+const YOURAPP_JSON = JSON.stringify(YOURAPP_SAMPLE, null, 2);
 
 interface FieldMapping {
   source: string;
@@ -220,7 +220,7 @@ type Phase = "analyzing" | "mapping" | "done";
 function findSourceLine(fieldPath: string): number | undefined {
   const key = fieldPath.split(".").pop()?.split("+")[0]?.replace(/[^a-zA-Z_]/g, "");
   if (!key) return undefined;
-  const lines = LEAGUEAPPS_JSON.split("\n");
+  const lines = YOURAPP_JSON.split("\n");
   for (let i = 0; i < lines.length; i++) {
     if (lines[i].includes(`"${key}"`)) return i + 1;
   }
@@ -262,7 +262,7 @@ export default function MappingsPage() {
     <div>
       <PageHeader
         title="Schema Mapping"
-        description={`LeagueApps data format — ${FIELD_MAPPINGS.length} fields mapped to the Canonical Schema.`}
+        description={`YourApp data format — ${FIELD_MAPPINGS.length} fields mapped to the Canonical Schema.`}
       >
         <span className="inline-flex items-center gap-1.5 rounded-md border border-neutral-700 bg-neutral-800 px-2.5 py-1 text-[10px] font-mono text-neutral-400 uppercase tracking-widest">
           <Sparkles size={10} className="text-accent-amber" />
@@ -295,7 +295,7 @@ export default function MappingsPage() {
 
       <div className="flex flex-wrap items-center gap-3 mb-6">
         <div className="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg border border-neutral-800 bg-neutral-900 text-[11px] font-mono text-neutral-400">
-          LeagueApps <ArrowRight size={10} className="text-neutral-600 mx-1" /> Orgo Canonical Schema
+          YourApp <ArrowRight size={10} className="text-neutral-600 mx-1" /> Orgo Canonical Schema
         </div>
         <div className="text-body-sm text-neutral-500">
           {highConfidence}/{FIELD_MAPPINGS.length} fields above 90%
@@ -307,7 +307,7 @@ export default function MappingsPage() {
           <div className="flex items-center justify-between px-5 py-3 border-b border-neutral-800/60 bg-neutral-900/50">
             <div className="flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-accent-amber" />
-              <span className="text-code text-neutral-400">LeagueApps Event Payload</span>
+              <span className="text-code text-neutral-400">YourApp Event Payload</span>
             </div>
             <span className="text-[10px] font-mono text-neutral-600 bg-neutral-800 px-2 py-0.5 rounded">
               READ ONLY
@@ -317,7 +317,7 @@ export default function MappingsPage() {
             height="640px"
             language="json"
             theme="vs-dark"
-            value={LEAGUEAPPS_JSON}
+            value={YOURAPP_JSON}
             onMount={(editor) => {
               editorRef.current = editor;
             }}

@@ -12,61 +12,27 @@ export default function HomePage() {
         <NetworkNodesBg />
         <div className="mkt-hero-content">
           <h1 className="mkt-hero-headline">
-            The API<br />for <span>scheduling data.</span>
+            The API for<br /><span>scheduling data</span>
           </h1>
           <p className="mkt-hero-sub">
             A scheduling data API that makes every platform{" "}
-            <strong>interoperable, secure and real-time.</strong>
+            <br /><strong>interoperable, secure and real-time.</strong>
           </p>
-          <div className="mkt-hero-actions">
-            <Link href="/getstarted" className="mkt-btn-primary">
-              Apply for Access →
+          <div className="mkt-hero-ctas">
+            <Link href="/platform" className="mkt-hero-cta-card mkt-hero-cta-card--green">
+              <div className="mkt-cta-card-who mkt-cta-card-who--green">Scheduling Platforms</div>
+              <div className="mkt-cta-card-action mkt-cta-card-action--green">I&apos;m a platform →</div>
+              <div className="mkt-cta-card-detail">Own your data. Earn passive revenue. Free to connect.</div>
             </Link>
-            <a href="#who" className="mkt-btn-secondary">
-              See Who It&apos;s For ↓
-            </a>
+            <Link href="/builder" className="mkt-hero-cta-card mkt-hero-cta-card--purple">
+              <div className="mkt-cta-card-who mkt-cta-card-who--purple">Builders</div>
+              <div className="mkt-cta-card-action mkt-cta-card-action--purple">I want scheduling data →</div>
+              <div className="mkt-cta-card-detail">One API. Real-time access. Apply for access.</div>
+            </Link>
           </div>
         </div>
         <HeroRoutingShowcase />
       </section>
-
-      {/* WHO IT'S FOR */}
-      <div className="mkt-who-strip" id="who">
-        <Link href="/platform" className="mkt-who-card" style={{ "--m-accent": "#39FF6A", "--m-accent-glow": "rgba(57,255,106,0.1)", "--m-accent-border": "rgba(57,255,106,0.22)" } as React.CSSProperties}>
-          <div className="mkt-who-tag">Scheduling Platforms</div>
-          <div className="mkt-who-title">You own the scheduling data.</div>
-          <div className="mkt-who-desc">
-            Replace your ICS link with a{" "}
-            <strong>secure, real-time, white-labeled API.</strong> Lock down your
-            data. Earn passive revenue. Free to connect.
-          </div>
-          <div className="mkt-who-link">Learn more →</div>
-        </Link>
-        {/* <Link href="/operator" className="mkt-who-card">
-          <div className="mkt-who-tag">Operators</div>
-          <div className="mkt-who-title">
-            You run multiple scheduling systems.
-          </div>
-          <div className="mkt-who-desc">
-            Connect every platform you run into{" "}
-            <strong>one real-time automated workflow.</strong> Sign in. Select
-            your systems. Done.
-          </div>
-          <div className="mkt-who-link">Learn more →</div>
-        </Link> */}
-        <Link href="/builder" className="mkt-who-card" style={{ "--m-accent": "#7C3AFF", "--m-accent-glow": "rgba(124,58,255,0.1)", "--m-accent-border": "rgba(124,58,255,0.22)" } as React.CSSProperties}>
-          <div className="mkt-who-tag">Builders</div>
-          <div className="mkt-who-title">
-            You need scheduling data to build on.
-          </div>
-          <div className="mkt-who-desc">
-            One authenticated API. Real-time access to{" "}
-            <strong>standardized scheduling data</strong> from every connected
-            platform. Apply once. Build anything.
-          </div>
-          <div className="mkt-who-link">Apply for access →</div>
-        </Link>
-      </div>
 
       {/* PROBLEM */}
       <section className="mkt-problem-section" id="problem">
@@ -110,10 +76,6 @@ export default function HomePage() {
             </div>
             <div className="mkt-card-item">
               <div className="mkt-dot">✕</div>
-              {/* <span>Every platform is a silo. Operators reconcile manually.</span> */}
-            </div>
-            <div className="mkt-card-item">
-              <div className="mkt-dot">✕</div>
               <span>Zero monetization. You own the data. It earns nothing.</span>
             </div>
           </div>
@@ -135,10 +97,6 @@ export default function HomePage() {
             <div className="mkt-card-item">
               <div className="mkt-dot">✓</div>
               <span>Full audit trail. Every API call logged.</span>
-            </div>
-            <div className="mkt-card-item">
-              <div className="mkt-dot">✓</div>
-              {/* <span>Universal standard. Operators get one live source of truth.</span> */}
             </div>
             <div className="mkt-card-item">
               <div className="mkt-dot">✓</div>
@@ -203,20 +161,19 @@ export default function HomePage() {
           Developer portal is live.{" "}
           <strong>Platforms join free.</strong>
         </p>
-        <div className="mkt-cta-pills">
-          <div className="mkt-cta-pill">
-            <span>Platforms</span> — Free to connect
-          </div>
-          {/* <div className="mkt-cta-pill">
-            <span>Operators</span> — Sign in and go
-          </div> */}
-          <div className="mkt-cta-pill">
-            <span>Builders</span> — Apply for access
-          </div>
+        <div className="mkt-dual-cta-grid">
+          <Link href="/platform" className="mkt-dual-cta-card mkt-dual-cta-card--green">
+            <div className="mkt-dual-cta-label mkt-dual-cta-label--green">Scheduling Platforms</div>
+            <div className="mkt-dual-cta-title">Connect your platform.</div>
+            <div className="mkt-dual-cta-btn mkt-dual-cta-btn--green">Free to join →</div>
+          </Link>
+          <Link href="/builder" className="mkt-dual-cta-card mkt-dual-cta-card--purple">
+            <div className="mkt-dual-cta-label mkt-dual-cta-label--purple">Builders</div>
+            <div className="mkt-dual-cta-title">Apply for access.</div>
+            <div className="mkt-dual-cta-btn mkt-dual-cta-btn--purple">Build on real data →</div>
+          </Link>
         </div>
-        <Link href="/getstarted" className="mkt-btn-cta-primary">
-          Apply for Access →
-        </Link>
+        <div className="mkt-cta-footnote">platforms join free · builders apply for access</div>
       </section>
     </>
   );

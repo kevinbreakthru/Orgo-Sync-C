@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 
 const RAW_JSON = `{
-  "source": "LeagueApps",
+  "source": "YourApp",
   "event_type": "game",
   "program_name": "U14 Boys Premier",
   "opponent": "FC Academy",
@@ -113,7 +113,7 @@ export function HeroRoutingShowcase() {
                 transition={{ duration: 0.35, ease: "easeInOut" }}
               >
                 <div className="hero-showcase-label">
-                  <span className="hero-showcase-badge-source">LeagueApps</span>
+                  <span className="hero-showcase-badge-source">YourApp</span>
                   Raw webhook payload
                 </div>
                 <pre className="hero-showcase-pre">{RAW_JSON}</pre>

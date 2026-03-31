@@ -173,6 +173,27 @@
 }
 .mkt-btn-cta-primary:hover { background: var(--m-orange-dark); transform: translateY(-2px); }
 
+/* ── HERO DUAL CTA CARDS ── */
+.mkt-hero-ctas { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 8px; max-width: 520px; }
+.mkt-hero-cta-card {
+  border-radius: 10px; padding: 18px 24px;
+  display: flex; flex-direction: column; gap: 4px;
+  text-decoration: none; transition: transform 0.2s, box-shadow 0.2s;
+  backdrop-filter: blur(8px);
+}
+.mkt-hero-cta-card:hover { transform: translateY(-3px); }
+.mkt-hero-cta-card--green { background: rgba(10,20,14,0.72); border: 1.5px solid rgba(57,255,106,0.35); }
+.mkt-hero-cta-card--green:hover { box-shadow: 0 0 28px rgba(57,255,106,0.15); }
+.mkt-hero-cta-card--purple { background: rgba(12,10,22,0.72); border: 1.5px solid rgba(191,0,255,0.35); }
+.mkt-hero-cta-card--purple:hover { box-shadow: 0 0 28px rgba(191,0,255,0.15); }
+.mkt-cta-card-who { font-size: 10px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: 2px; }
+.mkt-cta-card-who--green { color: #39FF6A; }
+.mkt-cta-card-who--purple { color: #BF00FF; }
+.mkt-cta-card-action { font-size: 15px; font-weight: 700; }
+.mkt-cta-card-action--green { color: #39FF6A; }
+.mkt-cta-card-action--purple { color: #BF00FF; }
+.mkt-cta-card-detail { font-size: 14px; color: rgba(255,255,255,0.65); line-height: 1.5; }
+
 /* ── SECTION HELPERS ── */
 .mkt-section { padding: 100px max(60px, calc((100% - 1200px) / 2)); }
 .mkt-section-eyebrow {
@@ -306,6 +327,23 @@
   letter-spacing: 0.04em;
 }
 .mkt-cta-pill span { color: rgba(255,255,255,0.65); font-weight: 600; }
+
+/* ── BOTTOM DUAL CTA CARDS ── */
+.mkt-dual-cta-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; width: 100%; max-width: 780px; margin: 0 auto 28px; position: relative; z-index: 1; }
+.mkt-dual-cta-card { border-radius: 12px; padding: 28px 32px; display: flex; flex-direction: column; gap: 10px; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; }
+.mkt-dual-cta-card:hover { transform: translateY(-3px); }
+.mkt-dual-cta-card--green { background: rgba(57,255,106,0.05); border: 1.5px solid rgba(57,255,106,0.25); }
+.mkt-dual-cta-card--green:hover { box-shadow: 0 0 32px rgba(57,255,106,0.12); }
+.mkt-dual-cta-card--purple { background: rgba(191,0,255,0.05); border: 1.5px solid rgba(191,0,255,0.25); }
+.mkt-dual-cta-card--purple:hover { box-shadow: 0 0 32px rgba(191,0,255,0.12); }
+.mkt-dual-cta-label { font-size: 10px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
+.mkt-dual-cta-label--green { color: #39FF6A; }
+.mkt-dual-cta-label--purple { color: #BF00FF; }
+.mkt-dual-cta-title { font-size: 18px; font-weight: 700; color: var(--m-white); letter-spacing: -0.01em; }
+.mkt-dual-cta-btn { font-size: 13px; font-weight: 600; letter-spacing: 0.04em; margin-top: 4px; }
+.mkt-dual-cta-btn--green { color: #39FF6A; }
+.mkt-dual-cta-btn--purple { color: #BF00FF; }
+.mkt-cta-footnote { font-size: 11px; color: rgba(255,255,255,0.22); letter-spacing: 0.08em; position: relative; z-index: 1; }
 
 /* Orange-background CTA variant (used by sub-pages) */
 .mkt-cta-orange { background: var(--m-orange); padding: 120px max(60px, calc((100% - 1200px) / 2)); text-align: center; }
@@ -743,6 +781,7 @@
 .mkt-hero-headline { animation: mktFadeUp 0.5s 0.1s ease both; }
 .mkt-hero-sub { animation: mktFadeUp 0.5s 0.2s ease both; }
 .mkt-hero-actions { animation: mktFadeUp 0.5s 0.3s ease both; }
+.mkt-hero-ctas { animation: mktFadeUp 0.5s 0.3s ease both; }
 
 /* ── RESPONSIVE: TABLET ── */
 @media (max-width: 1024px) {
@@ -764,12 +803,12 @@
 /* ── RESPONSIVE: MOBILE ── */
 @media (max-width: 768px) {
   /* Nav */
-  .mkt-nav { padding: 0 20px; height: 56px; }
+  .mkt-nav { padding: 0 24px; height: 56px; }
   .mkt-nav-desktop { display: none !important; }
   .mkt-nav-burger { display: flex !important; }
 
   /* Hero */
-  .mkt-hero { padding: 110px 20px 48px; min-height: auto !important; }
+  .mkt-hero { padding: 110px 24px 48px; min-height: auto !important; }
   .mkt-hero--split {
     grid-template-columns: 1fr;
     gap: 32px;
@@ -800,19 +839,20 @@
   .hero-showcase-ep-name { font-size: 14px; }
   .hero-showcase-ep-url { font-size: 14px; }
 
-  /* Who strip */
-  .mkt-who-strip { grid-template-columns: 1fr; }
-  .mkt-who-card { padding: 28px 20px; border-right: none; border-bottom: 1px solid rgba(255,255,255,0.06); }
-  .mkt-who-card:last-child { border-bottom: none; }
+  /* Hero dual CTA cards */
+  .mkt-hero-ctas { grid-template-columns: 1fr; max-width: 100%; }
+
+  /* Bottom dual CTA cards */
+  .mkt-dual-cta-grid { grid-template-columns: 1fr; }
 
   /* Sections */
-  .mkt-section { padding: 56px 20px; }
+  .mkt-section { padding: 56px 24px; }
   .mkt-section-h1 { font-size: clamp(28px, 7vw, 42px); }
   .mkt-section-h2 { font-size: 16px; margin-bottom: 36px; }
   .mkt-section-eyebrow { font-size: 14px; }
 
   /* Problem section */
-  .mkt-problem-section { padding: 56px 20px; }
+  .mkt-problem-section { padding: 56px 24px; }
   .mkt-problem-grid { grid-template-columns: 1fr; }
   .mkt-compare-asym { grid-template-columns: 1fr; gap: 12px; }
   .mkt-compare-bad { opacity: 1; transform: none; border-radius: 6px; }
@@ -826,19 +866,19 @@
   .mkt-vs-col { display: none; }
 
   /* How section */
-  .mkt-how-section { padding: 56px 20px; }
+  .mkt-how-section { padding: 56px 24px; }
   .mkt-how-grid { grid-template-columns: 1fr; }
   .mkt-how-card { padding: 28px 20px; }
   .mkt-how-num { font-size: 40px; }
 
   /* CTA */
-  .mkt-cta-section { padding: 64px 20px; }
+  .mkt-cta-section { padding: 64px 24px; }
   .mkt-cta-h1 { font-size: clamp(36px, 10vw, 64px); }
   .mkt-cta-h2 { font-size: 16px; margin-bottom: 32px; }
   .mkt-cta-pills { gap: 8px; }
   .mkt-cta-pill { padding: 8px 14px; font-size: 14px; }
   .mkt-btn-cta-primary { padding: 14px 32px; font-size: 14px; }
-  .mkt-cta-orange { padding: 64px 20px; }
+  .mkt-cta-orange { padding: 64px 24px; }
   .mkt-btn-white { padding: 14px 32px; font-size: 16px; }
 
   /* Band */
