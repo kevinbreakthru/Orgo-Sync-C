@@ -123,7 +123,7 @@
 
 .mkt-hero-headline {
   font-family: var(--font-bebas), 'Bebas Neue', sans-serif;
-  font-size: clamp(48px, 7vw, 96px);
+  font-size: clamp(40px, 5.5vw, 76px);
   line-height: 0.88; letter-spacing: 0.02em;
   color: var(--m-white); margin-bottom: 28px; max-width: 900px;
 }
@@ -486,11 +486,43 @@
   grid-template-columns: 3fr 2fr;
   grid-template-rows: auto;
   align-items: center;
-  gap: 40px;
+  column-gap: 40px;
+  row-gap: 0px;
 }
 .mkt-hero--split .mkt-hero-content { grid-column: 1; }
 .mkt-hero--split .hero-showcase { grid-column: 2; }
 .mkt-hero--split .mkt-hero-anim { grid-column: 2; }
+
+/* ── AUDIENCE CTA CARDS ── */
+.mkt-audience-card {
+  border-radius: 14px;
+  padding: 28px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-decoration: none;
+  position: relative;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+.mkt-audience-card:hover {
+  transform: translateY(-4px);
+}
+.mkt-audience-card--blue:hover  { box-shadow: 0 8px 40px rgba(77,159,255,0.25);  border-color: rgba(77,159,255,0.7)  !important; background: rgba(77,159,255,0.14)  !important; }
+.mkt-audience-card--green:hover { box-shadow: 0 8px 40px rgba(0,255,127,0.22);   border-color: rgba(0,255,127,0.7)   !important; background: rgba(0,255,127,0.12)   !important; }
+.mkt-audience-card--purple:hover{ box-shadow: 0 8px 40px rgba(176,77,255,0.22);  border-color: rgba(176,77,255,0.7)  !important; background: rgba(176,77,255,0.12)  !important; }
+
+.mkt-audience-card .mkt-card-arrow {
+  position: absolute;
+  top: 20px; right: 20px;
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+.mkt-audience-card:hover .mkt-card-arrow {
+  transform: translateX(3px);
+}
+
 .hub-spoke-overlay-mobile { display: none; }
 .mkt-hero-anim {
   position: relative;

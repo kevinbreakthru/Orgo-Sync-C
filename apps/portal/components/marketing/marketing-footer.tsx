@@ -16,8 +16,8 @@ export function MarketingFooter() {
         <div className="mkt-footer-tagline">The scheduling data standard.</div>
       </div>
       <div className="mkt-footer-links">
+        <Link href="/operator">Operators</Link>
         <Link href="/platform">Platforms</Link>
-        {/* <Link href="/operator">Operators</Link> */}
         <Link href="/builder">Builders</Link>
         <a href="mailto:zoya@orgohq.com">Contact</a>
       </div>

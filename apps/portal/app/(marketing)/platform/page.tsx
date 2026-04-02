@@ -4,364 +4,194 @@ import Link from "next/link";
 import { HubSpokeBg } from "../../../components/marketing/hub-spoke-bg";
 
 export const metadata: Metadata = {
-  title: "Orgo Sync for Platforms — Replace Your ICS Link",
+  title: "Orgo Sync for Platforms — Own Your Data. Earn From It.",
 };
+
+const MONO: React.CSSProperties = { fontFamily: "var(--font-jetbrains),'JetBrains Mono',monospace" };
+const BG  = "#07080c";
+const BG2 = "#0c0e18";
+const W90 = "rgba(255,255,255,0.90)";
+const W75 = "rgba(255,255,255,0.75)";
+const W40 = "rgba(255,255,255,0.40)";
+const GREEN = "#00ff7f"; const GREEN_T = "#00e070"; const GREEN_G = "rgba(0,255,127,0.35)";
+const ORANGE = "#FF3E00";
+const BORDER = "rgba(255,255,255,0.08)"; const BORDER_L = "rgba(255,255,255,0.05)";
+
+const wrap: React.CSSProperties = { padding: "90px max(60px, calc((100% - 1200px) / 2))" };
+const inner: React.CSSProperties = { maxWidth: 1200, margin: "0 auto" };
+const eyebrow: React.CSSProperties = { ...MONO, fontSize: 12, fontWeight: 500, letterSpacing: "0.18em", textTransform: "uppercase", color: GREEN_T, marginBottom: 20 };
+const h2: React.CSSProperties = { fontFamily: "var(--font-bebas),'Bebas Neue',sans-serif", fontSize: "clamp(32px,4vw,52px)", fontWeight: 700, lineHeight: 1.05, color: "#fff", marginBottom: 20 };
+const body: React.CSSProperties = { fontSize: 17, color: W90, lineHeight: 1.8 };
 
 export default function PlatformsPage() {
   return (
     <>
       {/* HERO */}
       <section className="mkt-hero mkt-hero--pillar">
-        <HubSpokeBg centerX={0.75} centerY={0.55} scale={0.38} overlay={false} />
-        <div className="mkt-hero-eyebrow" style={{ color: "#39FF6A", background: "rgba(57,255,106,0.1)", borderColor: "rgba(57,255,106,0.22)", "--m-accent": "#39FF6A" } as React.CSSProperties}>For Scheduling Platforms</div>
-        <h1 className="mkt-hero-headline" style={{ maxWidth: 860 }}>
-          Three lines of code.<br />
-          <span>Three value chains unlocked.</span>
+        <HubSpokeBg centerX={0.75} centerY={0.55} scale={0.38} overlay={false} color={{ r: 0, g: 255, b: 127 }} />
+        <div className="mkt-hero-eyebrow" style={{ color: GREEN_T, background: "rgba(0,255,127,0.1)", borderColor: "rgba(0,255,127,0.22)" } as React.CSSProperties}>For Scheduling Platforms</div>
+        <h1 className="mkt-hero-headline">
+          Three lines of code.<br /><span style={{ color: GREEN, textShadow: `0 0 40px ${GREEN_G}` }}>One API.</span>
         </h1>
         <p className="mkt-hero-sub">
-          Replace your ICS link with a{" "}
-          <strong>secure, real-time, white-labeled API.</strong> Your brand. Your
-          data.
+          Connect your platform to Orgo Sync once and make your scheduling data interoperable, authenticated, and revenue-generating — without changing anything your customers already use.
         </p>
         <div className="mkt-hero-actions">
-          <Link href="/getstarted" className="mkt-btn-primary">
-            Connect Your Platform →
-          </Link>
-          <a href="#how" className="mkt-btn-secondary">
-            See How It Works ↓
-          </a>
+          <Link href="/getstarted" className="mkt-btn-primary">Connect Your Platform →</Link>
+          <a href="#how" className="mkt-btn-secondary">See How It Works ↓</a>
         </div>
       </section>
 
-      {/* ASK STRIP */}
-      <div className="mkt-band">
-        <div className="mkt-band-label">The ask</div>
-        <div className="mkt-band-divider" />
-        <div className="mkt-band-text">
-          Replace your ICS link with the Orgo Sync white-labeled API. Everything else follows.
-        </div>
-      </div>
-
-      {/* THREE VALUE CHAINS */}
-      <section className="mkt-section" id="value" style={{ background: "var(--m-gray-light)" }}>
-        <div className="mkt-section-eyebrow">What you unlock</div>
-        <h2 className="mkt-section-h1">
-          One integration.<br />
-          <span>Three value chains.</span>
-        </h2>
-        <p className="mkt-section-h2" style={{ color: "var(--m-gray)" }}>
-          One afternoon unlocks three things your platform has never had simultaneously.
-        </p>
-        <div className="mkt-value-grid">
-          <div className="mkt-value-card">
-            <div className="mkt-value-num">01</div>
-            <div className="mkt-value-title">
-              Better family experience. Immediately.
-            </div>
-            <div className="mkt-value-body">
-              Real-time updates reach family calendars directly. No app. Your
-              platform gets the credit.
-            </div>
-            <ul className="mkt-value-items">
-              <li>Field changes in seconds, not hours.</li>
-              <li>No more missed games from stale invites.</li>
-              <li>Support tickets drop. NPS goes up.</li>
-              <li>Your brand on every update.</li>
-            </ul>
-          </div>
-          <div className="mkt-value-card">
-            <div className="mkt-value-num">02</div>
-            <div className="mkt-value-title">
-              New revenue stream. Zero build.
-            </div>
-            <div className="mkt-value-body">
-              Builders apply to access your data. You approve. You earn.
-            </div>
-            <ul className="mkt-value-items">
-              <li>You control who gets in.</li>
-              <li>20% of every usage fee, back to you.</li>
-              <li>Passive. Recurring. From data you already own.</li>
-              <li>No build. No maintenance. No effort.</li>
-            </ul>
-          </div>
-          {/* <div className="mkt-value-card">
-            <div className="mkt-value-num">03</div>
-            <div className="mkt-value-title">
-              Your operators stop churning.
-            </div>
-            <div className="mkt-value-body">
-              Operators running your platform alongside others can connect
-              everything. Friction gone.
-            </div>
-            <ul className="mkt-value-items">
-              <li>Their systems talk to each other automatically.</li>
-              <li>No manual reconciliation. No data conflicts.</li>
-              <li>They stay on your platform because it works.</li>
-              <li>Retention revenue you were quietly losing.</li>
-            </ul>
-          </div> */}
-        </div>
-      </section>
-
-      {/* ICS COMPARISON */}
-      <section className="mkt-section" id="comparison" style={{ background: "var(--m-black)" }}>
-        <div className="mkt-section-eyebrow">The standard you&apos;re replacing</div>
-        <h2 className="mkt-section-h1" style={{ color: "var(--m-white)" }}>
-          Your ICS link today<br />
-          <span>vs. your Orgo Sync API.</span>
-        </h2>
-        <p className="mkt-section-h2" style={{ color: "rgba(255,255,255,0.5)", marginBottom: 56 }}>
-          ICS was built for machines, not security or monetization. Every platform still runs on it.
-        </p>
-        <div className="mkt-compare-asym">
-          <div className="mkt-card bad mkt-compare-bad">
-            <div className="mkt-card-label">Your ICS link today</div>
-            <div className="mkt-card-title">
-              Public. Stale. Unprotected. Unmonetized.
-            </div>
-            <div className="mkt-ba-item">
-              <div className="mkt-dot">✕</div>
-              <span style={{ color: "rgba(255,255,255,0.5)" }}>
-                Public URL. Anyone can scrape it.
-              </span>
-            </div>
-            <div className="mkt-ba-item">
-              <div className="mkt-dot">✕</div>
-              <span style={{ color: "rgba(255,255,255,0.5)" }}>
-                Static. Refreshes every 4–12 hours.
-              </span>
-            </div>
-            <div className="mkt-ba-item">
-              <div className="mkt-dot">✕</div>
-              <span style={{ color: "rgba(255,255,255,0.5)" }}>
-                Zero access control. No visibility.
-              </span>
-            </div>
-            <div className="mkt-ba-item">
-              <div className="mkt-dot">✕</div>
-              <span style={{ color: "rgba(255,255,255,0.5)" }}>
-                No audit trail. No permissioning. No security layer of any kind.
-              </span>
-            </div>
-            <div className="mkt-ba-item">
-              <div className="mkt-dot">✕</div>
-              <span style={{ color: "rgba(255,255,255,0.5)" }}>
-                Zero monetization. Accessed constantly. Earns nothing.
-              </span>
-            </div>
-          </div>
-          <div className="mkt-card good mkt-compare-good">
-            <div className="mkt-card-label">
-              Your Orgo Sync white-labeled API
-            </div>
-            <div className="mkt-card-title">
-              Secure. Real-time. Permissioned. Earning.
-            </div>
-            <div className="mkt-ba-item">
-              <div className="mkt-dot">✓</div>
-              <span style={{ color: "rgba(255,255,255,0.75)" }}>
-                Authenticated. Only approved parties. Complete control.
-              </span>
-            </div>
-            <div className="mkt-ba-item">
-              <div className="mkt-dot">✓</div>
-              <span style={{ color: "rgba(255,255,255,0.75)" }}>
-                Real-time. Changes propagate in seconds.
-              </span>
-            </div>
-            <div className="mkt-ba-item">
-              <div className="mkt-dot">✓</div>
-              <span style={{ color: "rgba(255,255,255,0.75)" }}>
-                Full permissioning. You approve every request.
-              </span>
-            </div>
-            <div className="mkt-ba-item">
-              <div className="mkt-dot">✓</div>
-              <span style={{ color: "rgba(255,255,255,0.75)" }}>
-                Complete audit trail. Every call logged.
-              </span>
-            </div>
-            <div className="mkt-ba-item">
-              <div className="mkt-dot">✓</div>
-              <span style={{ color: "rgba(255,255,255,0.75)" }}>
-                20% from every builder who uses your data.
-              </span>
-            </div>
+      {/* THE OPPORTUNITY */}
+      <section style={{ ...wrap, background: BG }}>
+        <div style={inner}>
+          <div style={eyebrow}>The Opportunity</div>
+          <h2 style={h2}>Your scheduling data is your<br /><span style={{ color: GREEN }}>most valuable untapped asset.</span></h2>
+          <p style={{ ...body, maxWidth: 680, marginBottom: 48 }}>
+            You have built something valuable — a platform your customers depend on every day. Orgo Sync gives you a new way to make that asset work harder: for your operators, for your builders, and for your bottom line.
+          </p>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(2,1fr)", gap: 20 }}>
+            {[
+              { tag: "Earn",    title: "Passive revenue from day one",       body: "Every builder who accesses your data pays a usage fee. Revenue share flows to you automatically every month. No ongoing work. The data you already own starts earning." },
+              { tag: "Protect", title: "Full control over your data",         body: "You approve every builder who accesses your data. You set the terms. You revoke at any time. Every request is authenticated, logged, and fully visible to you." },
+              { tag: "Retain",  title: "Become the platform they can't leave", body: "When your platform connects, your operators get unified intelligence across every system they run — including yours. You didn't build a new feature. You became indispensable." },
+              { tag: "Grow",    title: "Join the ecosystem that compounds",    body: "Every builder that connects to your data makes your platform more valuable. Every operator that connects deepens the network. First movers own the builder relationships." },
+            ].map((c) => (
+              <div key={c.tag} style={{ background: "rgba(0,255,127,0.05)", border: "1px solid rgba(0,255,127,0.2)", borderRadius: 14, padding: 32 }}>
+                <div style={{ ...MONO, fontSize: 11, fontWeight: 500, letterSpacing: "0.16em", textTransform: "uppercase", color: GREEN_T, marginBottom: 12 }}>{c.tag}</div>
+                <div style={{ fontSize: 20, fontWeight: 700, color: "#fff", marginBottom: 10 }}>{c.title}</div>
+                <div style={{ fontSize: 16, color: W90, lineHeight: 1.7 }}>{c.body}</div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* HOW IT WORKS */}
-      <section className="mkt-section" id="how" style={{ background: "var(--m-white)" }}>
-        <div className="mkt-section-eyebrow">How it works</div>
-        <h2 className="mkt-section-h1">
-          Three lines of code.<br />
-          <span>One afternoon. Never again.</span>
-        </h2>
-        <p className="mkt-section-h2" style={{ color: "var(--m-gray)" }}>
-          Your developer replaces the ICS endpoint with your white-labeled Orgo
-          Sync API. Everything after that is automatic.
-        </p>
-        <div className="mkt-how-grid">
-          <div className="mkt-how-card">
-            <div className="mkt-how-num">01</div>
-            <div className="mkt-how-title">We scan your schema</div>
-            <div className="mkt-how-body">
-              AI maps your data to the Orgo Sync standard.{" "}
-              <strong>You approve once. Never again.</strong>
-            </div>
-          </div>
-          <div className="mkt-how-card">
-            <div className="mkt-how-num">02</div>
-            <div className="mkt-how-title">
-              Your developer adds three lines
-            </div>
-            <div className="mkt-how-body">
-              Replace the ICS endpoint with your white-labeled API.{" "}
-              <strong>Your brand. Your URL. Orgo Sync invisible underneath.</strong>
-            </div>
-          </div>
-          <div className="mkt-how-card">
-            <div className="mkt-how-num">03</div>
-            <div className="mkt-how-title">
-              Everything flows automatically
-            </div>
-            <div className="mkt-how-body">
-              Real-time updates. Builder requests routed to you.{" "}
-              <strong>Revenue deposited monthly. Zero ongoing work.</strong>
-            </div>
+      <section style={{ ...wrap, background: BG2, borderTop: `1px solid ${BORDER_L}`, borderBottom: `1px solid ${BORDER_L}` }} id="how">
+        <div style={inner}>
+          <div style={eyebrow}>How It Works</div>
+          <h2 style={h2}>Three lines of code.<br /><span style={{ color: GREEN }}>Zero technical lift.</span></h2>
+          <p style={{ ...body, maxWidth: 640, marginBottom: 48 }}>Our AI scans, maps, and connects your system automatically. <strong style={{ color: "#fff" }}>Everything after that is automatic.</strong></p>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 20 }}>
+            {[
+              { n: "01", t: "We scan your schema",           d: "Our AI maps your data structure to the Orgo Sync standard automatically. You approve once. We handle the normalization, the mapping, and the ongoing maintenance." },
+              { n: "02", t: "Your developer adds three lines", d: "Your developer adds three lines of code. Your brand. Your URL. Orgo Sync is invisible underneath. One afternoon of work." },
+              { n: "03", t: "Everything flows automatically", d: "Real-time updates propagate instantly. Builder access requests route to you for approval. Revenue share deposited monthly. Zero ongoing work from your team." },
+            ].map((s) => (
+              <div key={s.n} style={{ background: BG, border: `1px solid ${BORDER}`, borderRadius: 16, padding: 36 }}>
+                <div style={{ ...MONO, fontSize: 12, fontWeight: 500, color: ORANGE, letterSpacing: "0.1em", marginBottom: 16 }}>{s.n}</div>
+                <div style={{ fontSize: 20, fontWeight: 700, marginBottom: 12, color: "#fff" }}>{s.t}</div>
+                <div style={{ fontSize: 16, color: W90, lineHeight: 1.7 }}>{s.d}</div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* REVENUE STREAMS */}
-      <section className="mkt-section" style={{ background: "var(--m-gray-light)" }}>
-        <div className="mkt-section-eyebrow">Your two revenue streams</div>
-        <h2 className="mkt-section-h1">
-          Data you already own.<br />
-          <span>Now earning for you.</span>
-        </h2>
-        <p className="mkt-section-h2" style={{ color: "var(--m-gray)" }}>
-          You are not paying for Orgo Sync. Orgo Sync pays you.
-        </p>
-        <div className="mkt-revenue-grid-v2">
-          <div className="mkt-revenue-card-v2">
-            <div className="mkt-revenue-tag">Revenue Stream 01</div>
-            <div className="mkt-revenue-title">
-              Builder access fees — you approve, you earn
+      {/* REVENUE */}
+      <section style={{ ...wrap, background: "rgba(0,255,127,0.02)", borderTop: "1px solid rgba(0,255,127,0.1)", borderBottom: "1px solid rgba(0,255,127,0.1)" }}>
+        <div style={inner}>
+          <div style={eyebrow}>The Revenue Model</div>
+          <h2 style={h2}>You are not paying for Orgo Sync.<br /><span style={{ color: GREEN }}>Orgo Sync pays you.</span></h2>
+          <div style={{ maxWidth: 720 }}>
+            <p style={{ ...body, marginBottom: 18 }}>Every builder who accesses your data through Orgo Sync pays a subscription fee. You receive revenue share on that automatically, deposited monthly. No invoicing. No ongoing work. No contracts to manage.</p>
+            <p style={{ ...body, marginBottom: 18 }}>The number starts small and compounds as the builder ecosystem around your data grows. The platforms that connect first build the deepest builder relationships — and earn from them the longest.</p>
+            <p style={body}><strong style={{ color: "#fff" }}>Revenue share is one part of the return. Retention and defensibility are the bigger ones.</strong> We will walk you through what the full picture looks like for your platform on your onboarding call.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* WHITE LABEL */}
+      <section style={{ ...wrap, background: BG2, borderTop: `1px solid ${BORDER_L}`, borderBottom: `1px solid ${BORDER_L}` }}>
+        <div style={inner}>
+          <div style={eyebrow}>White Labeling</div>
+          <h2 style={h2}>Your brand. Your API.<br /><span style={{ color: GREEN }}>Orgo Sync invisible underneath.</span></h2>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 56, alignItems: "start" }}>
+            <div>
+              <p style={{ ...body, marginBottom: 18 }}>Orgo Sync operates entirely behind the scenes. Builders who access your data do so through an API that carries your brand, your URL structure, and your identity. Orgo Sync is the infrastructure underneath — never the face of it.</p>
+              <p style={{ ...body, marginBottom: 18 }}>This matters for two reasons. First, your brand stays front and center with every developer who builds on your data. Second, you retain full commercial and reputational ownership of the data relationship.</p>
+              <p style={body}><strong style={{ color: "#fff" }}>You do not become an Orgo Sync customer in the eyes of your builders. You become a platform with a professional, authenticated data API that happens to be powered by Orgo Sync infrastructure.</strong></p>
             </div>
-            <div className="mkt-revenue-body">
-              Builders apply to access your data via the developer portal. You
-              approve or deny. 20% of every usage fee deposited monthly.
-              Automatic.
-            </div>
-            <div className="mkt-revenue-pill">
-              Passive. Recurring. From data you already own.
-            </div>
-            <div className="mkt-revenue-mini-chart">
-              {[28, 35, 32, 48, 44, 56, 52, 68, 64, 78, 72, 88].map((h, i) => (
-                <div
-                  key={i}
-                  className="mkt-revenue-bar"
-                  style={{
-                    height: `${h}%`,
-                    background: i >= 9
-                      ? "var(--m-orange)"
-                      : `rgba(255,77,0,${0.15 + i * 0.06})`,
-                  }}
-                />
+            <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+              {[
+                { t: "Your URL, your subdomain",        d: "The API endpoint builders connect to reflects your platform's domain. api.yourplatform.com, not orgosync.com." },
+                { t: "Your brand in the marketplace",   d: "When builders browse Orgo Sync they see your platform name, logo, and description — not generic infrastructure branding." },
+                { t: "Your approval workflow",          d: "Builder access requests come to you for approval. You review, approve, or deny. The decision is entirely yours." },
+                { t: "Your dashboard",                  d: "Full visibility into who is accessing your data, how often, and what they are querying. Your data. Your control." },
+              ].map((f) => (
+                <div key={f.t} style={{ display: "flex", alignItems: "flex-start", gap: 16, padding: "18px 20px", borderRadius: 12, background: "rgba(0,255,127,0.04)", border: "1px solid rgba(0,255,127,0.15)" }}>
+                  <span style={{ width: 7, height: 7, borderRadius: "50%", background: GREEN, boxShadow: `0 0 6px ${GREEN_G}`, flexShrink: 0, marginTop: 8, display: "block" }} />
+                  <div>
+                    <div style={{ fontSize: 17, fontWeight: 600, color: GREEN_T, marginBottom: 4 }}>{f.t}</div>
+                    <div style={{ fontSize: 16, color: W75, lineHeight: 1.65 }}>{f.d}</div>
+                  </div>
+                </div>
               ))}
             </div>
           </div>
-          {/* <div className="mkt-revenue-card-v2">
-            <div className="mkt-revenue-tag">Revenue Stream 02</div>
-            <div className="mkt-revenue-title">
-              Operator retention — stop losing customers to friction
-            </div>
-            <div className="mkt-revenue-body">
-              Operators running your platform alongside others can now connect
-              everything via Orgo Sync. Friction drops. Churn drops.
-            </div>
-            <div className="mkt-revenue-pill">
-              Retention is revenue you were already losing.
-            </div>
-            <div className="mkt-retention-graph">
-              <div
-                className="mkt-retention-node"
-                style={{ background: "var(--m-gray-light)", color: "var(--m-dark)" }}
-              >
-                LA
-              </div>
-              <div className="mkt-retention-edge" />
-              <div className="mkt-retention-hub">SYNC</div>
-              <div className="mkt-retention-edge" />
-              <div
-                className="mkt-retention-node"
-                style={{ background: "var(--m-gray-light)", color: "var(--m-dark)" }}
-              >
-                TS
-              </div>
-            </div>
-          </div> */}
         </div>
       </section>
 
-      {/* UNLOCK / PRIVACY */}
-      <section className="mkt-section" style={{ background: "var(--m-black)" }}>
-        <div className="mkt-section-eyebrow">The bigger picture</div>
-        <h2
-          className="mkt-section-h1"
-          style={{ color: "var(--m-white)" }}
-        >
-          Ready to unlock<br />
-          <span>the true power of your data?</span>
-        </h2>
-        <p className="mkt-section-h2" style={{ color: "rgba(255,255,255,0.5)", marginBottom: 56 }}>
-          Your scheduling data is your most valuable asset. Right now it sits
-          unmonetized, unprotected and underutilized.
-        </p>
-        <div className="mkt-unlock-grid">
-          <div className="mkt-unlock-card">
-            <div className="mkt-unlock-title">
-              <span>Monetized</span>
-            </div>
-            <div className="mkt-unlock-body">
-              Every builder that accesses your data earns you passive revenue.
-              No build. No effort.
-            </div>
-          </div>
-          <div className="mkt-unlock-card">
-            <div className="mkt-unlock-title">
-              <span>Protected</span>
-            </div>
-            <div className="mkt-unlock-body">
-              Every access permissioned. Every call audited. Your data stays
-              yours. ICS gave you zero control. Orgo Sync gives you complete control.
-            </div>
-          </div>
-          <div className="mkt-unlock-card">
-            <div className="mkt-unlock-title">
-              <span>Interoperable</span>
-            </div>
-            <div className="mkt-unlock-body">
-              Your data joins a growing ecosystem. More platforms connecting
-              means more value for yours — automatically.
-            </div>
+      {/* DATA OWNERSHIP */}
+      <section style={{ ...wrap, background: BG }}>
+        <div style={inner}>
+          <div style={eyebrow}>Data Ownership and Security</div>
+          <h2 style={h2}>Your data stays yours.<br /><span style={{ color: GREEN }}>Always.</span></h2>
+          <p style={{ ...body, maxWidth: 620, marginBottom: 48 }}>We know the questions your legal and product team will ask. Here are the answers upfront.</p>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(2,1fr)", gap: 20 }}>
+            {[
+              { t: "You own the data. We just route it.",        d: "Orgo Sync is the infrastructure layer — not the data owner. Your data is never sold, stored beyond real-time routing, or used for any purpose you haven't approved.", dim: false },
+              { t: "No public endpoints. Ever.",                 d: "Every request is authenticated. Builders apply, you approve, and every call requires valid credentials. Nothing is accessible without your explicit permission.", dim: false },
+              { t: "You approve every builder. Revoke instantly.", d: "Access is granted by you and revocable by you at any time with immediate effect. No process. No delay. Full control stays with your platform.", dim: false },
+              { t: "Complete audit trail on every call.",        d: "Timestamp, builder identity, data requested, volume — every interaction logged and visible in your dashboard whenever you need it.", dim: false },
+              { t: "Encrypted end to end.",                      d: "All data moves via TLS. No plain text. Every connection authenticated and encrypted in transit.", dim: false },
+              { t: "GDPR and compliance ready",                  d: "Data processing agreements available for platforms that require them. Your legal team will have what they need before you connect.", dim: true },
+            ].map((c) => (
+              <div key={c.t} style={{ borderRadius: 14, padding: 28, background: BG2, border: `1px solid ${BORDER}`, opacity: c.dim ? 0.45 : 1, position: "relative" }}>
+                {c.dim && <div style={{ position: "absolute", top: 14, right: 14, ...MONO, fontSize: 10, color: W40, background: "rgba(255,255,255,0.06)", border: `1px solid rgba(255,255,255,0.1)`, padding: "3px 8px", borderRadius: 4 }}>Coming soon</div>}
+                <div style={{ fontSize: 18, fontWeight: 700, color: "#fff", marginBottom: 8 }}>{c.t}</div>
+                <div style={{ fontSize: 16, color: W90, lineHeight: 1.7 }}>{c.d}</div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="mkt-cta-orange">
-        <h2 className="mkt-cta-h1">
-          Ready to unlock the<br />true power of your data?
-        </h2>
-        <p className="mkt-cta-h2">
-          Free to connect. Three lines of code.
-        </p>
-        <Link href="/getstarted" className="mkt-btn-white">
-          Connect Your Platform →
-        </Link>
+      {/* PRECEDENT */}
+      <section style={{ ...wrap, background: BG }}>
+        <div style={inner}>
+          <div style={eyebrow}>This Is a Proven Playbook</div>
+          <h2 style={h2}>This has happened before.<br />Every time it did, <span style={{ color: GREEN }}>an ecosystem was born.</span></h2>
+          <p style={{ ...body, maxWidth: 620, marginBottom: 48 }}>The infrastructure layer that unlocks a data category defines the standard for an entire industry. Platforms that move first own the ecosystem.</p>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 2 }}>
+            {[
+              { co: "Stripe",    unlocked: "Unlocked payments",        result: "Banks that connected became infrastructure. Banks that waited became legacy.", active: false },
+              { co: "Plaid",     unlocked: "Unlocked banking data",     result: "Institutions that opened their data became the foundation. Those that stayed closed became irrelevant.", active: false },
+              { co: "Twilio",    unlocked: "Unlocked communications",   result: "Carriers that participated became essential. The ones that didn't became dumb pipes.", active: false },
+              { co: "Orgo Sync", unlocked: "Unlocking scheduling data", result: "The platforms that connect now will own the builder relationships and the ecosystem built on top of their data.", active: true },
+            ].map((p, i) => (
+              <div key={i} style={{ padding: "28px 24px", background: p.active ? "rgba(0,255,127,0.05)" : BG2, border: `1px solid ${p.active ? "rgba(0,255,127,0.25)" : BORDER}`, borderRadius: i === 0 ? "14px 0 0 14px" : i === 3 ? "0 14px 14px 0" : 0, display: "flex", flexDirection: "column", gap: 10 }}>
+                <div style={{ ...MONO, fontSize: 12, fontWeight: 500, color: p.active ? GREEN_T : W40 }}>{p.co}</div>
+                <div style={{ fontSize: 17, fontWeight: 600, color: p.active ? "#fff" : W75 }}>{p.unlocked}</div>
+                <div style={{ fontSize: 15, color: p.active ? W75 : W40, lineHeight: 1.6 }}>{p.result}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FINAL CTA */}
+      <section style={{ ...wrap, background: "rgba(0,255,127,0.03)", borderTop: "1px solid rgba(0,255,127,0.12)", textAlign: "center" }} id="getstarted">
+        <div style={{ maxWidth: 680, margin: "0 auto" }}>
+          <h2 style={{ ...h2, marginBottom: 18 }}>Ready to unlock the <span style={{ color: GREEN }}>true value of your data?</span></h2>
+          <p style={{ ...body, marginBottom: 40, maxWidth: 520, marginLeft: "auto", marginRight: "auto" }}>
+            Free to connect. Book a 30-minute call and we will walk you through the integration, your revenue potential, and answer any questions your team has.
+          </p>
+          <Link href="/getstarted" style={{ display: "inline-flex", alignItems: "center", gap: 8, padding: "16px 36px", borderRadius: 10, fontSize: 16, fontWeight: 600, textDecoration: "none", background: "rgba(0,255,127,0.12)", color: GREEN, border: "1.5px solid rgba(0,255,127,0.4)" }}>
+            Connect Your Platform →
+          </Link>
+        </div>
       </section>
     </>
   );

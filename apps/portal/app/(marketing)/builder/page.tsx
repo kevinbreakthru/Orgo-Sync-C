@@ -7,377 +7,198 @@ export const metadata: Metadata = {
   title: "Orgo Sync for Builders — Build on Real Scheduling Data",
 };
 
+const MONO: React.CSSProperties = { fontFamily: "var(--font-jetbrains),'JetBrains Mono',monospace" };
+const BG  = "#07080c";
+const BG2 = "#0c0e18";
+const W90 = "rgba(255,255,255,0.90)";
+const W75 = "rgba(255,255,255,0.75)";
+const W40 = "rgba(255,255,255,0.40)";
+const PURPLE = "#b04dff"; const PURPLE_T = "#c470ff"; const PURPLE_G = "rgba(176,77,255,0.35)";
+const ORANGE = "#FF3E00";
+const BORDER = "rgba(255,255,255,0.08)"; const BORDER_L = "rgba(255,255,255,0.05)";
+
+const wrap: React.CSSProperties = { padding: "90px max(60px, calc((100% - 1200px) / 2))" };
+const inner: React.CSSProperties = { maxWidth: 1200, margin: "0 auto" };
+const eyebrow: React.CSSProperties = { ...MONO, fontSize: 12, fontWeight: 500, letterSpacing: "0.18em", textTransform: "uppercase", color: PURPLE_T, marginBottom: 20 };
+const h2: React.CSSProperties = { fontFamily: "var(--font-bebas),'Bebas Neue',sans-serif", fontSize: "clamp(32px,4vw,52px)", fontWeight: 700, lineHeight: 1.05, color: "#fff", marginBottom: 20 };
+const body: React.CSSProperties = { fontSize: 17, color: W90, lineHeight: 1.8 };
+
 export default function BuildersPage() {
   return (
     <>
       {/* HERO */}
       <section className="mkt-hero mkt-hero--pillar">
-        <HubSpokeBg centerX={0.75} centerY={0.55} scale={0.38} overlay={false} />
-        <div className="mkt-hero-eyebrow" style={{ color: "#BF00FF", background: "rgba(191,0,255,0.1)", borderColor: "rgba(191,0,255,0.22)", "--m-accent": "#BF00FF" } as React.CSSProperties}>For Builders</div>
+        <HubSpokeBg centerX={0.75} centerY={0.55} scale={0.38} overlay={false} color={{ r: 176, g: 77, b: 255 }} />
+        <div className="mkt-hero-eyebrow" style={{ color: PURPLE_T, background: "rgba(176,77,255,0.1)", borderColor: "rgba(176,77,255,0.22)" } as React.CSSProperties}>For Builders and Developers</div>
         <h1 className="mkt-hero-headline">
-          The scheduling data<br />you need to build on<br />
-          <span>has been locked. Until now.</span>
+          The scheduling data you need to build on, <span style={{ color: PURPLE, textShadow: `0 0 40px ${PURPLE_G}` }}>unlocked.</span>
         </h1>
-        <p className="mkt-hero-sub">
-          One authenticated API. Real-time access to{" "}
-          <strong>standardized scheduling data</strong> from every connected
-          platform. Apply once. Build anything.
-        </p>
+        <p className="mkt-hero-sub">One authenticated integration. Apply for platform approval and build whatever comes next.</p>
         <div className="mkt-hero-actions">
-          <Link href="/getstarted" className="mkt-btn-primary">
-            Apply for Access →
-          </Link>
-          <a href="#usecases" className="mkt-btn-secondary">
-            See What You Can Build ↓
-          </a>
+          <Link href="/getstarted" className="mkt-btn-primary">Apply for Access →</Link>
+          <a href="#usecases" className="mkt-btn-secondary">See What You Can Build ↓</a>
         </div>
       </section>
 
-      {/* CONSTRAINT BAND */}
-      <div className="mkt-band">
-        <div className="mkt-band-label">The constraint today</div>
-        <div className="mkt-band-divider" />
-        <div className="mkt-band-text">
-          Every platform is a silo. No unified API. No real-time data. You&apos;ve been
-          building on stale public feeds. That ends here.
-        </div>
-      </div>
-
-      {/* BEFORE AFTER */}
-      <section className="mkt-section" style={{ background: "var(--m-black)" }}>
-        <div className="mkt-section-eyebrow">Building on scheduling data</div>
-        <h2 className="mkt-section-h1" style={{ color: "var(--m-white)" }}>
-          Without Orgo Sync<br />
-          <span>vs. with Orgo Sync.</span>
-        </h2>
-        <p className="mkt-section-h2" style={{ color: "rgba(255,255,255,0.5)", marginBottom: 56 }}>
-          Five stale fields and a public URL is not a data layer. Orgo Sync fills the gap.
-        </p>
-        <div className="mkt-ba-grid">
-          <div className="mkt-card bad" style={{ borderRadius: 4 }}>
-            <div className="mkt-card-label">Without Orgo Sync</div>
-            <div className="mkt-card-title">
-              Five stale fields. No standard. No real time. No access layer.
+      {/* THE CEILING */}
+      <section style={{ ...wrap, background: BG }}>
+        <div style={inner}>
+          <div style={eyebrow}>The Ceiling You Have Been Hitting</div>
+          <h2 style={h2}>Scheduling data exists.<br /><span style={{ color: PURPLE }}>Getting to it is the problem.</span></h2>
+          <p style={{ ...body, maxWidth: 700, marginBottom: 48 }}>
+            Sometimes there is an API. More often there is not. Either way, getting structured, real-time, authenticated scheduling data across multiple platforms has always required more effort than it should. Builders have made it work. Orgo Sync makes it effortless.
+          </p>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 28 }}>
+            {/* WITHOUT */}
+            <div style={{ borderRadius: 16, padding: 36, background: "rgba(255,255,255,0.025)", border: "1px solid rgba(255,255,255,0.08)" }}>
+              <div style={{ ...MONO, fontSize: 11, letterSpacing: "0.16em", textTransform: "uppercase", color: W40, marginBottom: 12 }}>What you are dealing with today</div>
+              <div style={{ fontSize: 22, fontWeight: 700, color: W75, marginBottom: 8 }}>Fragmented, inconsistent, and brittle</div>
+              <div style={{ fontSize: 15, fontStyle: "italic", color: W75, marginBottom: 24, paddingBottom: 20, borderBottom: "1px solid rgba(255,255,255,0.07)" }}>However you are getting the data, it is harder than it needs to be.</div>
+              <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
+                {[
+                  "Every platform is a separate negotiation, a separate integration, a separate maintenance burden.",
+                  "Data structures differ across platforms. Normalizing them falls on you every time.",
+                  "Stale data. Changes take hours to propagate. Your users see the wrong information.",
+                  "No standardized access layer. No audit trail. No legitimate foundation that scales with your product.",
+                  "AI needs clean real-time data to reason well. What is available today is neither.",
+                ].map((item, i) => (
+                  <div key={i} style={{ display: "flex", alignItems: "flex-start", gap: 12, fontSize: 16, lineHeight: 1.6, color: W75 }}>
+                    <span style={{ flexShrink: 0, width: 20, height: 20, borderRadius: "50%", background: "rgba(255,255,255,0.06)", color: W40, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 10, fontWeight: 700, marginTop: 2 }}>✕</span>
+                    {item}
+                  </div>
+                ))}
+              </div>
             </div>
-            <div className="mkt-ba-item">
-              <div className="mkt-dot">✕</div>
-              <span style={{ color: "rgba(255,255,255,0.5)" }}>
-                Public ICS feeds. Title, time, location. That&apos;s all you have.
-              </span>
-            </div>
-            <div className="mkt-ba-item">
-              <div className="mkt-dot">✕</div>
-              <span style={{ color: "rgba(255,255,255,0.5)" }}>
-                Stale. Changes take hours to reach your product.
-              </span>
-            </div>
-            <div className="mkt-ba-item">
-              <div className="mkt-dot">✕</div>
-              <span style={{ color: "rgba(255,255,255,0.5)" }}>
-                Every platform is a custom bilateral negotiation. You rebuild every time.
-              </span>
-            </div>
-            <div className="mkt-ba-item">
-              <div className="mkt-dot">✕</div>
-              <span style={{ color: "rgba(255,255,255,0.5)" }}>
-                No permissioned access. No audit trail. No legitimate foundation.
-              </span>
+            {/* WITH */}
+            <div style={{ borderRadius: 16, padding: 36, background: "rgba(176,77,255,0.05)", border: "1px solid rgba(176,77,255,0.28)" }}>
+              <div style={{ ...MONO, fontSize: 11, letterSpacing: "0.16em", textTransform: "uppercase", color: PURPLE_T, marginBottom: 12 }}>With Orgo Sync</div>
+              <div style={{ fontSize: 22, fontWeight: 700, color: "#fff", marginBottom: 8 }}>Rich, structured, real-time data</div>
+              <div style={{ fontSize: 15, fontStyle: "italic", color: PURPLE_T, marginBottom: 24, paddingBottom: 20, borderBottom: "1px solid rgba(255,255,255,0.07)", opacity: 0.9 }}>Authenticated. Real-time. One standard. Any approved platform.</div>
+              <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
+                {[
+                  "One integration. Build once. Access every platform that approves you without rebuilding.",
+                  "Full structured payloads normalized to a single standard. The richness platforms actually hold.",
+                  "Real-time webhooks. Changes reach your product in seconds, not hours.",
+                  "Authenticated. Permissioned. Audited. A legitimate data foundation you can build a real business on.",
+                  "Clean, standardized, real-time data your AI can reason over accurately.",
+                ].map((item, i) => (
+                  <div key={i} style={{ display: "flex", alignItems: "flex-start", gap: 12, fontSize: 16, lineHeight: 1.6, color: W90 }}>
+                    <span style={{ flexShrink: 0, width: 20, height: 20, borderRadius: "50%", background: "rgba(176,77,255,0.15)", color: PURPLE, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 10, fontWeight: 700, marginTop: 2 }}>✓</span>
+                    {item}
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
-          <div className="mkt-vs-col">VS</div>
-          <div className="mkt-card good" style={{ borderRadius: 4 }}>
-            <div className="mkt-card-label">With Orgo Sync</div>
-            <div className="mkt-card-title">
-              Rich structured data. Real time. One API. Any approved platform.
-            </div>
-            <div className="mkt-ba-item">
-              <div className="mkt-dot">✓</div>
-              <span style={{ color: "rgba(255,255,255,0.75)" }}>
-                Authenticated real-time access. One standard format, any approved platform.
-              </span>
-            </div>
-            <div className="mkt-ba-item">
-              <div className="mkt-dot">✓</div>
-              <span style={{ color: "rgba(255,255,255,0.75)" }}>
-                Real-time webhooks. Changes reach your product in seconds.
-              </span>
-            </div>
-            <div className="mkt-ba-item">
-              <div className="mkt-dot">✓</div>
-              <span style={{ color: "rgba(255,255,255,0.75)" }}>
-                One API. Build once. No custom integrations ever again.
-              </span>
-            </div>
-            <div className="mkt-ba-item">
-              <div className="mkt-dot">✓</div>
-              <span style={{ color: "rgba(255,255,255,0.75)" }}>
-                Authenticated. Permissioned. Audited.
-              </span>
-            </div>
+        </div>
+      </section>
+
+      {/* HOW YOU GET ACCESS */}
+      <section style={{ ...wrap, background: BG2, borderTop: `1px solid ${BORDER_L}`, borderBottom: `1px solid ${BORDER_L}` }} id="how">
+        <div style={inner}>
+          <div style={eyebrow}>How You Get Access</div>
+          <h2 style={h2}>Four steps.<br /><span style={{ color: PURPLE }}>Minutes, not months.</span></h2>
+          <p style={{ ...body, maxWidth: 680, marginBottom: 48 }}>No bilateral negotiations. No custom integrations. Apply once and access every platform that approves you through a single authenticated API.</p>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 20 }}>
+            {[
+              { n: "01", t: "Apply via the developer portal",    d: "Tell us what you are building and which platforms you need data from. Takes minutes. No lengthy forms, no legal review to start." },
+              { n: "02", t: "Platforms approve your access",     d: "Each platform reviews and approves your request on their own terms. You get access to the data they authorize. Typically 24 to 48 hours." },
+              { n: "03", t: "One API. Every approved source.",   d: "One standardized integration. Build once. Access any platform you are approved for through the same authenticated endpoint." },
+              { n: "04", t: "Pay per usage as you grow",         d: "No upfront commitments. Your monthly plan includes a generous call bundle. Pay a small overage only when you grow beyond it." },
+            ].map((s) => (
+              <div key={s.n} style={{ background: BG, border: `1px solid ${BORDER}`, borderRadius: 16, padding: 28 }}>
+                <div style={{ ...MONO, fontSize: 12, color: ORANGE, letterSpacing: "0.1em", marginBottom: 14 }}>{s.n}</div>
+                <div style={{ fontSize: 18, fontWeight: 700, marginBottom: 10, color: "#fff" }}>{s.t}</div>
+                <div style={{ fontSize: 16, color: W90, lineHeight: 1.7 }}>{s.d}</div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* USE CASES */}
-      <section className="mkt-section mkt-usecases-section" id="usecases">
-        <div className="mkt-section-eyebrow">What you can build</div>
-        <h2 className="mkt-section-h1">
-          Your product.<br />
-          <span>Your UX. Our infrastructure.</span>
-        </h2>
-        <p className="mkt-section-h2" style={{ color: "var(--m-gray)" }}>
-          Orgo Sync provides the data layer. What you build on top is up to you.
-        </p>
-        <div className="mkt-usecases-grid">
-          <div className="mkt-usecase-card">
-            <div className="mkt-usecase-tag">Fan and game day experiences</div>
-            <div className="mkt-usecase-title">
-              Live schedule data. Real-time fan engagement.
-            </div>
-            <div className="mkt-usecase-body">
-              Pull game schedules and venue data into your product. Trigger live
-              updates tied to real events as they happen.
-            </div>
-            <div className="mkt-usecase-why">
-              <span>Why Orgo Sync:</span> Real-time authenticated data. Not a stale ICS feed.
-            </div>
-          </div>
-          <div className="mkt-usecase-card">
-            <div className="mkt-usecase-tag">Unified participant profiles</div>
-            <div className="mkt-usecase-title">
-              A complete scheduling view across every platform a participant
-              touches.
-            </div>
-            <div className="mkt-usecase-body">
-              Connect approved platforms and assemble a unified schedule for any
-              participant. Academic, club, tournament — all in one API.
-            </div>
-            <div className="mkt-usecase-why">
-              <span>Why Orgo Sync:</span> The only infrastructure that sees across platforms.
-            </div>
-          </div>
-          <div className="mkt-usecase-card">
-            <div className="mkt-usecase-tag">AI scheduling intelligence</div>
-            <div className="mkt-usecase-title">
-              Real structured data for your AI to reason over accurately.
-            </div>
-            <div className="mkt-usecase-body">
-              Power your AI with authenticated real-time data from the platforms
-              users actually live in. Conflict detection. Pattern recognition. All possible now.
-            </div>
-            <div className="mkt-usecase-why">
-              <span>Why Orgo Sync:</span> AI doesn&apos;t hallucinate when it has reliable real-time data.
-            </div>
+      <section style={{ ...wrap, background: BG }} id="usecases">
+        <div style={inner}>
+          <div style={eyebrow}>What You Can Build</div>
+          <h2 style={h2}>Your product. Your UX.<br /><span style={{ color: PURPLE }}>Our infrastructure.</span></h2>
+          <p style={{ ...body, maxWidth: 680, marginBottom: 48 }}>Orgo Sync provides the data layer. What you build on top is entirely up to you.</p>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 20 }}>
+            {[
+              { t: "Fan and game day experiences",    d: "Pull live schedule data and venue information into your product. Trigger real-time updates tied to actual events as they happen. Build the fan experience platforms have never been able to deliver themselves.",                                                    why: "Real-time authenticated data. Not a stale feed." },
+              { t: "Unified scheduling views",        d: "Connect approved platforms and assemble a complete scheduling picture across every platform a participant or family touches. Academic, club, tournament — all through one authenticated API.",                                                              why: "The only infrastructure that sees across platforms." },
+              { t: "AI scheduling intelligence",      d: "Power your AI with authenticated real-time data from the platforms users actually live in. Conflict detection, pattern recognition, predictive scheduling — all possible when your model has reliable data to work from.",                                   why: "AI does not hallucinate when it has real-time structured data." },
+              { t: "Recruiting and analytics tools",  d: "Access program structures, team rosters, and event histories from connected platforms. Build the recruiting intelligence layer that scouts, coaches, and athletes have been waiting for.",                                                                  why: "Structured data that goes far beyond a calendar event." },
+              { t: "Notification and logistics apps", d: "Build the apps that turn a calendar event into a full logistics workflow. Real-time updates, carpool coordination, travel planning — all triggered by authenticated scheduling data the moment anything changes.",                                           why: "Real-time webhooks. Changes in seconds, not hours." },
+              { t: "Anything you can imagine",        d: "Scheduling data touches every part of how people spend their time. The platforms are connected. The data is structured. The infrastructure is live. What you build on top is only limited by your imagination.",                                             why: "The data layer that was always supposed to exist." },
+            ].map((c) => (
+              <div key={c.t} style={{ borderRadius: 16, padding: 28, background: "rgba(176,77,255,0.04)", border: "1px solid rgba(176,77,255,0.18)", display: "flex", flexDirection: "column", gap: 10 }}>
+                <div style={{ fontSize: 20, fontWeight: 700, color: "#fff" }}>{c.t}</div>
+                <div style={{ fontSize: 16, color: W90, lineHeight: 1.7 }}>{c.d}</div>
+                <div style={{ ...MONO, fontSize: 13, color: PURPLE_T, marginTop: 4 }}>{c.why}</div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* HOW ACCESS WORKS */}
-      <section className="mkt-section" id="how" style={{ background: "var(--m-white)" }}>
-        <div className="mkt-section-eyebrow">How you get access</div>
-        <h2 className="mkt-section-h1">
-          Four steps.<br />
-          <span>Minutes not months.</span>
-        </h2>
-        <p className="mkt-section-h2" style={{ color: "var(--m-gray)" }}>
-          No bilateral negotiations. No custom integrations. Apply once and
-          access every platform that approves you.
-        </p>
-        <div className="mkt-access-grid">
-          <div className="mkt-access-card">
-            <div className="mkt-access-num">01</div>
-            <div className="mkt-access-title">
-              Apply via the developer portal
-            </div>
-            <div className="mkt-access-body">
-              Tell us what you&apos;re building. <strong>Takes minutes.</strong>
-            </div>
-          </div>
-          <div className="mkt-access-card">
-            <div className="mkt-access-num">02</div>
-            <div className="mkt-access-title">
-              Platform approves your access
-            </div>
-            <div className="mkt-access-body">
-              Each platform approves your request.{" "}
-              <strong>You get access to what they authorize.</strong>
-            </div>
-          </div>
-          <div className="mkt-access-card">
-            <div className="mkt-access-num">03</div>
-            <div className="mkt-access-title">
-              One API. Every approved source.
-            </div>
-            <div className="mkt-access-body">
-              One standardized API.{" "}
-              <strong>Build once. Access any platform you&apos;re approved for.</strong>
-            </div>
-          </div>
-          <div className="mkt-access-card">
-            <div className="mkt-access-num">04</div>
-            <div className="mkt-access-title">
-              Pay per API call. Scale freely.
-            </div>
-            <div className="mkt-access-body">
-              No flat fees. No minimums. <strong>Pay per call. Start free.</strong>
-            </div>
+      {/* AI ERA */}
+      <section style={{ ...wrap, background: "rgba(176,77,255,0.02)", borderTop: "1px solid rgba(176,77,255,0.1)", borderBottom: "1px solid rgba(176,77,255,0.1)" }}>
+        <div style={inner}>
+          <div style={eyebrow}>Built for the AI Era</div>
+          <h2 style={h2}>We are not building AI.<br /><span style={{ color: PURPLE }}>We are building what scheduling AI runs on.</span></h2>
+          <p style={{ ...body, maxWidth: 680, marginBottom: 48 }}>Every AI scheduling assistant hits the same wall — fragmented, stale, unstructured data. Orgo Sync removes it.</p>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 20 }}>
+            {[
+              { t: "Agentic AI needs real-time authenticated data", d: "Scheduling agents need real-time authenticated access across every platform a user touches. Orgo Sync makes that possible without bilateral integrations for every platform in your users' lives." },
+              { t: "Clean structured data AI can trust",            d: "AI does not hallucinate when it has reliable data. We produce clean, standardized, real-time scheduling data your models can reason over accurately." },
+              { t: "Own the integration before it is table stakes", d: "Build on the scheduling data infrastructure early. The builders who get access first get the deepest platform relationships and the strongest position as the ecosystem matures." },
+            ].map((c) => (
+              <div key={c.t} style={{ borderRadius: 14, padding: 32, background: BG2, border: `1px solid ${BORDER}` }}>
+                <div style={{ fontSize: 20, fontWeight: 700, color: "#fff", marginBottom: 10 }}>{c.t}</div>
+                <div style={{ fontSize: 16, color: W90, lineHeight: 1.7 }}>{c.d}</div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* PRICING */}
-      <section className="mkt-section mkt-pricing-section">
-        <div className="mkt-section-eyebrow">Pricing</div>
-        <h2 className="mkt-section-h1" style={{ color: "var(--m-white)" }}>
-          Pay per API call.<br />
-          <span>No minimums. No surprises.</span>
-        </h2>
-        <p className="mkt-section-h2" style={{ color: "rgba(255,255,255,0.5)", marginBottom: 56 }}>
-          500 free calls to start. Pay only for what you use.
-        </p>
-        <div className="mkt-pricing-grid">
-          <div className="mkt-pricing-card">
-            <div className="mkt-pricing-name">Sandbox</div>
-            <div className="mkt-pricing-price">Free</div>
-            <div className="mkt-pricing-unit">first 500 API calls</div>
-            <div className="mkt-pricing-volume">Build and test</div>
-            <div className="mkt-pricing-desc">
-              Full API access. No credit card.
-            </div>
+      <section style={{ ...wrap, background: BG2, borderTop: `1px solid ${BORDER_L}`, borderBottom: `1px solid ${BORDER_L}` }} id="pricing">
+        <div style={inner}>
+          <div style={eyebrow}>Pricing</div>
+          <h2 style={h2}>Simple monthly pricing.<br /><span style={{ color: PURPLE }}>Generous included calls. Low overage.</span></h2>
+          <p style={{ ...body, maxWidth: 680, marginBottom: 48 }}>Pick the tier that matches your number of platform connections. Each plan includes a generous monthly call bundle. Pay a small per-call overage only when you exceed it.</p>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 16 }}>
+            {[
+              { tier: "Starter",    price: "$99",   unit: "/mo", volume: "1–3 platform connections",   desc: "500K calls included per month. $0.002 per call above that. Build and prove your product before you scale.",                featured: true },
+              { tier: "Growth",     price: "$179",  unit: "/mo", volume: "4–6 platform connections",   desc: "2.5M calls included per month. $0.0015 per call above that. For growing products expanding their platform reach.",         featured: false },
+              { tier: "Scale",      price: "$299",  unit: "/mo", volume: "7+ platform connections",    desc: "10M calls included per month. $0.001 per call above that. For established products at meaningful volume.",                 featured: false },
+              { tier: "Enterprise", price: "Custom", unit: "",   volume: "Unlimited connections",      desc: "Custom call bundles, dedicated support, SLA guarantees, and negotiated overage rates. Talk to us.",                       featured: false },
+            ].map((c) => (
+              <div key={c.tier} style={{ borderRadius: 16, padding: 28, display: "flex", flexDirection: "column", gap: 12, background: c.featured ? "rgba(176,77,255,0.06)" : BG, border: c.featured ? "1.5px solid rgba(176,77,255,0.35)" : `1px solid ${BORDER}` }}>
+                <div style={{ ...MONO, fontSize: 11, letterSpacing: "0.14em", textTransform: "uppercase", color: c.featured ? PURPLE_T : W40 }}>{c.tier}</div>
+                <div style={{ fontSize: 30, fontWeight: 700, color: "#fff" }}>{c.price}<span style={{ fontSize: 15, fontWeight: 400, color: W40 }}>{c.unit}</span></div>
+                <div style={{ fontSize: 15, color: W75 }}>{c.volume}</div>
+                <div style={{ height: 1, background: "rgba(255,255,255,0.07)" }} />
+                <div style={{ fontSize: 16, color: W90, lineHeight: 1.65 }}>{c.desc}</div>
+              </div>
+            ))}
           </div>
-          <div className="mkt-pricing-card highlight">
-            <div className="mkt-pricing-name">Growth</div>
-            <div className="mkt-pricing-price">$0.075</div>
-            <div className="mkt-pricing-unit">per API call</div>
-            <div className="mkt-pricing-volume">Up to 10K calls/mo</div>
-            <div className="mkt-pricing-desc">
-              Early production.
-            </div>
-          </div>
-          <div className="mkt-pricing-card">
-            <div className="mkt-pricing-name">Scale</div>
-            <div className="mkt-pricing-price">$0.065</div>
-            <div className="mkt-pricing-unit">per API call</div>
-            <div className="mkt-pricing-volume">10K to 100K calls/mo</div>
-            <div className="mkt-pricing-desc">
-              Established products with growing volume.
-            </div>
-          </div>
-          <div className="mkt-pricing-card">
-            <div className="mkt-pricing-name">Enterprise</div>
-            <div className="mkt-pricing-price">$0.055</div>
-            <div className="mkt-pricing-unit">per API call</div>
-            <div className="mkt-pricing-volume">100K+ calls/mo</div>
-            <div className="mkt-pricing-desc">
-              High-volume. Custom SLA.
-            </div>
-          </div>
-        </div>
-        <div className="mkt-pricing-note">
-          No setup fees. No monthly minimums. First 500 calls always free.
+          <p style={{ ...MONO, fontSize: 12, color: W40, letterSpacing: "0.06em", marginTop: 20, textAlign: "center" }}>pricing confirmed on your access call · no setup fees · no minimums</p>
         </div>
       </section>
 
-      {/* AI SECTION */}
-      <section className="mkt-section" style={{ background: "var(--m-gray-light)" }}>
-        <div className="mkt-section-eyebrow">Built for the AI era</div>
-        <h2 className="mkt-section-h1">
-          We are not building AI.<br />
-          <span>We are building what scheduling AI runs on.</span>
-        </h2>
-        <p className="mkt-section-h2" style={{ color: "var(--m-gray)" }}>
-          Every AI scheduling assistant hits the same wall — fragmented, stale
-          data. Orgo Sync removes it.
-        </p>
-        <div className="mkt-ai-grid">
-          <div className="mkt-ai-card">
-            <div className="mkt-ai-icon">⚡</div>
-            <div className="mkt-ai-title">
-              Agentic AI needs real-time authenticated data
-            </div>
-            <div className="mkt-ai-body">
-              Scheduling agents need{" "}
-              <strong>real-time authenticated access across every platform a user touches.</strong>{" "}
-              Orgo Sync makes that possible without bilateral integrations.
-            </div>
-          </div>
-          <div className="mkt-ai-card">
-            <div className="mkt-ai-icon">🧠</div>
-            <div className="mkt-ai-title">
-              Clean structured data AI can trust
-            </div>
-            <div className="mkt-ai-body">
-              AI doesn&apos;t hallucinate when it has reliable data. We produce{" "}
-              <strong>clean standardized real-time scheduling data</strong> your
-              models can reason over accurately.
-            </div>
-          </div>
-          <div className="mkt-ai-card">
-            <div className="mkt-ai-icon">🔗</div>
-            <div className="mkt-ai-title">
-              The standard connection point for scheduling AI
-            </div>
-            <div className="mkt-ai-body">
-              Build on the scheduling data standard early.{" "}
-              <strong>Own the integration before it&apos;s table stakes.</strong>
-            </div>
-          </div>
+      {/* FINAL CTA */}
+      <section style={{ ...wrap, background: "rgba(176,77,255,0.03)", borderTop: "1px solid rgba(176,77,255,0.12)", textAlign: "center" }} id="getstarted">
+        <div style={{ maxWidth: 680, margin: "0 auto" }}>
+          <h2 style={{ ...h2, marginBottom: 18 }}>Ready to build on <span style={{ color: PURPLE }}>real scheduling data?</span></h2>
+          <p style={{ ...body, marginBottom: 40, maxWidth: 520, marginLeft: "auto", marginRight: "auto" }}>
+            Developer portal is live. Apply in minutes. Book a call and we will walk you through the marketplace, available platforms, and get your access set up.
+          </p>
+          <Link href="/getstarted" style={{ display: "inline-flex", alignItems: "center", gap: 8, padding: "16px 36px", borderRadius: 10, fontSize: 16, fontWeight: 600, textDecoration: "none", background: "rgba(176,77,255,0.12)", color: PURPLE, border: "1.5px solid rgba(176,77,255,0.4)" }}>
+            Apply for Access →
+          </Link>
         </div>
-      </section>
-
-      {/* UNLOCK */}
-      <section className="mkt-section" style={{ background: "var(--m-black)" }}>
-        <div className="mkt-section-eyebrow">The bigger picture</div>
-        <h2 className="mkt-section-h1" style={{ color: "var(--m-white)" }}>
-          Ready to unlock<br />
-          <span>what you can actually build?</span>
-        </h2>
-        <p className="mkt-section-h2" style={{ color: "rgba(255,255,255,0.5)", marginBottom: 56 }}>
-          The scheduling data layer has been missing for 30 years. The window is
-          open right now.
-        </p>
-        <div className="mkt-unlock-grid">
-          <div className="mkt-unlock-card">
-            <div className="mkt-unlock-title">
-              <span>Build once.</span> Access everywhere.
-            </div>
-            <div className="mkt-unlock-body">
-              One API. As platforms join, your product gains access
-              automatically — no new integrations.
-            </div>
-          </div>
-          <div className="mkt-unlock-card">
-            <div className="mkt-unlock-title">
-              <span>The network</span> grows around you.
-            </div>
-            <div className="mkt-unlock-body">
-              Every platform that connects expands your product&apos;s reach.
-              Build once. The network compounds.
-            </div>
-          </div>
-          <div className="mkt-unlock-card">
-            <div className="mkt-unlock-title">
-              <span>First movers</span> define the category.
-            </div>
-            <div className="mkt-unlock-body">
-              The standard is being set now. Early builders get the deepest
-              access and strongest position. The window is open.
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="mkt-cta-orange">
-        <h2 className="mkt-cta-h1">
-          Ready to build on<br />real scheduling data?
-        </h2>
-        <p className="mkt-cta-h2">
-          Developer portal is live. First 500 calls free. Apply in minutes.
-        </p>
-        <Link href="/getstarted" className="mkt-btn-white">
-          Apply for Access →
-        </Link>
       </section>
     </>
   );
