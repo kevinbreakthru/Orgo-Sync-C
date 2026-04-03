@@ -26,7 +26,8 @@ export function NetworkNodesBg() {
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
-    let W = 0, H = 0;
+    let W = 0,
+      H = 0;
     let nodes: Node[] = [];
     let animId: number;
 
@@ -55,20 +56,41 @@ export function NetworkNodesBg() {
     function drawBackground() {
       ctx!.clearRect(0, 0, W, H);
 
-      const bg = ctx!.createRadialGradient(W * 0.5, H * 0.45, 0, W * 0.5, H * 0.45, Math.max(W, H) * 0.8);
+      const bg = ctx!.createRadialGradient(
+        W * 0.5,
+        H * 0.45,
+        0,
+        W * 0.5,
+        H * 0.45,
+        Math.max(W, H) * 0.8,
+      );
       bg.addColorStop(0, "#120800");
       bg.addColorStop(0.5, "#0a0500");
       bg.addColorStop(1, "#080808");
       ctx!.fillStyle = bg;
       ctx!.fillRect(0, 0, W, H);
 
-      const g1 = ctx!.createRadialGradient(W * 0.2, H * 0.3, 0, W * 0.2, H * 0.3, W * 0.4);
+      const g1 = ctx!.createRadialGradient(
+        W * 0.2,
+        H * 0.3,
+        0,
+        W * 0.2,
+        H * 0.3,
+        W * 0.4,
+      );
       g1.addColorStop(0, "rgba(255,62,0,0.07)");
       g1.addColorStop(1, "transparent");
       ctx!.fillStyle = g1;
       ctx!.fillRect(0, 0, W, H);
 
-      const g2 = ctx!.createRadialGradient(W * 0.8, H * 0.7, 0, W * 0.8, H * 0.7, W * 0.45);
+      const g2 = ctx!.createRadialGradient(
+        W * 0.8,
+        H * 0.7,
+        0,
+        W * 0.8,
+        H * 0.7,
+        W * 0.45,
+      );
       g2.addColorStop(0, "rgba(255,120,0,0.05)");
       g2.addColorStop(1, "transparent");
       ctx!.fillStyle = g2;
@@ -88,7 +110,12 @@ export function NetworkNodesBg() {
           const d = Math.sqrt(dx * dx + dy * dy);
           if (d < effectiveDist) {
             const t = 1 - d / effectiveDist;
-            const grad = ctx!.createLinearGradient(nodes[i].x, nodes[i].y, nodes[j].x, nodes[j].y);
+            const grad = ctx!.createLinearGradient(
+              nodes[i].x,
+              nodes[i].y,
+              nodes[j].x,
+              nodes[j].y,
+            );
             grad.addColorStop(0, `rgba(${r},${g},${b},${t * 1.0})`);
             grad.addColorStop(0.5, `rgba(255,120,30,${t * 0.85})`);
             grad.addColorStop(1, `rgba(${r},${g},${b},${t * 1.0})`);
@@ -106,7 +133,14 @@ export function NetworkNodesBg() {
         n.pulse += n.pulseSpeed;
         const pf = 1 + Math.sin(n.pulse) * 0.3;
 
-        const glow = ctx!.createRadialGradient(n.x, n.y, 0, n.x, n.y, n.r * 10 * pf);
+        const glow = ctx!.createRadialGradient(
+          n.x,
+          n.y,
+          0,
+          n.x,
+          n.y,
+          n.r * 10 * pf,
+        );
         glow.addColorStop(0, `rgba(${r},${g},${b},0.35)`);
         glow.addColorStop(0.4, `rgba(255,100,0,0.14)`);
         glow.addColorStop(1, "transparent");
@@ -115,7 +149,14 @@ export function NetworkNodesBg() {
         ctx!.fillStyle = glow;
         ctx!.fill();
 
-        const dot = ctx!.createRadialGradient(n.x - n.r * 0.3, n.y - n.r * 0.3, 0, n.x, n.y, n.r * pf);
+        const dot = ctx!.createRadialGradient(
+          n.x - n.r * 0.3,
+          n.y - n.r * 0.3,
+          0,
+          n.x,
+          n.y,
+          n.r * pf,
+        );
         dot.addColorStop(0, "#FFB080");
         dot.addColorStop(0.5, "#FF3E00");
         dot.addColorStop(1, "#AA2200");
@@ -157,7 +198,11 @@ export function NetworkNodesBg() {
         style={{ animation: "hubSpokeFadeIn 1.2s 0.3s ease both" }}
         aria-hidden
       />
-      <div className="absolute inset-0" style={{ background: "rgba(0,0,0,0.55)" }} aria-hidden />
+      <div
+        className="absolute inset-0"
+        style={{ background: "rgba(0,0,0,0.55)" }}
+        aria-hidden
+      />
     </>
   );
 }

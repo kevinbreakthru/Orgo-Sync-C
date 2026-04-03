@@ -11,7 +11,11 @@ interface Particle {
   inbound: boolean;
 }
 
-interface RGB { r: number; g: number; b: number; }
+interface RGB {
+  r: number;
+  g: number;
+  b: number;
+}
 
 export function HubSpokeBg({
   centerX = 0.5,
@@ -34,7 +38,9 @@ export function HubSpokeBg({
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
-    let W = 0, H = 0, animId: number;
+    let W = 0,
+      H = 0,
+      animId: number;
     let lastTime = performance.now();
     let tick = 0;
 
@@ -87,8 +93,18 @@ export function HubSpokeBg({
       const { r, g, b } = color;
 
       // Background — tinted toward the page color
-      const bg = ctx!.createRadialGradient(cx, cy, 0, cx, cy, Math.max(W, H) * 0.75);
-      bg.addColorStop(0, `rgba(${Math.round(r * 0.08)},${Math.round(g * 0.08)},${Math.round(b * 0.08)},1)`);
+      const bg = ctx!.createRadialGradient(
+        cx,
+        cy,
+        0,
+        cx,
+        cy,
+        Math.max(W, H) * 0.75,
+      );
+      bg.addColorStop(
+        0,
+        `rgba(${Math.round(r * 0.08)},${Math.round(g * 0.08)},${Math.round(b * 0.08)},1)`,
+      );
       bg.addColorStop(0.5, "#060608");
       bg.addColorStop(1, "#080808");
       ctx!.fillStyle = bg;
@@ -121,8 +137,12 @@ export function HubSpokeBg({
         // Trail
         for (let trail = 1; trail <= 5; trail++) {
           const tp = Math.max(0, t - trail * 0.018);
-          const tpx = p.inbound ? sp.x + (cx - sp.x) * tp : cx + (sp.x - cx) * tp;
-          const tpy = p.inbound ? sp.y + (cy - sp.y) * tp : cy + (sp.y - cy) * tp;
+          const tpx = p.inbound
+            ? sp.x + (cx - sp.x) * tp
+            : cx + (sp.x - cx) * tp;
+          const tpy = p.inbound
+            ? sp.y + (cy - sp.y) * tp
+            : cy + (sp.y - cy) * tp;
           ctx!.beginPath();
           ctx!.arc(tpx, tpy, 1.5, 0, Math.PI * 2);
           ctx!.fillStyle = `rgba(${r},${g},${b},${0.12 - trail * 0.02})`;
@@ -131,7 +151,10 @@ export function HubSpokeBg({
 
         // Particle glow
         const pglow = ctx!.createRadialGradient(px, py, 0, px, py, 7);
-        pglow.addColorStop(0, `rgba(${Math.min(255, r + 80)},${Math.min(255, g + 80)},${Math.min(255, b + 80)},0.9)`);
+        pglow.addColorStop(
+          0,
+          `rgba(${Math.min(255, r + 80)},${Math.min(255, g + 80)},${Math.min(255, b + 80)},0.9)`,
+        );
         pglow.addColorStop(0.4, `rgba(${r},${g},${b},0.4)`);
         pglow.addColorStop(1, "transparent");
         ctx!.beginPath();
@@ -151,7 +174,14 @@ export function HubSpokeBg({
         const sp = spokePos(i);
         const pf = 1 + Math.sin(tick + i * 0.9) * 0.25;
 
-        const ng = ctx!.createRadialGradient(sp.x, sp.y, 0, sp.x, sp.y, 20 * pf);
+        const ng = ctx!.createRadialGradient(
+          sp.x,
+          sp.y,
+          0,
+          sp.x,
+          sp.y,
+          20 * pf,
+        );
         ng.addColorStop(0, `rgba(${r},${g},${b},0.25)`);
         ng.addColorStop(1, "transparent");
         ctx!.beginPath();
@@ -159,10 +189,23 @@ export function HubSpokeBg({
         ctx!.fillStyle = ng;
         ctx!.fill();
 
-        const nd = ctx!.createRadialGradient(sp.x - 1.5, sp.y - 1.5, 0, sp.x, sp.y, 5 * pf);
-        nd.addColorStop(0, `rgba(${Math.min(255, r + 100)},${Math.min(255, g + 100)},${Math.min(255, b + 100)},1)`);
+        const nd = ctx!.createRadialGradient(
+          sp.x - 1.5,
+          sp.y - 1.5,
+          0,
+          sp.x,
+          sp.y,
+          5 * pf,
+        );
+        nd.addColorStop(
+          0,
+          `rgba(${Math.min(255, r + 100)},${Math.min(255, g + 100)},${Math.min(255, b + 100)},1)`,
+        );
         nd.addColorStop(0.5, `rgba(${r},${g},${b},1)`);
-        nd.addColorStop(1, `rgba(${Math.round(r * 0.6)},${Math.round(g * 0.6)},${Math.round(b * 0.6)},1)`);
+        nd.addColorStop(
+          1,
+          `rgba(${Math.round(r * 0.6)},${Math.round(g * 0.6)},${Math.round(b * 0.6)},1)`,
+        );
         ctx!.beginPath();
         ctx!.arc(sp.x, sp.y, 5 * pf, 0, Math.PI * 2);
         ctx!.fillStyle = nd;
@@ -189,10 +232,23 @@ export function HubSpokeBg({
       ctx!.stroke();
 
       // Hub core
-      const hcore = ctx!.createRadialGradient(cx - 4, cy - 4, 0, cx, cy, 14 * hpf);
-      hcore.addColorStop(0, `rgba(${Math.min(255, r + 100)},${Math.min(255, g + 100)},${Math.min(255, b + 100)},1)`);
+      const hcore = ctx!.createRadialGradient(
+        cx - 4,
+        cy - 4,
+        0,
+        cx,
+        cy,
+        14 * hpf,
+      );
+      hcore.addColorStop(
+        0,
+        `rgba(${Math.min(255, r + 100)},${Math.min(255, g + 100)},${Math.min(255, b + 100)},1)`,
+      );
       hcore.addColorStop(0.5, `rgba(${r},${g},${b},1)`);
-      hcore.addColorStop(1, `rgba(${Math.round(r * 0.5)},${Math.round(g * 0.5)},${Math.round(b * 0.5)},1)`);
+      hcore.addColorStop(
+        1,
+        `rgba(${Math.round(r * 0.5)},${Math.round(g * 0.5)},${Math.round(b * 0.5)},1)`,
+      );
       ctx!.beginPath();
       ctx!.arc(cx, cy, 14 * hpf, 0, Math.PI * 2);
       ctx!.fillStyle = hcore;
@@ -222,8 +278,18 @@ export function HubSpokeBg({
         style={{ animation: "hubSpokeFadeIn 1.2s 0.3s ease both" }}
         aria-hidden
       />
-      {overlay && <div className="absolute inset-0 hub-spoke-overlay-desktop" style={{ background: "rgba(0,0,0,0.52)" }} aria-hidden />}
-      <div className="absolute inset-0 hub-spoke-overlay-mobile" style={{ background: "rgba(0,0,0,0.6)" }} aria-hidden />
+      {overlay && (
+        <div
+          className="absolute inset-0 hub-spoke-overlay-desktop"
+          style={{ background: "rgba(0,0,0,0.52)" }}
+          aria-hidden
+        />
+      )}
+      <div
+        className="absolute inset-0 hub-spoke-overlay-mobile"
+        style={{ background: "rgba(0,0,0,0.6)" }}
+        aria-hidden
+      />
     </>
   );
 }

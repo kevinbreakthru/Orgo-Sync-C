@@ -12,7 +12,7 @@ export function MarketingAnimations() {
 
     // Grid / flex children get staggered delays
     const gridParents = document.querySelectorAll(
-      ".mkt-g2, .mkt-g3, .mkt-g4, .mkt-split"
+      ".mkt-g2, .mkt-g3, .mkt-g4, .mkt-split",
     );
     gridParents.forEach((parent) => {
       Array.from(parent.children).forEach((child, i) => {
@@ -30,14 +30,16 @@ export function MarketingAnimations() {
           }
         });
       },
-      { threshold: 0.08 }
+      { threshold: 0.08 },
     );
 
     // Double rAF: let the browser paint the hidden (opacity:0) state
     // before we start observing, so in-viewport elements animate properly.
     requestAnimationFrame(() => {
       requestAnimationFrame(() => {
-        document.querySelectorAll(".mkt-reveal").forEach((el) => observer.observe(el));
+        document
+          .querySelectorAll(".mkt-reveal")
+          .forEach((el) => observer.observe(el));
       });
     });
 

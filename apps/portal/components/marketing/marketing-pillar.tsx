@@ -9,7 +9,10 @@ interface MarketingPillarProps {
   className?: string;
 }
 
-export function MarketingPillar({ opacity = 0.5, className = "" }: MarketingPillarProps) {
+export function MarketingPillar({
+  opacity = 0.5,
+  className = "",
+}: MarketingPillarProps) {
   return (
     <div
       className={`absolute inset-0 pointer-events-none overflow-hidden ${className}`}
@@ -28,7 +31,10 @@ export function MarketingPillar({ opacity = 0.5, className = "" }: MarketingPill
         className={`absolute inset-0`}
         mixBlendMode="screen"
       />
-      <div className="absolute inset-0" style={{ opacity: 1 - opacity, background: "var(--m-black)" }} />
+      <div
+        className="absolute inset-0"
+        style={{ opacity: 1 - opacity, background: "var(--m-black)" }}
+      />
     </div>
   );
 }

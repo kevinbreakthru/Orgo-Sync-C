@@ -24,15 +24,24 @@ export function MarketingNav() {
       <nav className={`mkt-nav${scrolled ? " mkt-nav--scrolled" : ""}`}>
         <Link href="/" className="mkt-nav-logo">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/orgosynclogo.svg" alt="Orgo Sync" width={152} height={38} />
+          <img
+            src="/orgosynclogo.svg"
+            alt="Orgo Sync"
+            width={152}
+            height={38}
+          />
         </Link>
 
         {/* Desktop links */}
         <div className="mkt-nav-links mkt-nav-desktop">
           {NAV_LINKS.map((l) => (
-            <Link key={l.href} href={l.href}>{l.label}</Link>
+            <Link key={l.href} href={l.href}>
+              {l.label}
+            </Link>
           ))}
-          <Link href="/getstarted" className="mkt-nav-cta">Get Started →</Link>
+          <Link href="/getstarted" className="mkt-nav-cta">
+            Get Started →
+          </Link>
         </div>
 
         {/* Mobile hamburger */}
@@ -50,7 +59,10 @@ export function MarketingNav() {
       {/* Mobile overlay */}
       {open && (
         <div className="mkt-mobile-menu" onClick={() => setOpen(false)}>
-          <div className="mkt-mobile-menu-inner" onClick={(e) => e.stopPropagation()}>
+          <div
+            className="mkt-mobile-menu-inner"
+            onClick={(e) => e.stopPropagation()}
+          >
             {NAV_LINKS.map((l) => (
               <Link
                 key={l.href}
