@@ -72,11 +72,6 @@ export default function HomePage() {
         {/* Row 1: text + showcase */}
         <div className="mkt-hero-main">
           <div className="mkt-hero-main-text">
-            <div style={{ ...MONO, fontSize: 12, fontWeight: 500, letterSpacing: "0.2em", textTransform: "uppercase", color: ORANGE, marginBottom: 28, display: "flex", alignItems: "center", gap: 12 }}>
-              <span style={{ display: "block", height: 1, width: 32, background: ORANGE, opacity: 0.6 }} />
-              Orgo Sync
-              <span style={{ display: "block", height: 1, width: 32, background: ORANGE, opacity: 0.6 }} />
-            </div>
             <h1 className="mkt-hero-headline">
               Orgo Sync makes <span>scheduling data</span> intelligent, interoperable, and secure.
             </h1>
