@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { MarketingNav } from "../../components/marketing/marketing-nav";
 import { MarketingFooter } from "../../components/marketing/marketing-footer";
+import { MarketingAnimations } from "../../components/marketing/marketing-animations";
 import "./marketing.css";
 
 export const metadata: Metadata = {
@@ -16,6 +17,7 @@ export default function MarketingLayout({
 }) {
   return (
     <div className="mkt">
+      <MarketingAnimations />
       <MarketingNav />
       {children}
       <MarketingFooter />

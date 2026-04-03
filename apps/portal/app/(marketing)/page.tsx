@@ -39,13 +39,13 @@ function OppSection({ color, label, h2, body, points, cta, href, tint }: {
   points: { title: string; desc: string }[]; cta: string; href: string; tint: string;
 }) {
   return (
-    <section style={{ ...wrap, background: tint, borderTop: `1px solid ${color}1e`, borderBottom: `1px solid ${color}1e` }}>
-      <div style={{ maxWidth: 1200, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64, alignItems: "start" }}>
+    <section className="mkt-wrap" style={{ background: tint, borderTop: `1px solid ${color}1e`, borderBottom: `1px solid ${color}1e` }}>
+      <div className="mkt-split" style={{ maxWidth: 1200, margin: "0 auto", gap: 64, alignItems: "start" }}>
         <div>
           <div style={eyebrow(color)}>{label}</div>
           <h2 style={{ ...h2style }}>{h2}</h2>
           <p style={{ ...bodyText, marginBottom: 32 }}>{body}</p>
-          <Link href={href} style={{ display: "inline-flex", alignItems: "center", gap: 8, padding: "14px 26px", borderRadius: 10, fontSize: 16, fontWeight: 600, textDecoration: "none", background: `${color}1a`, color, border: `1px solid ${color}59` }}>{cta}</Link>
+          <Link href={href} className="mkt-btn-tint" style={{ display: "inline-flex", alignItems: "center", gap: 8, padding: "14px 26px", borderRadius: 12, fontSize: 16, fontWeight: 600, textDecoration: "none", background: `${color}1a`, color, border: `1px solid ${color}59` }}>{cta}</Link>
         </div>
         <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
           {points.map((p, i) => (
@@ -67,27 +67,33 @@ export default function HomePage() {
   return (
     <>
       {/* HERO */}
-      <section className="mkt-hero mkt-hero--pillar mkt-hero--split">
+      <section className="mkt-hero mkt-hero--pillar" style={{ display: "flex", flexDirection: "column", gap: 16 }}>
         <NetworkNodesBg />
-        <div className="mkt-hero-content">
-          <div style={{ ...MONO, fontSize: 12, fontWeight: 500, letterSpacing: "0.2em", textTransform: "uppercase", color: ORANGE, marginBottom: 28, display: "flex", alignItems: "center", gap: 12 }}>
-            <span style={{ display: "block", height: 1, width: 32, background: ORANGE, opacity: 0.6 }} />
-            Orgo Sync
-            <span style={{ display: "block", height: 1, width: 32, background: ORANGE, opacity: 0.6 }} />
+        {/* Row 1: text + showcase */}
+        <div className="mkt-hero-main">
+          <div className="mkt-hero-main-text">
+            <div style={{ ...MONO, fontSize: 12, fontWeight: 500, letterSpacing: "0.2em", textTransform: "uppercase", color: ORANGE, marginBottom: 28, display: "flex", alignItems: "center", gap: 12 }}>
+              <span style={{ display: "block", height: 1, width: 32, background: ORANGE, opacity: 0.6 }} />
+              Orgo Sync
+              <span style={{ display: "block", height: 1, width: 32, background: ORANGE, opacity: 0.6 }} />
+            </div>
+            <h1 className="mkt-hero-headline">
+              Orgo Sync makes <span>scheduling data</span> intelligent, interoperable, and secure.
+            </h1>
+            <p className="mkt-hero-sub">Connect your platforms. Own your data. Build on it.</p>
           </div>
-          <h1 className="mkt-hero-headline">
-            Orgo Sync makes <span>scheduling data</span> intelligent, interoperable, and secure.
-          </h1>
-          <p className="mkt-hero-sub">Connect your platforms. Own your data. Build on it.</p>
+          <div className="mkt-hero-main-showcase">
+            <HeroRoutingShowcase />
+          </div>
         </div>
-        <HeroRoutingShowcase />
-        <div style={{ gridColumn: "1 / -1", display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 28, position: "relative", zIndex: 1 }}>
+        {/* Row 2: CTAs */}
+        <div className="mkt-hero-cta-row">
           {[
             { href: "/operator", cls: "blue",   color: BLUE, text: BLUE_T, bg: "rgba(7,8,18,0.82)", bd: "rgba(77,159,255,0.35)", who: "Operators", action: "I want to unify my systems", detail: "One view across every platform you run." },
             { href: "/platform", cls: "green",  color: GREEN, text: GREEN_T, bg: "rgba(7,8,18,0.82)", bd: "rgba(0,255,127,0.35)", who: "Platforms", action: "I want to be interoperable", detail: "Your data is your most valuable asset." },
             { href: "/builder",  cls: "purple", color: PURPLE, text: PURPLE_T, bg: "rgba(7,8,18,0.82)", bd: "rgba(176,77,255,0.35)", who: "Builders", action: "I want scheduling data", detail: "One API. Any approved platform." },
           ].map((c) => (
-            <Link key={c.href} href={c.href} className={`mkt-audience-card mkt-audience-card--${c.cls}`} style={{ background: c.bg, border: `1.5px solid ${c.bd}` }}>
+            <Link key={c.href} href={c.href} className={`mkt-audience-card mkt-audience-card--${c.cls}`} style={{ flex: 1, background: c.bg, border: `1.5px solid ${c.bd}` }}>
               <div className="mkt-card-arrow" style={{ background: `${c.color}22`, border: `1.5px solid ${c.bd}`, color: c.color }}><ArrowRight size={16} /></div>
               <div style={{ ...MONO, fontSize: 12, fontWeight: 500, letterSpacing: "0.16em", textTransform: "uppercase", color: c.text }}>{c.who}</div>
               <div style={{ fontSize: 22, fontWeight: 700, color: c.color, lineHeight: 1.2, paddingRight: 40 }}>{c.action}</div>
@@ -137,13 +143,13 @@ export default function HomePage() {
       />
 
       {/* SO WHAT */}
-      <section style={{ ...wrap, background: BG }}>
+      <section className="mkt-wrap" style={{ background: BG }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
           <div style={eyebrow(ORANGE)}>The So What</div>
           <h2 style={{ ...h2style, marginBottom: 48 }}>
             What interoperability <span style={{ color: ORANGE }}>actually means.</span>
           </h2>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 20 }}>
+          <div className="mkt-g3" style={{ gap: 20 }}>
             {[
               { n: "01", t: "Organizations finally have clarity", d: "When all your systems speak the same language, change management becomes manageable. Every department works from the same data. Decisions get made with confidence." },
               { n: "02", t: "Platform data becomes infrastructure", d: "Platforms that connect do not just share data. They become the foundation other products are built on. That is a moat, not a vulnerability." },
@@ -152,7 +158,7 @@ export default function HomePage() {
               { n: "05", t: "Passive revenue for platforms", d: "Every API call a builder makes generates revenue share back to the platform. No ongoing work. The data you already own starts earning." },
               { n: "06", t: "First movers own the ecosystem", d: "Operators who connect first get unified intelligence before their competitors. Platforms who connect first own the builder relationships. The standard is being set right now." },
             ].map((c) => (
-              <div key={c.n} style={{ background: BG, border: `1px solid ${BORDER}`, borderRadius: 14, padding: 28 }}>
+              <div key={c.n} style={{ background: BG, border: `1px solid ${BORDER}`, borderRadius: 12, padding: 28 }}>
                 <div style={{ ...MONO, fontSize: 12, fontWeight: 500, color: ORANGE, letterSpacing: "0.1em", marginBottom: 10 }}>{c.n}</div>
                 <div style={{ fontSize: 18, fontWeight: 700, color: "#fff", marginBottom: 10 }}>{c.t}</div>
                 <div style={{ fontSize: 16, color: W90, lineHeight: 1.7 }}>{c.d}</div>
@@ -163,14 +169,14 @@ export default function HomePage() {
       </section>
 
       {/* PRECEDENT */}
-      <section style={{ ...wrap, background: BG }}>
+      <section className="mkt-wrap" style={{ background: BG }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
           <div style={eyebrow(ORANGE)}>This Is a Proven Playbook</div>
           <h2 style={{ ...h2style, marginBottom: 16 }}>
             This has happened before.<br />Every time it did, <span style={{ color: ORANGE }}>an ecosystem was born.</span>
           </h2>
           <p style={{ ...bodyText, maxWidth: 620, marginBottom: 48 }}>The infrastructure layer that unlocks a data category defines the standard for an entire industry. Platforms that move first own the ecosystem.</p>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 2 }}>
+          <div className="mkt-g4" style={{ gap: 2 }}>
             {[
               { co: "Stripe",     unlocked: "Unlocked payments",          result: "Banks that connected became infrastructure. Banks that waited became legacy.", active: false },
               { co: "Plaid",      unlocked: "Unlocked banking data",       result: "Institutions that opened their data became the foundation. Those that stayed closed became irrelevant.", active: false },
@@ -188,24 +194,26 @@ export default function HomePage() {
       </section>
 
       {/* FINAL CTA */}
-      <section style={{ ...wrap, background: BG2, borderTop: `1px solid ${BORDER_L}`, textAlign: "center" }}>
+      <section className="mkt-wrap" style={{ background: BG2, borderTop: `1px solid ${BORDER_L}`, textAlign: "center" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
           <div style={{ fontSize: 16, color: "#fff", marginBottom: 12 }}>The standard is being set now.</div>
           <h2 style={{ fontFamily: "var(--font-bebas),'Bebas Neue',sans-serif", fontSize: "clamp(36px,5vw,64px)", fontWeight: 700, lineHeight: 1.05, marginBottom: 20, color: ORANGE }}>Which side are you on?</h2>
           <p style={{ ...bodyText, marginBottom: 56, maxWidth: 560, marginLeft: "auto", marginRight: "auto" }}>
             Operators who connect first get unified intelligence before their competitors. Platforms who connect first own the builder relationships. Builders who apply first get the data advantage.
           </p>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 20 }}>
+          <div className="mkt-g3" style={{ gap: 20 }}>
             {[
               { color: BLUE, text: BLUE_T, tint: "rgba(77,159,255,0.05)", bd: "rgba(77,159,255,0.22)", btnBg: "rgba(77,159,255,0.12)", btnBd: "rgba(77,159,255,0.35)", label: "Operators", title: "I want to unify my systems.", desc: "Your platforms do not talk to each other. Connect once and get a unified intelligent view across everything you run.", href: "/operator" },
               { color: GREEN, text: GREEN_T, tint: "rgba(0,255,127,0.04)", bd: "rgba(0,255,127,0.22)", btnBg: "rgba(0,255,127,0.1)", btnBd: "rgba(0,255,127,0.35)", label: "Scheduling platforms", title: "I want to be interoperable.", desc: "Free to connect. We build the API, maintain it, and act as the neutral intermediary. Earn passively from every builder who accesses your data.", href: "/platform" },
               { color: PURPLE, text: PURPLE_T, tint: "rgba(176,77,255,0.04)", bd: "rgba(176,77,255,0.22)", btnBg: "rgba(176,77,255,0.1)", btnBd: "rgba(176,77,255,0.35)", label: "Builders and developers", title: "I want access to scheduling data.", desc: "Apply once. One integration across every platform that approves you. Rich, structured, real-time scheduling data to build anything.", href: "/builder" },
             ].map((c) => (
-              <div key={c.href} style={{ borderRadius: 16, padding: "32px 28px", textAlign: "left", display: "flex", flexDirection: "column", gap: 14, background: c.tint, border: `1.5px solid ${c.bd}` }}>
-                <div style={{ ...MONO, fontSize: 11, fontWeight: 500, letterSpacing: "0.16em", textTransform: "uppercase", color: c.text }}>{c.label}</div>
-                <div style={{ fontSize: 20, fontWeight: 700, color: "#fff" }}>{c.title}</div>
-                <p style={{ fontSize: 16, color: W90, lineHeight: 1.65 }}>{c.desc}</p>
-                <Link href={c.href} style={{ display: "inline-block", padding: "12px 22px", borderRadius: 9, fontSize: 15, fontWeight: 600, textDecoration: "none", background: c.btnBg, color: c.color, border: `1px solid ${c.btnBd}`, alignSelf: "flex-start" }}>Get Started →</Link>
+              <div key={c.href} style={{ borderRadius: 12, padding: "32px 28px", textAlign: "left", display: "flex", flexDirection: "column", justifyContent: "space-between", gap: 14, background: c.tint, border: `1.5px solid ${c.bd}` }}>
+                <div>
+                  <div style={{ ...MONO, fontSize: 11, fontWeight: 500, letterSpacing: "0.16em", textTransform: "uppercase", color: c.text, marginBottom: 14 }}>{c.label}</div>
+                  <div style={{ fontSize: 20, fontWeight: 700, color: "#fff", marginBottom: 10 }}>{c.title}</div>
+                  <p style={{ fontSize: 16, color: W90, lineHeight: 1.65 }}>{c.desc}</p>
+                </div>
+                <Link href={c.href} className="mkt-btn-tint" style={{ display: "inline-block", padding: "12px 22px", borderRadius: 12, fontSize: 15, fontWeight: 600, textDecoration: "none", background: c.btnBg, color: c.color, border: `1px solid ${c.btnBd}`, alignSelf: "flex-start" }}>Get Started →</Link>
               </div>
             ))}
           </div>

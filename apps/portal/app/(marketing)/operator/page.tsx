@@ -38,7 +38,7 @@ export default function OperatorsPage() {
         <p className="mkt-hero-sub">
           You have invested in platforms that serve critical business functions. The problem is they do not talk to each other. <strong>Orgo Sync is the cross-platform layer that unifies scheduling across the tools you already use and empowers your entire organization with its intelligence.</strong>
         </p>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 2, maxWidth: 600, marginTop: 8 }}>
+        <div className="mkt-g3 mkt-hero-strip" style={{ gap: 2, maxWidth: 600, marginTop: 8 }}>
           {[
             { n: "01. Protect", t: "Keep every tool you have" },
             { n: "02. Optimize", t: "Make them work as one" },
@@ -50,18 +50,18 @@ export default function OperatorsPage() {
             </div>
           ))}
         </div>
-        <div style={{ marginTop: 28 }}>
+        <div className="mkt-hero-actions" style={{ marginTop: 28 }}>
           <Link href="/getstarted" className="mkt-btn-primary">I want to unify my systems →</Link>
         </div>
       </section>
 
       {/* WHO IT'S FOR */}
-      <section style={{ ...wrap, background: BG2, borderTop: `1px solid ${BORDER_L}`, borderBottom: `1px solid ${BORDER_L}` }}>
+      <section className="mkt-wrap" style={{ background: BG2, borderTop: `1px solid ${BORDER_L}`, borderBottom: `1px solid ${BORDER_L}` }}>
         <div style={inner}>
           <div style={eyebrow}>Who It&apos;s For</div>
           <h2 style={h2}>Built for organizations that<br /><span style={{ color: BLUE }}>outgrew a single platform.</span></h2>
           <p style={{ ...body, maxWidth: 640, marginBottom: 48 }}>If your organization manages scheduling complexity across more than one system, Orgo Sync was built for you.</p>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 20 }}>
+          <div className="mkt-g3" style={{ gap: 20 }}>
             {[
               { badge: "Multi-sport facilities",  t: "Sports complexes and academies",        d: "Multiple sports, multiple venues, multiple platforms. A single scheduling conflict across systems costs real money and real trust." },
               { badge: "Higher education",         t: "University athletic departments",       d: "Athletic scheduling, academic calendars, facility management, and student life running on separate systems with zero interoperability between departments." },
@@ -70,7 +70,7 @@ export default function OperatorsPage() {
               { badge: "Fitness and wellness",     t: "Multi-location fitness organizations",  d: "Class schedules, facility bookings, trainer availability, and event calendars in separate systems with no unified operational view across locations." },
               { badge: "Corporate",                t: "Corporate campus operations",           d: "Meeting rooms, athletic facilities, event spaces, and shared resources across multiple booking systems. Constant conflicts, constant manual reconciliation, no single source of truth." },
             ].map((c) => (
-              <div key={c.t} style={{ borderRadius: 14, padding: 28, background: BG, border: `1px solid ${BORDER}` }}>
+              <div key={c.t} style={{ borderRadius: 12, padding: 28, background: BG, border: `1px solid ${BORDER}` }}>
                 <div style={{ ...MONO, fontSize: 10, letterSpacing: "0.14em", textTransform: "uppercase", color: BLUE_T, background: "rgba(77,159,255,0.08)", border: "1px solid rgba(77,159,255,0.2)", padding: "4px 10px", borderRadius: 4, display: "inline-block", marginBottom: 14 }}>{c.badge}</div>
                 <div style={{ fontSize: 18, fontWeight: 700, color: "#fff", marginBottom: 8 }}>{c.t}</div>
                 <div style={{ fontSize: 16, color: W90, lineHeight: 1.7 }}>{c.d}</div>
@@ -81,11 +81,11 @@ export default function OperatorsPage() {
       </section>
 
       {/* THE REALITY */}
-      <section style={{ ...wrap, background: BG2, borderTop: `1px solid ${BORDER_L}`, borderBottom: `1px solid ${BORDER_L}` }}>
+      <section className="mkt-wrap" style={{ background: BG2, borderTop: `1px solid ${BORDER_L}`, borderBottom: `1px solid ${BORDER_L}` }}>
         <div style={inner}>
           <div style={eyebrow}>The Reality You Are Living</div>
           <h2 style={h2}>You built a great tech stack.<br /><span style={{ color: BLUE }}>Fragmentation is making it work against you.</span></h2>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 56, alignItems: "start" }}>
+          <div className="mkt-split" style={{ gap: 56, alignItems: "start" }}>
             <div>
               <p style={{ ...body, marginBottom: 18 }}>You did not choose fragmentation. It happened as your organization grew. One platform for scheduling. Another for facilities. Another for events. Each one was the right choice at the time. Each one delivers real value in isolation.</p>
               <p style={{ ...body, marginBottom: 18 }}>But none of them know what the others know. When something changes in one system, the others do not know about it until a human being manually reconciles the difference. That gap between systems is where your staff hours go. It is where conflicts are born. It is where good decisions get made on incomplete information.</p>
@@ -110,12 +110,12 @@ export default function OperatorsPage() {
       </section>
 
       {/* THE CORE PROMISE */}
-      <section style={{ ...wrap, background: BG }}>
+      <section className="mkt-wrap" style={{ background: BG }}>
         <div style={inner}>
           <div style={eyebrow}>The Core Promise</div>
           <h2 style={h2}>Not a replacement.<br /><span style={{ color: BLUE }}>A multiplier.</span></h2>
           <p style={{ ...body, maxWidth: 680, marginBottom: 48 }}>The all-in-one solutions want you to abandon what works and start over on their platform. Orgo Sync does the opposite. <strong style={{ color: "#fff" }}>We make the tools you already trust worth more.</strong></p>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 20 }}>
+          <div className="mkt-g3" style={{ gap: 20 }}>
             {[
               { t: "Your investment stays protected",        d: "The platforms your team knows, the workflows they trust, the data already in each system — all of it stays exactly as it is. Orgo Sync adds a layer. It does not replace one." },
               { t: "Every system becomes more valuable",    d: "When your systems share a common data layer, each one gets smarter. Every platform knows what the others know. The whole becomes greater than the sum of its parts." },
@@ -124,7 +124,7 @@ export default function OperatorsPage() {
               { t: "Conflicts caught before they happen",   d: "When a change in one system creates a conflict in another, Orgo Sync flags it immediately — not when a coach calls, not when a family shows up to the wrong field." },
               { t: "Role-based access for your whole team", d: "Admins see everything. Coaches see their teams. Facility managers see their venues. Everyone gets the view they need without seeing what they do not." },
             ].map((c) => (
-              <div key={c.t} style={{ borderRadius: 16, padding: 28, background: "rgba(77,159,255,0.06)", border: "1px solid rgba(77,159,255,0.22)" }}>
+              <div key={c.t} style={{ borderRadius: 12, padding: 28, background: "rgba(77,159,255,0.06)", border: "1px solid rgba(77,159,255,0.22)" }}>
                 <div style={{ fontSize: 20, fontWeight: 700, color: "#fff", marginBottom: 10 }}>{c.t}</div>
                 <div style={{ fontSize: 16, color: W90, lineHeight: 1.7 }}>{c.d}</div>
               </div>
@@ -134,19 +134,19 @@ export default function OperatorsPage() {
       </section>
 
       {/* HOW IT WORKS */}
-      <section style={{ ...wrap, background: BG2, borderTop: `1px solid ${BORDER_L}`, borderBottom: `1px solid ${BORDER_L}` }} id="how">
+      <section className="mkt-wrap" style={{ background: BG2, borderTop: `1px solid ${BORDER_L}`, borderBottom: `1px solid ${BORDER_L}` }} id="how">
         <div style={inner}>
           <div style={eyebrow}>How It Works</div>
           <h2 style={h2}>One single, intelligent<br /><span style={{ color: BLUE }}>source of scheduling truth.</span></h2>
           <p style={{ ...body, maxWidth: 680, marginBottom: 48 }}>No new software for your platforms to install. No migration. No IT project. <strong style={{ color: "#fff" }}>Zero technical development required.</strong> Your team never has to change how they work inside any platform.</p>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 20 }}>
+          <div className="mkt-g4" style={{ gap: 20 }}>
             {[
               { n: "01", t: "Sign in and select your systems",    d: "Tell us which platforms you run. That's your entire technical responsibility." },
               { n: "02", t: "We scan, map and connect",           d: "AI scans and maps each system automatically. We implement the connections. Zero lift on your end." },
               { n: "03", t: "Conflicts detected automatically",   d: "When a change in one system creates a conflict in another, you are alerted immediately — before anyone else finds out." },
               { n: "04", t: "Your operation runs itself",         d: "Real-time sync. Full audit trail. The reconciliation disappears. Your team gets their time back." },
             ].map((s) => (
-              <div key={s.n} style={{ background: BG, border: `1px solid ${BORDER}`, borderRadius: 16, padding: 28 }}>
+              <div key={s.n} style={{ background: BG, border: `1px solid ${BORDER}`, borderRadius: 12, padding: 28 }}>
                 <div style={{ ...MONO, fontSize: 12, color: ORANGE, letterSpacing: "0.1em", marginBottom: 14 }}>{s.n}</div>
                 <div style={{ fontSize: 18, fontWeight: 700, marginBottom: 10, color: "#fff" }}>{s.t}</div>
                 <div style={{ fontSize: 16, color: W90, lineHeight: 1.7 }}>{s.d}</div>
@@ -157,19 +157,19 @@ export default function OperatorsPage() {
       </section>
 
       {/* PRICING */}
-      <section style={{ ...wrap, background: "rgba(77,159,255,0.02)", borderTop: "1px solid rgba(77,159,255,0.1)", borderBottom: "1px solid rgba(77,159,255,0.1)" }} id="pricing">
+      <section className="mkt-wrap" style={{ background: "rgba(77,159,255,0.02)", borderTop: "1px solid rgba(77,159,255,0.1)", borderBottom: "1px solid rgba(77,159,255,0.1)" }} id="pricing">
         <div style={inner}>
           <div style={eyebrow}>Pricing</div>
           <h2 style={h2}>Pay less than one staff hour a week<br /><span style={{ color: BLUE }}>to reclaim twenty of them.</span></h2>
           <p style={{ ...body, maxWidth: 640, marginBottom: 48 }}>Orgo Sync costs a fraction of the manual labor it replaces.</p>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 16 }}>
+          <div className="mkt-g4" style={{ gap: 16 }}>
             {[
               { tier: "Starter",    price: "$499",  unit: "/mo", volume: "Up to 3 platforms",    features: ["Unified calendar view", "Real-time conflict detection", "Daily, weekly, monthly views", "Mobile responsive", "Up to 5 user seats"],                                                                featured: true },
               { tier: "Growth",     price: "$899",  unit: "/mo", volume: "Up to 6 platforms",    features: ["Everything in Starter", "Orgo Assist intelligence layer", "Scenario planning and modeling", "Role-based access controls", "Up to 20 user seats"],                                                   featured: false },
               { tier: "Pro",        price: "$1,499", unit: "/mo", volume: "Up to 12 platforms",  features: ["Everything in Growth", "Unlimited user seats", "Custom data exports and reporting", "Priority support and onboarding", "Advanced analytics"],                                                        featured: false },
               { tier: "Enterprise", price: "Custom", unit: "",   volume: "Unlimited platforms",  features: ["Everything in Pro", "Custom SLA and uptime guarantees", "Dedicated implementation support", "SSO and enterprise security", "Multi-site and multi-org support"],                                     featured: false },
             ].map((c) => (
-              <div key={c.tier} style={{ borderRadius: 16, padding: 28, display: "flex", flexDirection: "column", gap: 12, background: c.featured ? "rgba(77,159,255,0.06)" : BG2, border: c.featured ? "1.5px solid rgba(77,159,255,0.35)" : `1px solid ${BORDER}` }}>
+              <div key={c.tier} style={{ borderRadius: 12, padding: 28, display: "flex", flexDirection: "column", gap: 12, background: c.featured ? "rgba(77,159,255,0.06)" : BG2, border: c.featured ? "1.5px solid rgba(77,159,255,0.35)" : `1px solid ${BORDER}` }}>
                 <div style={{ ...MONO, fontSize: 11, letterSpacing: "0.14em", textTransform: "uppercase", color: c.featured ? BLUE_T : W40 }}>{c.tier}</div>
                 <div style={{ fontSize: 30, fontWeight: 700, color: "#fff" }}>{c.price}<span style={{ fontSize: 15, fontWeight: 400, color: W40 }}>{c.unit}</span></div>
                 <div style={{ fontSize: 15, color: W75 }}>{c.volume}</div>
@@ -189,13 +189,13 @@ export default function OperatorsPage() {
       </section>
 
       {/* FINAL CTA */}
-      <section style={{ ...wrap, background: "rgba(77,159,255,0.03)", borderTop: "1px solid rgba(77,159,255,0.12)", textAlign: "center" }} id="getstarted">
+      <section className="mkt-wrap" style={{ background: "rgba(77,159,255,0.03)", borderTop: "1px solid rgba(77,159,255,0.12)", textAlign: "center" }} id="getstarted">
         <div style={{ maxWidth: 700, margin: "0 auto" }}>
           <h2 style={{ ...h2, marginBottom: 18 }}>Level up your tech stack<br />with <span style={{ color: BLUE }}>intelligence.</span></h2>
           <p style={{ ...body, marginBottom: 40, maxWidth: 520, marginLeft: "auto", marginRight: "auto" }}>
             Book a 30-minute call. We will show you exactly what your organization looks like with one unified view across every system you run — and what Orgo Assist can do with it.
           </p>
-          <Link href="/getstarted" style={{ display: "inline-flex", alignItems: "center", gap: 8, padding: "16px 36px", borderRadius: 10, fontSize: 16, fontWeight: 600, textDecoration: "none", background: "rgba(77,159,255,0.12)", color: BLUE, border: "1.5px solid rgba(77,159,255,0.4)" }}>
+          <Link href="/getstarted" className="mkt-btn-tint" style={{ display: "inline-flex", alignItems: "center", gap: 8, padding: "16px 36px", borderRadius: 12, fontSize: 16, fontWeight: 600, textDecoration: "none", background: "rgba(77,159,255,0.12)", color: BLUE, border: "1.5px solid rgba(77,159,255,0.4)" }}>
             I want to unify my systems →
           </Link>
         </div>

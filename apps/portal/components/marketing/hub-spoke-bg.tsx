@@ -219,6 +219,7 @@ export function HubSpokeBg({
       <canvas
         ref={canvasRef}
         className="absolute inset-0 w-full h-full"
+        style={{ animation: "hubSpokeFadeIn 1.2s 0.3s ease both" }}
         aria-hidden
       />
       {overlay && <div className="absolute inset-0 hub-spoke-overlay-desktop" style={{ background: "rgba(0,0,0,0.52)" }} aria-hidden />}
