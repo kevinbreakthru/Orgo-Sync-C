@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import Image from "next/image";
 
 const NAV_LINKS = [
   { href: "/operator", label: "Operators" },
@@ -24,13 +23,8 @@ export function MarketingNav() {
     <>
       <nav className={`mkt-nav${scrolled ? " mkt-nav--scrolled" : ""}`}>
         <Link href="/" className="mkt-nav-logo">
-          <Image
-            src="/orgosynclogo.svg"
-            alt="Orgo Sync"
-            width={152}
-            height={38}
-            priority
-          />
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/orgosynclogo.svg" alt="Orgo Sync" width={152} height={38} />
         </Link>
 
         {/* Desktop links */}

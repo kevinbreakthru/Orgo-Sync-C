@@ -22,6 +22,7 @@
   font-size: 16px;
   line-height: 1.6;
   overflow-x: hidden;
+  background: var(--m-black);
 }
 
 /* ── NAV ── */
@@ -118,7 +119,7 @@
   background: var(--m-black);
   min-height: 100vh;
   display: flex; flex-direction: column; justify-content: center;
-  padding: 120px max(48px, calc((100% - 1200px) / 2)) 80px;
+  padding: 120px max(48px, calc((100% - 1200px) / 2)) 100px;
   position: relative; overflow: hidden;
 }
 .mkt-hero--pillar::before { display: none; }
@@ -771,7 +772,7 @@
 }
 
 .mkt-getstarted-roles {
-  display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px;
+  display: flex; flex-direction: column; gap: 24px; margin-bottom: 24px;
 }
 .mkt-role-card {
   background: var(--m-dark); border: 1px solid rgba(255,255,255,0.08);
@@ -782,21 +783,19 @@
   font-family: inherit; color: inherit;
 }
 .mkt-role-card:hover { border-color: rgba(255,255,255,0.15); }
-.mkt-role-card--active {
-  background: rgba(255,77,0,0.06);
-  border-color: var(--m-orange);
+.mkt-role-top {
+  display: flex; align-items: center; gap: 14px; margin-bottom: 8px;
 }
 .mkt-role-icon {
-  width: 40px; height: 40px; border-radius: 8px;
+  width: 40px; height: 40px; border-radius: 12px;
   background: rgba(255,77,0,0.12); border: 1px solid rgba(255,77,0,0.25);
   flex-shrink: 0; display: flex; align-items: center; justify-content: center;
-  margin-top: 2px;
 }
 .mkt-role-content { flex: 1; min-width: 0; }
 .mkt-role-title {
   font-family: var(--font-bebas), 'Bebas Neue', sans-serif;
-  font-size: 22px; letter-spacing: 0.06em;
-  color: var(--m-orange); margin-bottom: 4px; line-height: 1;
+  font-size: 32px; letter-spacing: 0.06em;
+  color: rgba(255,255,255,0.75); line-height: 1; margin-top: 2px;
 }
 .mkt-role-desc {
   font-size: 16px; color: rgba(255,255,255,0.45); line-height: 1.5;
@@ -807,25 +806,22 @@
 .mkt-role-tag {
   font-size: 14px; font-weight: 600;
   color: rgba(255,255,255,0.4); background: rgba(255,255,255,0.06);
-  border-radius: 4px; padding: 3px 8px;
+  border-radius: 12px; padding: 3px 8px;
 }
 .mkt-role-tag--active {
   color: rgba(255,255,255,0.55); background: rgba(255,77,0,0.1);
 }
 .mkt-role-radio {
-  width: 20px; height: 20px; border-radius: 50%;
+  width: 26px; height: 26px; border-radius: 50%;
   border: 1.5px solid rgba(255,255,255,0.15);
-  background: transparent; flex-shrink: 0; margin-top: 10px;
+  background: transparent; flex-shrink: 0; margin-left: auto;
   display: flex; align-items: center; justify-content: center;
-  transition: all 0.2s;
-}
-.mkt-role-radio--active {
-  border-color: var(--m-orange); background: var(--m-orange);
+  transition: border-color 0.15s;
 }
 .mkt-getstarted-submit {
   width: 100%; padding: 14px;
   background: var(--m-orange); color: var(--m-white);
-  border: none; border-radius: 8px;
+  border: none; border-radius: 12px;
   font-size: 16px; font-weight: 600; letter-spacing: 0.04em;
   cursor: pointer; transition: opacity 0.2s, background 0.2s;
 }
@@ -847,9 +843,12 @@
 /* Homepage hero rows */
 .mkt-hero-main { display: flex; align-items: center; gap: 40px; position: relative; z-index: 1; }
 .mkt-hero-main > .mkt-hero-main-text { flex: 3; }
+.mkt-hero-main > .mkt-hero-main-text > *:last-child { margin-bottom: 0; }
 .mkt-hero-main > .mkt-hero-main-showcase { flex: 2; }
 .mkt-hero-cta-row { display: flex; gap: 20px; position: relative; z-index: 1; }
 .mkt-hero-cta-row > * { flex: 1; }
+.mkt-hero-showcase-mobile { display: none; }
+.mkt-hero-showcase-desktop { display: block; }
 
 /* ── ENTRANCE ANIMATIONS ── */
 .mkt-reveal {
@@ -912,24 +911,10 @@
 
   /* Grid/flex utilities */
   .mkt-g2, .mkt-g3, .mkt-g4, .mkt-split { grid-template-columns: 1fr; }
-  .mkt-hero-main { display: contents; }
-  .mkt-hero-main-text  { order: 1; }
-  .mkt-hero-cta-row    { order: 2; flex-direction: column; }
-  .mkt-hero-main-showcase {
-    order: 3;
-    width: 100%;
-    background: #111111;
-    border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 24px 80px rgba(0,0,0,0.5);
-  }
-  .mkt-hero-main-showcase .hero-showcase {
-    background: transparent;
-    border: none;
-    border-radius: 0;
-    box-shadow: none;
-  }
+  .mkt-hero-main { flex-direction: column; }
+  .mkt-hero-cta-row { flex-direction: column; }
+  .mkt-hero-showcase-desktop { display: none !important; }
+  .mkt-hero-showcase-mobile { display: block; }
 
   /* Hero */
   .mkt-hero { padding: 110px 24px 48px; min-height: auto !important; }

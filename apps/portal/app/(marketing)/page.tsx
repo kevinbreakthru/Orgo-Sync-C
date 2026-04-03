@@ -67,9 +67,9 @@ export default function HomePage() {
   return (
     <>
       {/* HERO */}
-      <section className="mkt-hero mkt-hero--pillar" style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+      <section className="mkt-hero mkt-hero--pillar" style={{ display: "flex", flexDirection: "column", gap: 48 }}>
         <NetworkNodesBg />
-        {/* Row 1: text + showcase */}
+        {/* Row 1: text + showcase (desktop) */}
         <div className="mkt-hero-main">
           <div className="mkt-hero-main-text">
             <h1 className="mkt-hero-headline">
@@ -77,7 +77,7 @@ export default function HomePage() {
             </h1>
             <p className="mkt-hero-sub">Connect your platforms. Own your data. Build on it.</p>
           </div>
-          <div className="mkt-hero-main-showcase">
+          <div className="mkt-hero-main-showcase mkt-hero-showcase-desktop">
             <HeroRoutingShowcase />
           </div>
         </div>
@@ -95,6 +95,10 @@ export default function HomePage() {
               <div style={{ fontSize: 16, color: W75, lineHeight: 1.5 }}>{c.detail}</div>
             </Link>
           ))}
+        </div>
+        {/* Showcase mobile only — rendered after CTAs */}
+        <div className="mkt-hero-showcase-mobile">
+          <HeroRoutingShowcase />
         </div>
       </section>
 

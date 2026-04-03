@@ -154,6 +154,7 @@ export function NetworkNodesBg() {
       <canvas
         ref={canvasRef}
         className="absolute inset-0 w-full h-full"
+        style={{ animation: "hubSpokeFadeIn 1.2s 0.3s ease both" }}
         aria-hidden
       />
       <div className="absolute inset-0" style={{ background: "rgba(0,0,0,0.55)" }} aria-hidden />
