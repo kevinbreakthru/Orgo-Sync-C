@@ -214,7 +214,7 @@ export default function HomePage() {
               bg: "rgba(7,8,18,0.82)",
               bd: "rgba(176,77,255,0.35)",
               who: "Builders",
-              action: "I want to build on standardized data",
+              action: "I want authenticated data",
               detail: "3 lines of code, 1 API, pay per usage.",
             },
           ].map((c) => (
