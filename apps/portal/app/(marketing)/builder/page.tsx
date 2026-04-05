@@ -5,6 +5,18 @@ import { HubSpokeBg } from "../../../components/marketing/hub-spoke-bg";
 
 export const metadata: Metadata = {
   title: "Orgo Sync for Builders — Build on Real Scheduling Data",
+  description: "One authenticated integration. Apply once, access every approved platform. Rich, structured, real-time scheduling data.",
+  openGraph: {
+    title: "Orgo Sync for Builders — Build on Real Scheduling Data",
+    description: "One authenticated integration. Apply once, access every approved platform. Rich, structured, real-time scheduling data.",
+    images: [{ url: "/builders-og.png", width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Orgo Sync for Builders — Build on Real Scheduling Data",
+    description: "One authenticated integration. Apply once, access every approved platform.",
+    images: ["/builders-og.png"],
+  },
 };
 
 const MONO: React.CSSProperties = {
@@ -70,9 +82,10 @@ export default function BuildersPage() {
           For Builders and Developers
         </div>
         <h1 className="mkt-hero-headline">
-          The scheduling data you need to build on,{" "}
+          The scheduling data you need to build on.
+          <br />
           <span style={{ color: PURPLE, textShadow: `0 0 40px ${PURPLE_G}` }}>
-            unlocked.
+            Now you can build on it.
           </span>
         </h1>
         <p className="mkt-hero-sub">

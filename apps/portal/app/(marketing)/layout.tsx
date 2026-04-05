@@ -7,7 +7,20 @@ import "./marketing.css";
 export const metadata: Metadata = {
   title: "Orgo Sync — The Scheduling Data Standard",
   description:
-    "The first universal API that makes every scheduling platform interoperable, secure and real-time.",
+    "One API that makes scheduling data intelligent, interoperable, and secure.",
+  openGraph: {
+    title: "Orgo Sync — The Scheduling Data Standard",
+    description:
+      "One API that makes scheduling data intelligent, interoperable, and secure.",
+    images: [{ url: "/home-og.png", width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Orgo Sync — The Scheduling Data Standard",
+    description:
+      "One API that makes scheduling data intelligent, interoperable, and secure.",
+    images: ["/home-og.png"],
+  },
 };
 
 export default function MarketingLayout({

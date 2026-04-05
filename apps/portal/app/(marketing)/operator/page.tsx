@@ -4,8 +4,19 @@ import Link from "next/link";
 import { HubSpokeBg } from "../../../components/marketing/hub-spoke-bg";
 
 export const metadata: Metadata = {
-  title:
-    "Orgo Sync for Operators — One View. Every System. Total Intelligence.",
+  title: "Orgo Sync for Operators — One View. Every System. Total Intelligence.",
+  description: "Unified scheduling intelligence across every platform you run. No migration, no new software. Connect once.",
+  openGraph: {
+    title: "Orgo Sync for Operators — One View. Every System. Total Intelligence.",
+    description: "Unified scheduling intelligence across every platform you run. No migration, no new software. Connect once.",
+    images: [{ url: "/operators-og.png", width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Orgo Sync for Operators — One View. Every System. Total Intelligence.",
+    description: "Unified scheduling intelligence across every platform you run.",
+    images: ["/operators-og.png"],
+  },
 };
 
 const MONO: React.CSSProperties = {
@@ -489,9 +500,9 @@ export default function OperatorsPage() {
         <div style={inner}>
           <div style={eyebrow}>Pricing</div>
           <h2 style={h2}>
-            Pay less than one staff hour a week
+            Reclaim 20+ hours of staff productivity
             <br />
-            <span style={{ color: BLUE }}>to reclaim twenty of them.</span>
+            <span style={{ color: BLUE }}>per week.</span>
           </h2>
           <p style={{ ...body, maxWidth: 640, marginBottom: 48 }}>
             Orgo Sync costs a fraction of the manual labor it replaces.

@@ -17,7 +17,7 @@ interface Node {
   pulseSpeed: number;
 }
 
-export function NetworkNodesBg() {
+export function NetworkNodesBg({ nodeCount }: { nodeCount?: number } = {}) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
@@ -49,7 +49,7 @@ export function NetworkNodesBg() {
     }
 
     function init() {
-      const count = W < 768 ? 20 : W < 1024 ? 40 : NODE_COUNT;
+      const count = nodeCount ?? (W < 768 ? 20 : W < 1024 ? 40 : NODE_COUNT);
       nodes = Array.from({ length: count }, createNode);
     }
 

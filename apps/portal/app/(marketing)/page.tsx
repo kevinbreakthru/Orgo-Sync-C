@@ -173,12 +173,9 @@ export default function HomePage() {
         <div className="mkt-hero-main">
           <div className="mkt-hero-main-text">
             <h1 className="mkt-hero-headline">
-              Orgo Sync makes <span>scheduling data</span> intelligent,
+              One API that makes <span>scheduling data</span> intelligent,
               interoperable, and secure.
             </h1>
-            <p className="mkt-hero-sub">
-              Connect your platforms. Own your data. Build on it.
-            </p>
           </div>
           <div className="mkt-hero-main-showcase mkt-hero-showcase-desktop">
             <HeroRoutingShowcase />
@@ -196,7 +193,7 @@ export default function HomePage() {
               bd: "rgba(77,159,255,0.35)",
               who: "Operators",
               action: "I want to unify my systems",
-              detail: "One view across every platform you run.",
+              detail: "Extract intelligence across scheduling platforms.",
             },
             {
               href: "/platform",
@@ -207,7 +204,7 @@ export default function HomePage() {
               bd: "rgba(0,255,127,0.35)",
               who: "Platforms",
               action: "I want to be interoperable",
-              detail: "Your data is your most valuable asset.",
+              detail: "Unlock your data and earn passive revenue.",
             },
             {
               href: "/builder",
@@ -217,8 +214,8 @@ export default function HomePage() {
               bg: "rgba(7,8,18,0.82)",
               bd: "rgba(176,77,255,0.35)",
               who: "Builders",
-              action: "I want scheduling data",
-              detail: "One API. Any approved platform.",
+              action: "I want to build on standardized data",
+              detail: "3 lines of code, 1 API, pay per usage.",
             },
           ].map((c) => (
             <Link
@@ -467,6 +464,7 @@ export default function HomePage() {
             This has happened before.
             <br />
             Every time it did,{" "}
+            <br />
             <span style={{ color: ORANGE }}>an ecosystem was born.</span>
           </h2>
           <p style={{ ...bodyText, maxWidth: 620, marginBottom: 48 }}>

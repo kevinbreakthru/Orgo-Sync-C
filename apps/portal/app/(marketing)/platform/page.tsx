@@ -5,6 +5,18 @@ import { HubSpokeBg } from "../../../components/marketing/hub-spoke-bg";
 
 export const metadata: Metadata = {
   title: "Orgo Sync for Platforms — Own Your Data. Earn From It.",
+  description: "Connect once. Make your scheduling data interoperable, authenticated, and revenue-generating. Free to connect.",
+  openGraph: {
+    title: "Orgo Sync for Platforms — Own Your Data. Earn From It.",
+    description: "Connect once. Make your scheduling data interoperable, authenticated, and revenue-generating. Free to connect.",
+    images: [{ url: "/platforms-og.png", width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Orgo Sync for Platforms — Own Your Data. Earn From It.",
+    description: "Connect once. Make your scheduling data interoperable, authenticated, and revenue-generating.",
+    images: ["/platforms-og.png"],
+  },
 };
 
 const MONO: React.CSSProperties = {
@@ -499,6 +511,7 @@ export default function PlatformsPage() {
             This has happened before.
             <br />
             Every time it did,{" "}
+            <br />
             <span style={{ color: GREEN }}>an ecosystem was born.</span>
           </h2>
           <p style={{ ...body, maxWidth: 620, marginBottom: 48 }}>
@@ -596,8 +609,9 @@ export default function PlatformsPage() {
       >
         <div style={{ maxWidth: 680, margin: "0 auto" }}>
           <h2 style={{ ...h2, marginBottom: 18 }}>
-            Ready to unlock the{" "}
-            <span style={{ color: GREEN }}>true value of your data?</span>
+            Ready to unlock the true value
+            <br />
+            <span style={{ color: GREEN }}>of your data?</span>
           </h2>
           <p
             style={{
