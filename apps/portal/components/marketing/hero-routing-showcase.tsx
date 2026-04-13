@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 
 const RAW_JSON = `{
-  "source": "LeagueApps",
+  "source": "YourApp",
   "event_type": "game",
   "program_name": "U14 Boys Premier",
   "opponent": "FC Academy",
@@ -35,7 +35,8 @@ const ENDPOINTS = [
 ];
 
 const PHASE_TIMING = { raw: 2800, canonical: 3200, dispatch: 4600 };
-const TOTAL_CYCLE = PHASE_TIMING.raw + PHASE_TIMING.canonical + PHASE_TIMING.dispatch + 2000;
+const TOTAL_CYCLE =
+  PHASE_TIMING.raw + PHASE_TIMING.canonical + PHASE_TIMING.dispatch + 2000;
 
 type Phase = "raw" | "canonical" | "dispatch";
 
@@ -56,15 +57,37 @@ export function HeroRoutingShowcase() {
       setPhase("raw");
       setDeliveredCount(0);
 
-      setTimeout(() => { if (mounted) setPhase("canonical"); }, PHASE_TIMING.raw);
-      setTimeout(() => { if (mounted) setPhase("dispatch"); }, PHASE_TIMING.raw + PHASE_TIMING.canonical);
-      setTimeout(() => { if (mounted) setDeliveredCount(1); }, PHASE_TIMING.raw + PHASE_TIMING.canonical + 800);
-      setTimeout(() => { if (mounted) setDeliveredCount(2); }, PHASE_TIMING.raw + PHASE_TIMING.canonical + 1500);
-      setTimeout(() => { if (mounted) setDeliveredCount(3); }, PHASE_TIMING.raw + PHASE_TIMING.canonical + 2200);
+      setTimeout(() => {
+        if (mounted) setPhase("canonical");
+      }, PHASE_TIMING.raw);
+      setTimeout(() => {
+        if (mounted) setPhase("dispatch");
+      }, PHASE_TIMING.raw + PHASE_TIMING.canonical);
+      setTimeout(
+        () => {
+          if (mounted) setDeliveredCount(1);
+        },
+        PHASE_TIMING.raw + PHASE_TIMING.canonical + 800,
+      );
+      setTimeout(
+        () => {
+          if (mounted) setDeliveredCount(2);
+        },
+        PHASE_TIMING.raw + PHASE_TIMING.canonical + 1500,
+      );
+      setTimeout(
+        () => {
+          if (mounted) setDeliveredCount(3);
+        },
+        PHASE_TIMING.raw + PHASE_TIMING.canonical + 2200,
+      );
     }
     cycle();
     const interval = setInterval(cycle, TOTAL_CYCLE);
-    return () => { mounted = false; clearInterval(interval); };
+    return () => {
+      mounted = false;
+      clearInterval(interval);
+    };
   }, []);
 
   return (
@@ -86,15 +109,21 @@ export function HeroRoutingShowcase() {
 
       <div className="hero-showcase-body">
         <div className="hero-showcase-status">
-          <span className={`hero-showcase-step ${phase === "raw" ? "active" : "done"}`}>
+          <span
+            className={`hero-showcase-step ${phase === "raw" ? "active" : "done"}`}
+          >
             Ingest
           </span>
           <span className="hero-showcase-arrow">→</span>
-          <span className={`hero-showcase-step ${phase === "canonical" ? "active" : phase === "dispatch" ? "done" : ""}`}>
+          <span
+            className={`hero-showcase-step ${phase === "canonical" ? "active" : phase === "dispatch" ? "done" : ""}`}
+          >
             Normalize
           </span>
           <span className="hero-showcase-arrow">→</span>
-          <span className={`hero-showcase-step ${phase === "dispatch" ? "active" : ""}`}>
+          <span
+            className={`hero-showcase-step ${phase === "dispatch" ? "active" : ""}`}
+          >
             Dispatch
           </span>
         </div>
@@ -113,7 +142,7 @@ export function HeroRoutingShowcase() {
                 transition={{ duration: 0.35, ease: "easeInOut" }}
               >
                 <div className="hero-showcase-label">
-                  <span className="hero-showcase-badge-source">LeagueApps</span>
+                  <span className="hero-showcase-badge-source">YourApp</span>
                   Raw webhook payload
                 </div>
                 <pre className="hero-showcase-pre">{RAW_JSON}</pre>
@@ -148,7 +177,9 @@ export function HeroRoutingShowcase() {
                 exit="exit"
                 transition={{ duration: 0.35, ease: "easeInOut" }}
               >
-                <div className="hero-showcase-label">Dispatching webhooks&hellip;</div>
+                <div className="hero-showcase-label">
+                  Dispatching webhooks&hellip;
+                </div>
                 <div className="hero-showcase-endpoints">
                   {ENDPOINTS.map((ep, i) => (
                     <div key={ep.name} className="hero-showcase-endpoint">
@@ -164,7 +195,9 @@ export function HeroRoutingShowcase() {
                           200 OK
                         </motion.span>
                       ) : (
-                        <span className="hero-showcase-ep-pending">pending</span>
+                        <span className="hero-showcase-ep-pending">
+                          pending
+                        </span>
                       )}
                     </div>
                   ))}

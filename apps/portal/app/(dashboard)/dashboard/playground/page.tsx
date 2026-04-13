@@ -91,7 +91,7 @@ const EXAMPLES = {
         source: "json",
         enrich: false,
         payload: {
-          source: { platform: "leagueapps", external_id: "evt_90210" },
+          source: { platform: "yourapp", external_id: "evt_90210" },
           title: "U12 Soccer vs Eagles",
           start: "2026-03-28T14:00:00-05:00",
           end: "2026-03-28T15:30:00-05:00",

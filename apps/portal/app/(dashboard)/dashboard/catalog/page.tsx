@@ -21,8 +21,8 @@ const SAMPLE_PLATFORMS = [
     dataVolume: "~120K events/day",
   },
   {
-    id: "leagueapps",
-    name: "LeagueApps",
+    id: "yourapp",
+    name: "YourApp",
     description: "Registration and scheduling for leagues and clubs",
     eventTypes: "Seasons, games, practices, camps",
     dataVolume: "~85K events/day",

@@ -15,7 +15,9 @@ export function PulseRingsBg() {
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
-    let W = 0, H = 0, animId: number;
+    let W = 0,
+      H = 0,
+      animId: number;
     let startTime = performance.now();
 
     function resize() {
@@ -27,7 +29,14 @@ export function PulseRingsBg() {
       ctx!.clearRect(0, 0, W, H);
 
       // Background
-      const bg = ctx!.createRadialGradient(W * 0.5, H * 0.5, 0, W * 0.5, H * 0.5, Math.max(W, H) * 0.75);
+      const bg = ctx!.createRadialGradient(
+        W * 0.5,
+        H * 0.5,
+        0,
+        W * 0.5,
+        H * 0.5,
+        Math.max(W, H) * 0.75,
+      );
       bg.addColorStop(0, "#140600");
       bg.addColorStop(0.5, "#0a0400");
       bg.addColorStop(1, "#080808");
@@ -57,7 +66,14 @@ export function PulseRingsBg() {
       }
 
       // Soft central glow
-      const glow = ctx!.createRadialGradient(cx, cy, 0, cx, cy, Math.min(W, H) * 0.35);
+      const glow = ctx!.createRadialGradient(
+        cx,
+        cy,
+        0,
+        cx,
+        cy,
+        Math.min(W, H) * 0.35,
+      );
       glow.addColorStop(0, `rgba(${r},${g},${b},0.12)`);
       glow.addColorStop(0.5, `rgba(255,100,0,0.05)`);
       glow.addColorStop(1, "transparent");
@@ -86,7 +102,11 @@ export function PulseRingsBg() {
         className="absolute inset-0 w-full h-full"
         aria-hidden
       />
-      <div className="absolute inset-0" style={{ background: "rgba(0,0,0,0.5)" }} aria-hidden />
+      <div
+        className="absolute inset-0"
+        style={{ background: "rgba(0,0,0,0.5)" }}
+        aria-hidden
+      />
     </>
   );
 }

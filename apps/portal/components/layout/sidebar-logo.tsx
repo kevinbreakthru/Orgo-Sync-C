@@ -9,7 +9,6 @@ const STORAGE_KEY = "partner_logo_url";
 const STORAGE_LABEL_KEY = "partner_logo_label";
 
 const PRESETS = [
-  { label: "LeagueApps", url: "https://www.leagueapps.com/hubfs/LA-nav-logo.svg" },
   { label: "TeamSnap", url: "https://www.teamsnap.com/hubfs/TeamSnap_Logo.svg" },
   { label: "PlayMetrics", url: "https://playmetrics.com/wp-content/themes/flavor/assets/images/logo.svg" },
   { label: "GameChanger", url: "https://gc-static.gc.com/assets/gc-logo-dark.svg" },

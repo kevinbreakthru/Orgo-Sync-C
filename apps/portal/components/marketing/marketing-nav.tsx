@@ -2,11 +2,10 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import Image from "next/image";
 
 const NAV_LINKS = [
+  { href: "/operator", label: "Operators" },
   { href: "/platform", label: "Platforms" },
-  // { href: "/operator", label: "Operators" },
   { href: "/builder", label: "Builders" },
 ];
 
@@ -24,21 +23,25 @@ export function MarketingNav() {
     <>
       <nav className={`mkt-nav${scrolled ? " mkt-nav--scrolled" : ""}`}>
         <Link href="/" className="mkt-nav-logo">
-          <Image
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
             src="/orgosynclogo.svg"
             alt="Orgo Sync"
             width={152}
             height={38}
-            priority
           />
         </Link>
 
         {/* Desktop links */}
         <div className="mkt-nav-links mkt-nav-desktop">
           {NAV_LINKS.map((l) => (
-            <Link key={l.href} href={l.href}>{l.label}</Link>
+            <Link key={l.href} href={l.href}>
+              {l.label}
+            </Link>
           ))}
-          <Link href="/getstarted" className="mkt-nav-cta">Get Started →</Link>
+          <Link href="/getstarted" className="mkt-nav-cta">
+            Get Started →
+          </Link>
         </div>
 
         {/* Mobile hamburger */}
@@ -56,7 +59,10 @@ export function MarketingNav() {
       {/* Mobile overlay */}
       {open && (
         <div className="mkt-mobile-menu" onClick={() => setOpen(false)}>
-          <div className="mkt-mobile-menu-inner" onClick={(e) => e.stopPropagation()}>
+          <div
+            className="mkt-mobile-menu-inner"
+            onClick={(e) => e.stopPropagation()}
+          >
             {NAV_LINKS.map((l) => (
               <Link
                 key={l.href}
